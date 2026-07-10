@@ -1,4 +1,4 @@
-# AI-Powered Organ Donation Matching Platform Using Machine Learning Operations for Intelligent Organ Allocation and Transplant Decision Support
+# AI-Powered Organ Donation Matching Platform for Intelligent Organ Allocation and Transplant Decision Support
 
 ## Overview
 
