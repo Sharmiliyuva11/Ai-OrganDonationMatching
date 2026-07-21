@@ -1,0 +1,2001 @@
+recipient_id,age,gender,blood_group,organ_needed,hla_type,diagnosis,urgency,waiting_days,hospital,city,doctor_verified
+R00001,19,Female,B-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,210,CMC Vellore,Delhi,No
+R00002,19,Male,B-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,1150,AIIMS Delhi,Mumbai,No
+R00003,46,Female,A+,Liver,HLA-A03-B15,Liver Failure,Critical,697,Kauvery Hospital,Madurai,Yes
+R00004,24,Male,O+,Heart,HLA-A02-B07,Heart Failure,High,705,Kauvery Hospital,Chennai,No
+R00005,25,Female,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,High,1183,AIIMS Delhi,Coimbatore,Yes
+R00006,67,Female,A-,Liver,HLA-A11-B35,Liver Failure,Low,779,Kauvery Hospital,Hyderabad,Yes
+R00007,41,Female,B-,Liver,HLA-A24-B44,Liver Failure,Low,1248,Fortis Hospital,Mumbai,Yes
+R00008,47,Female,AB+,Liver,HLA-A11-B35,Liver Failure,High,115,AIIMS Delhi,Chennai,Yes
+R00009,35,Male,B-,Lung,HLA-A26-B40,Lung Disease,Medium,1343,Global Hospital,Bangalore,No
+R00010,34,Male,B-,Liver,HLA-A24-B44,Liver Failure,Critical,1196,Sri Ramachandra Hospital,Vellore,Yes
+R00011,50,Female,A-,Liver,HLA-A01-B08,Liver Failure,Low,314,Fortis Hospital,Bangalore,Yes
+R00012,42,Female,AB+,Lung,HLA-A01-B08,Lung Disease,Low,1397,Kauvery Hospital,Vellore,Yes
+R00013,45,Male,O-,Heart,HLA-A01-B08,Heart Failure,High,1026,Fortis Hospital,Mumbai,Yes
+R00014,71,Male,B+,Heart,HLA-A26-B40,Heart Failure,Medium,1105,Apollo Hospital,Delhi,Yes
+R00015,19,Male,AB-,Lung,HLA-A24-B44,Lung Disease,Medium,119,AIIMS Delhi,Delhi,Yes
+R00016,64,Female,A-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,1352,Global Hospital,Mumbai,Yes
+R00017,51,Female,B-,Heart,HLA-A11-B35,Heart Failure,High,818,MIOT Hospital,Hyderabad,No
+R00018,33,Male,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,1205,AIIMS Delhi,Delhi,Yes
+R00019,22,Male,B-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,677,CMC Vellore,Mumbai,Yes
+R00020,60,Female,B-,Heart,HLA-A03-B15,Heart Failure,Critical,498,Global Hospital,Bangalore,Yes
+R00021,24,Female,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,957,Apollo Hospital,Coimbatore,Yes
+R00022,64,Female,A-,Lung,HLA-A11-B35,Lung Disease,Medium,390,Global Hospital,Madurai,No
+R00023,35,Female,B-,Liver,HLA-A02-B07,Liver Failure,Critical,1128,CMC Vellore,Chennai,Yes
+R00024,66,Male,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,986,AIIMS Delhi,Bangalore,Yes
+R00025,42,Male,O+,Liver,HLA-A24-B44,Liver Failure,Critical,585,Sri Ramachandra Hospital,Mumbai,No
+R00026,30,Female,B-,Liver,HLA-A01-B08,Liver Failure,Low,643,Apollo Hospital,Chennai,No
+R00027,72,Male,A+,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,141,CMC Vellore,Salem,No
+R00028,74,Male,A+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,1347,MIOT Hospital,Trichy,Yes
+R00029,33,Female,O+,Heart,HLA-A03-B15,Heart Failure,High,937,MIOT Hospital,Coimbatore,Yes
+R00030,57,Male,A-,Lung,HLA-A11-B35,Lung Disease,High,272,MIOT Hospital,Coimbatore,Yes
+R00031,36,Male,O-,Heart,HLA-A24-B44,Heart Failure,Low,1368,Kauvery Hospital,Coimbatore,Yes
+R00032,25,Male,B+,Heart,HLA-A24-B44,Heart Failure,High,1239,AIIMS Delhi,Vellore,Yes
+R00033,50,Female,AB+,Heart,HLA-A01-B08,Heart Failure,Low,1300,Sri Ramachandra Hospital,Trichy,Yes
+R00034,39,Male,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,1130,Sri Ramachandra Hospital,Mumbai,Yes
+R00035,22,Male,A+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,881,Fortis Hospital,Chennai,Yes
+R00036,75,Male,AB-,Heart,HLA-A11-B35,Heart Failure,Medium,1366,CMC Vellore,Vellore,No
+R00037,65,Male,B-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,845,Apollo Hospital,Madurai,Yes
+R00038,69,Male,AB+,Lung,HLA-A03-B15,Lung Disease,Low,784,Apollo Hospital,Hyderabad,Yes
+R00039,70,Female,AB-,Liver,HLA-A24-B44,Liver Failure,Medium,457,Apollo Hospital,Salem,No
+R00040,35,Male,AB+,Heart,HLA-A26-B40,Heart Failure,Critical,1392,MIOT Hospital,Chennai,Yes
+R00041,29,Female,A+,Heart,HLA-A02-B07,Heart Failure,Critical,708,MIOT Hospital,Bangalore,Yes
+R00042,75,Male,AB+,Lung,HLA-A01-B08,Lung Disease,Critical,4,AIIMS Delhi,Vellore,No
+R00043,60,Female,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,1039,Kauvery Hospital,Bangalore,Yes
+R00044,62,Female,B+,Lung,HLA-A11-B35,Lung Disease,Critical,1362,Sri Ramachandra Hospital,Madurai,Yes
+R00045,53,Male,AB+,Lung,HLA-A24-B44,Lung Disease,Medium,881,MIOT Hospital,Hyderabad,No
+R00046,61,Male,O-,Lung,HLA-A03-B15,Lung Disease,Low,582,MIOT Hospital,Coimbatore,Yes
+R00047,32,Male,B+,Heart,HLA-A01-B08,Heart Failure,Low,502,Global Hospital,Delhi,Yes
+R00048,44,Male,O+,Lung,HLA-A33-B58,Lung Disease,Critical,500,Fortis Hospital,Chennai,Yes
+R00049,32,Male,O-,Lung,HLA-A01-B08,Lung Disease,Medium,249,Global Hospital,Madurai,No
+R00050,53,Female,O-,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,326,Global Hospital,Hyderabad,Yes
+R00051,71,Female,O-,Liver,HLA-A11-B35,Liver Failure,High,901,CMC Vellore,Trichy,Yes
+R00052,39,Female,A-,Heart,HLA-A03-B15,Heart Failure,Medium,474,Sri Ramachandra Hospital,Madurai,Yes
+R00053,44,Female,AB-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,128,AIIMS Delhi,Bangalore,No
+R00054,62,Male,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,721,Kauvery Hospital,Bangalore,No
+R00055,65,Male,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,High,893,Global Hospital,Chennai,No
+R00056,60,Female,B+,Heart,HLA-A33-B58,Heart Failure,Medium,1275,Apollo Hospital,Bangalore,Yes
+R00057,59,Female,B+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,103,Kauvery Hospital,Bangalore,Yes
+R00058,47,Female,AB-,Liver,HLA-A30-B18,Liver Failure,High,864,Kauvery Hospital,Coimbatore,No
+R00059,65,Male,AB-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,1335,Apollo Hospital,Chennai,Yes
+R00060,71,Male,B+,Liver,HLA-A11-B35,Liver Failure,Medium,970,CMC Vellore,Delhi,Yes
+R00061,62,Female,AB-,Lung,HLA-A03-B15,Lung Disease,Low,336,Kauvery Hospital,Coimbatore,Yes
+R00062,54,Female,O+,Heart,HLA-A11-B35,Heart Failure,Low,1213,AIIMS Delhi,Coimbatore,Yes
+R00063,69,Male,A+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,1355,MIOT Hospital,Coimbatore,Yes
+R00064,72,Female,O-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,742,Global Hospital,Madurai,No
+R00065,64,Female,O-,Liver,HLA-A33-B58,Liver Failure,Critical,1498,Kauvery Hospital,Vellore,Yes
+R00066,35,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,689,Apollo Hospital,Hyderabad,Yes
+R00067,49,Male,AB-,Liver,HLA-A24-B44,Liver Failure,High,573,Kauvery Hospital,Mumbai,Yes
+R00068,30,Male,B-,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,1138,AIIMS Delhi,Hyderabad,No
+R00069,68,Male,A-,Lung,HLA-A24-B44,Lung Disease,Medium,829,AIIMS Delhi,Trichy,Yes
+R00070,53,Female,O+,Lung,HLA-A26-B40,Lung Disease,High,1440,Global Hospital,Trichy,Yes
+R00071,32,Male,B-,Heart,HLA-A26-B40,Heart Failure,Low,1098,Fortis Hospital,Salem,Yes
+R00072,35,Female,A-,Lung,HLA-A11-B35,Lung Disease,High,466,MIOT Hospital,Madurai,Yes
+R00073,63,Male,AB+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,1134,Kauvery Hospital,Madurai,No
+R00074,73,Male,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,903,MIOT Hospital,Madurai,Yes
+R00075,73,Female,A-,Heart,HLA-A02-B07,Heart Failure,Critical,1008,CMC Vellore,Delhi,Yes
+R00076,27,Female,A-,Liver,HLA-A11-B35,Liver Failure,Low,1143,Sri Ramachandra Hospital,Delhi,Yes
+R00077,42,Female,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,626,Apollo Hospital,Delhi,Yes
+R00078,58,Male,AB+,Liver,HLA-A02-B07,Liver Failure,Medium,492,Fortis Hospital,Mumbai,Yes
+R00079,18,Female,O-,Liver,HLA-A33-B58,Liver Failure,High,67,AIIMS Delhi,Trichy,Yes
+R00080,22,Male,AB+,Lung,HLA-A11-B35,Lung Disease,Critical,236,AIIMS Delhi,Madurai,Yes
+R00081,22,Male,B+,Liver,HLA-A24-B44,Liver Failure,High,900,CMC Vellore,Hyderabad,Yes
+R00082,35,Female,O-,Lung,HLA-A02-B07,Lung Disease,Low,885,MIOT Hospital,Delhi,Yes
+R00083,23,Male,A+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,359,Global Hospital,Mumbai,No
+R00084,29,Female,O-,Heart,HLA-A02-B07,Heart Failure,Critical,713,Sri Ramachandra Hospital,Vellore,Yes
+R00085,72,Male,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,591,Sri Ramachandra Hospital,Mumbai,Yes
+R00086,23,Female,AB+,Lung,HLA-A26-B40,Lung Disease,Low,828,Apollo Hospital,Mumbai,No
+R00087,21,Male,AB-,Lung,HLA-A33-B58,Lung Disease,Critical,106,AIIMS Delhi,Trichy,Yes
+R00088,46,Female,A-,Heart,HLA-A01-B08,Heart Failure,Medium,1454,Fortis Hospital,Trichy,Yes
+R00089,44,Male,B-,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,241,Fortis Hospital,Hyderabad,Yes
+R00090,63,Female,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,500,Global Hospital,Mumbai,Yes
+R00091,30,Male,A-,Lung,HLA-A24-B44,Lung Disease,Critical,697,Kauvery Hospital,Chennai,Yes
+R00092,71,Female,B+,Heart,HLA-A33-B58,Heart Failure,Critical,707,MIOT Hospital,Mumbai,No
+R00093,38,Male,B-,Lung,HLA-A30-B18,Lung Disease,Medium,842,Apollo Hospital,Vellore,No
+R00094,42,Male,O-,Lung,HLA-A01-B08,Lung Disease,Medium,1029,MIOT Hospital,Coimbatore,No
+R00095,51,Female,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,1341,Fortis Hospital,Coimbatore,No
+R00096,39,Female,A-,Heart,HLA-A26-B40,Heart Failure,Critical,649,Global Hospital,Mumbai,Yes
+R00097,22,Male,AB+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,889,CMC Vellore,Coimbatore,No
+R00098,62,Female,A+,Liver,HLA-A01-B08,Liver Failure,High,115,Kauvery Hospital,Vellore,Yes
+R00099,27,Male,O+,Lung,HLA-A03-B15,Lung Disease,Medium,359,CMC Vellore,Delhi,No
+R00100,61,Male,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,945,Kauvery Hospital,Hyderabad,Yes
+R00101,75,Female,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,905,MIOT Hospital,Delhi,Yes
+R00102,62,Female,O-,Lung,HLA-A24-B44,Lung Disease,Medium,788,Global Hospital,Coimbatore,Yes
+R00103,54,Female,AB+,Lung,HLA-A24-B44,Lung Disease,Low,1349,Sri Ramachandra Hospital,Trichy,Yes
+R00104,73,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,1244,MIOT Hospital,Salem,Yes
+R00105,34,Male,A-,Pancreas,HLA-A01-B08,Pancreatic Disease,High,903,Apollo Hospital,Delhi,Yes
+R00106,23,Female,AB-,Liver,HLA-A30-B18,Liver Failure,Medium,412,Fortis Hospital,Mumbai,Yes
+R00107,50,Female,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,605,MIOT Hospital,Coimbatore,No
+R00108,27,Male,O+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,809,Apollo Hospital,Trichy,Yes
+R00109,41,Female,O+,Lung,HLA-A26-B40,Lung Disease,Low,1383,AIIMS Delhi,Hyderabad,Yes
+R00110,74,Female,B-,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,1436,Kauvery Hospital,Bangalore,Yes
+R00111,20,Male,AB+,Liver,HLA-A33-B58,Liver Failure,Low,200,AIIMS Delhi,Mumbai,Yes
+R00112,47,Female,O+,Lung,HLA-A03-B15,Lung Disease,Critical,1342,CMC Vellore,Hyderabad,No
+R00113,20,Female,B-,Heart,HLA-A33-B58,Heart Failure,Critical,484,MIOT Hospital,Coimbatore,Yes
+R00114,75,Female,A+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,389,CMC Vellore,Hyderabad,Yes
+R00115,59,Male,A+,Liver,HLA-A26-B40,Liver Failure,Medium,258,AIIMS Delhi,Coimbatore,Yes
+R00116,31,Male,AB-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,568,Fortis Hospital,Madurai,Yes
+R00117,25,Male,B+,Liver,HLA-A01-B08,Liver Failure,High,488,MIOT Hospital,Chennai,Yes
+R00118,21,Male,O+,Heart,HLA-A02-B07,Heart Failure,Low,976,Global Hospital,Vellore,Yes
+R00119,50,Male,A+,Lung,HLA-A24-B44,Lung Disease,Critical,1318,Apollo Hospital,Chennai,No
+R00120,45,Male,O-,Lung,HLA-A33-B58,Lung Disease,Low,166,MIOT Hospital,Delhi,Yes
+R00121,26,Female,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,930,Sri Ramachandra Hospital,Coimbatore,Yes
+R00122,64,Male,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,848,MIOT Hospital,Hyderabad,No
+R00123,64,Male,AB-,Lung,HLA-A30-B18,Lung Disease,High,1363,Kauvery Hospital,Vellore,Yes
+R00124,22,Male,A-,Lung,HLA-A02-B07,Lung Disease,Critical,198,MIOT Hospital,Madurai,Yes
+R00125,53,Female,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,High,1363,Sri Ramachandra Hospital,Chennai,Yes
+R00126,37,Female,A-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,1345,Global Hospital,Salem,Yes
+R00127,72,Female,A-,Heart,HLA-A24-B44,Heart Failure,Medium,879,Apollo Hospital,Delhi,Yes
+R00128,29,Female,AB+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,13,Fortis Hospital,Madurai,No
+R00129,27,Male,A-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Critical,860,Global Hospital,Vellore,Yes
+R00130,37,Female,A-,Heart,HLA-A01-B08,Heart Failure,Medium,323,Apollo Hospital,Coimbatore,Yes
+R00131,60,Female,O-,Lung,HLA-A33-B58,Lung Disease,Critical,560,AIIMS Delhi,Mumbai,Yes
+R00132,45,Male,AB+,Heart,HLA-A33-B58,Heart Failure,High,94,AIIMS Delhi,Bangalore,Yes
+R00133,31,Female,B-,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,593,MIOT Hospital,Coimbatore,Yes
+R00134,65,Female,B+,Lung,HLA-A03-B15,Lung Disease,Critical,1091,AIIMS Delhi,Mumbai,Yes
+R00135,43,Male,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,160,MIOT Hospital,Delhi,No
+R00136,43,Female,AB+,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,43,MIOT Hospital,Madurai,No
+R00137,23,Female,A-,Heart,HLA-A11-B35,Heart Failure,Critical,1207,Sri Ramachandra Hospital,Mumbai,Yes
+R00138,73,Female,AB-,Lung,HLA-A11-B35,Lung Disease,High,345,CMC Vellore,Mumbai,Yes
+R00139,50,Male,AB-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,484,CMC Vellore,Madurai,Yes
+R00140,29,Male,A-,Liver,HLA-A03-B15,Liver Failure,Critical,951,Global Hospital,Delhi,Yes
+R00141,27,Female,A-,Heart,HLA-A33-B58,Heart Failure,Critical,1294,Kauvery Hospital,Trichy,Yes
+R00142,50,Male,AB+,Heart,HLA-A33-B58,Heart Failure,Critical,78,Apollo Hospital,Vellore,Yes
+R00143,59,Male,O+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,922,AIIMS Delhi,Vellore,No
+R00144,27,Male,O-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,1463,CMC Vellore,Mumbai,Yes
+R00145,33,Female,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,764,Kauvery Hospital,Bangalore,No
+R00146,61,Male,AB-,Heart,HLA-A02-B07,Heart Failure,High,194,Sri Ramachandra Hospital,Trichy,Yes
+R00147,73,Male,AB-,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,717,Kauvery Hospital,Bangalore,Yes
+R00148,63,Male,AB+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,262,CMC Vellore,Bangalore,Yes
+R00149,41,Female,B+,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,996,AIIMS Delhi,Salem,Yes
+R00150,22,Female,A-,Liver,HLA-A01-B08,Liver Failure,High,1266,Fortis Hospital,Delhi,No
+R00151,28,Male,B+,Liver,HLA-A33-B58,Liver Failure,Low,842,MIOT Hospital,Salem,No
+R00152,36,Female,B-,Pancreas,HLA-A11-B35,Pancreatic Disease,High,961,AIIMS Delhi,Vellore,No
+R00153,67,Female,O+,Lung,HLA-A30-B18,Lung Disease,Medium,409,Fortis Hospital,Trichy,Yes
+R00154,73,Female,A-,Lung,HLA-A02-B07,Lung Disease,High,172,Fortis Hospital,Trichy,No
+R00155,27,Female,A-,Pancreas,HLA-A11-B35,Pancreatic Disease,Critical,716,Apollo Hospital,Bangalore,Yes
+R00156,50,Female,B-,Lung,HLA-A30-B18,Lung Disease,Low,768,AIIMS Delhi,Chennai,Yes
+R00157,71,Female,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,588,Global Hospital,Madurai,No
+R00158,57,Male,A-,Lung,HLA-A01-B08,Lung Disease,High,442,Fortis Hospital,Mumbai,No
+R00159,67,Female,B-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,98,AIIMS Delhi,Bangalore,No
+R00160,25,Female,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,597,Sri Ramachandra Hospital,Chennai,Yes
+R00161,54,Female,B+,Liver,HLA-A02-B07,Liver Failure,High,139,Apollo Hospital,Bangalore,No
+R00162,58,Female,AB-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,732,CMC Vellore,Vellore,Yes
+R00163,67,Female,B+,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,1119,MIOT Hospital,Madurai,No
+R00164,58,Male,B+,Lung,HLA-A02-B07,Lung Disease,Critical,76,Kauvery Hospital,Salem,Yes
+R00165,74,Male,AB-,Liver,HLA-A24-B44,Liver Failure,Critical,1113,Global Hospital,Trichy,Yes
+R00166,36,Female,A+,Liver,HLA-A26-B40,Liver Failure,High,255,MIOT Hospital,Bangalore,No
+R00167,75,Female,AB-,Lung,HLA-A03-B15,Lung Disease,Critical,1418,Global Hospital,Vellore,Yes
+R00168,64,Female,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Medium,1118,Kauvery Hospital,Vellore,Yes
+R00169,38,Female,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,342,Global Hospital,Vellore,No
+R00170,64,Female,O+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,154,Sri Ramachandra Hospital,Vellore,Yes
+R00171,27,Female,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,484,MIOT Hospital,Vellore,No
+R00172,20,Male,O-,Pancreas,HLA-A26-B40,Pancreatic Disease,High,910,CMC Vellore,Delhi,Yes
+R00173,41,Female,AB-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,233,Apollo Hospital,Madurai,No
+R00174,42,Male,AB+,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,440,Kauvery Hospital,Hyderabad,Yes
+R00175,26,Male,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,180,MIOT Hospital,Vellore,Yes
+R00176,52,Female,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,741,AIIMS Delhi,Coimbatore,Yes
+R00177,33,Female,A+,Liver,HLA-A26-B40,Liver Failure,High,958,Fortis Hospital,Delhi,Yes
+R00178,37,Female,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,1178,CMC Vellore,Madurai,Yes
+R00179,46,Female,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,265,Sri Ramachandra Hospital,Mumbai,Yes
+R00180,51,Male,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,661,AIIMS Delhi,Vellore,Yes
+R00181,34,Male,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1259,CMC Vellore,Mumbai,Yes
+R00182,55,Male,B+,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,59,CMC Vellore,Chennai,Yes
+R00183,67,Female,A+,Liver,HLA-A33-B58,Liver Failure,High,1315,Kauvery Hospital,Hyderabad,Yes
+R00184,37,Female,A-,Lung,HLA-A01-B08,Lung Disease,Medium,901,Sri Ramachandra Hospital,Hyderabad,No
+R00185,39,Male,AB-,Liver,HLA-A26-B40,Liver Failure,High,817,Fortis Hospital,Vellore,Yes
+R00186,33,Female,A-,Heart,HLA-A24-B44,Heart Failure,Critical,508,Fortis Hospital,Coimbatore,Yes
+R00187,42,Female,B-,Heart,HLA-A03-B15,Heart Failure,High,1184,MIOT Hospital,Salem,Yes
+R00188,50,Female,O-,Lung,HLA-A24-B44,Lung Disease,Critical,48,CMC Vellore,Bangalore,No
+R00189,31,Female,A+,Liver,HLA-A01-B08,Liver Failure,High,1014,Global Hospital,Trichy,Yes
+R00190,45,Male,AB+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,750,Apollo Hospital,Bangalore,Yes
+R00191,53,Male,AB-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,792,Global Hospital,Mumbai,Yes
+R00192,61,Male,B+,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,765,MIOT Hospital,Mumbai,Yes
+R00193,30,Female,A+,Liver,HLA-A01-B08,Liver Failure,Low,281,MIOT Hospital,Hyderabad,No
+R00194,56,Male,AB-,Liver,HLA-A26-B40,Liver Failure,Medium,805,Kauvery Hospital,Delhi,Yes
+R00195,71,Female,AB+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,755,MIOT Hospital,Coimbatore,No
+R00196,37,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,1478,Apollo Hospital,Delhi,No
+R00197,51,Female,B+,Liver,HLA-A11-B35,Liver Failure,Low,1173,CMC Vellore,Salem,Yes
+R00198,38,Female,B+,Lung,HLA-A30-B18,Lung Disease,Medium,841,Global Hospital,Chennai,Yes
+R00199,31,Female,O-,Pancreas,HLA-A30-B18,Pancreatic Disease,High,355,Global Hospital,Mumbai,Yes
+R00200,40,Female,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,572,Kauvery Hospital,Salem,Yes
+R00201,63,Male,O-,Heart,HLA-A26-B40,Heart Failure,Critical,715,Kauvery Hospital,Trichy,Yes
+R00202,61,Female,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,595,Apollo Hospital,Trichy,Yes
+R00203,46,Female,O-,Heart,HLA-A11-B35,Heart Failure,Medium,1104,Kauvery Hospital,Mumbai,Yes
+R00204,24,Male,B-,Liver,HLA-A01-B08,Liver Failure,Medium,1307,AIIMS Delhi,Chennai,Yes
+R00205,39,Female,A-,Lung,HLA-A03-B15,Lung Disease,Low,1128,Fortis Hospital,Bangalore,No
+R00206,59,Male,AB+,Lung,HLA-A26-B40,Lung Disease,High,1323,Apollo Hospital,Coimbatore,Yes
+R00207,65,Male,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,75,Sri Ramachandra Hospital,Hyderabad,Yes
+R00208,74,Male,A+,Heart,HLA-A24-B44,Heart Failure,Low,687,Kauvery Hospital,Hyderabad,No
+R00209,72,Female,AB+,Liver,HLA-A11-B35,Liver Failure,Low,678,Fortis Hospital,Hyderabad,Yes
+R00210,18,Female,AB+,Liver,HLA-A11-B35,Liver Failure,Medium,1252,Sri Ramachandra Hospital,Bangalore,Yes
+R00211,43,Male,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,663,AIIMS Delhi,Chennai,Yes
+R00212,33,Female,AB+,Lung,HLA-A26-B40,Lung Disease,High,1193,Apollo Hospital,Trichy,Yes
+R00213,21,Male,O-,Liver,HLA-A24-B44,Liver Failure,Medium,831,Kauvery Hospital,Coimbatore,Yes
+R00214,57,Male,B-,Heart,HLA-A03-B15,Heart Failure,Critical,314,Global Hospital,Delhi,Yes
+R00215,62,Female,B-,Lung,HLA-A11-B35,Lung Disease,Low,1077,Global Hospital,Mumbai,Yes
+R00216,54,Male,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,337,MIOT Hospital,Mumbai,No
+R00217,61,Male,O-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,114,Global Hospital,Madurai,No
+R00218,54,Male,O-,Lung,HLA-A24-B44,Lung Disease,Low,811,Kauvery Hospital,Chennai,Yes
+R00219,22,Male,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,1109,Apollo Hospital,Coimbatore,No
+R00220,36,Female,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,767,Sri Ramachandra Hospital,Hyderabad,No
+R00221,23,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Medium,1101,Sri Ramachandra Hospital,Mumbai,Yes
+R00222,71,Male,A+,Liver,HLA-A24-B44,Liver Failure,Critical,1380,Sri Ramachandra Hospital,Mumbai,No
+R00223,33,Female,AB-,Liver,HLA-A03-B15,Liver Failure,High,387,CMC Vellore,Chennai,No
+R00224,67,Male,B-,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,207,Apollo Hospital,Hyderabad,Yes
+R00225,65,Male,O+,Liver,HLA-A33-B58,Liver Failure,Medium,1106,AIIMS Delhi,Chennai,Yes
+R00226,36,Male,AB-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,619,Fortis Hospital,Mumbai,Yes
+R00227,37,Female,A+,Lung,HLA-A03-B15,Lung Disease,Critical,1139,Global Hospital,Chennai,Yes
+R00228,68,Female,O+,Lung,HLA-A30-B18,Lung Disease,Medium,615,Sri Ramachandra Hospital,Madurai,No
+R00229,72,Male,AB+,Liver,HLA-A03-B15,Liver Failure,Critical,119,Sri Ramachandra Hospital,Bangalore,Yes
+R00230,33,Female,B-,Lung,HLA-A26-B40,Lung Disease,Low,922,MIOT Hospital,Coimbatore,Yes
+R00231,35,Female,A+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,1204,AIIMS Delhi,Hyderabad,Yes
+R00232,37,Male,B-,Heart,HLA-A11-B35,Heart Failure,Low,981,AIIMS Delhi,Delhi,Yes
+R00233,33,Female,AB+,Lung,HLA-A30-B18,Lung Disease,Critical,1093,MIOT Hospital,Trichy,Yes
+R00234,50,Female,O-,Heart,HLA-A02-B07,Heart Failure,Critical,656,AIIMS Delhi,Vellore,Yes
+R00235,20,Male,B+,Lung,HLA-A01-B08,Lung Disease,High,1134,Sri Ramachandra Hospital,Trichy,Yes
+R00236,39,Male,O+,Liver,HLA-A11-B35,Liver Failure,Critical,1128,MIOT Hospital,Trichy,No
+R00237,47,Male,AB-,Lung,HLA-A03-B15,Lung Disease,Medium,1476,Global Hospital,Madurai,Yes
+R00238,20,Male,A+,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,282,AIIMS Delhi,Coimbatore,Yes
+R00239,31,Female,AB-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,1351,Global Hospital,Chennai,Yes
+R00240,53,Female,A+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,1098,Kauvery Hospital,Chennai,No
+R00241,24,Male,B+,Liver,HLA-A11-B35,Liver Failure,Medium,1270,Kauvery Hospital,Vellore,Yes
+R00242,23,Female,O+,Lung,HLA-A33-B58,Lung Disease,Medium,1428,AIIMS Delhi,Trichy,Yes
+R00243,23,Female,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,115,Apollo Hospital,Madurai,Yes
+R00244,72,Female,AB-,Lung,HLA-A02-B07,Lung Disease,Low,471,AIIMS Delhi,Delhi,No
+R00245,20,Male,AB+,Heart,HLA-A01-B08,Heart Failure,Medium,645,Apollo Hospital,Salem,Yes
+R00246,22,Female,B+,Lung,HLA-A11-B35,Lung Disease,Critical,1387,MIOT Hospital,Bangalore,Yes
+R00247,50,Female,A+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,476,CMC Vellore,Vellore,No
+R00248,19,Female,O-,Heart,HLA-A33-B58,Heart Failure,Medium,729,Sri Ramachandra Hospital,Bangalore,Yes
+R00249,60,Female,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,1461,CMC Vellore,Coimbatore,Yes
+R00250,42,Male,O+,Liver,HLA-A26-B40,Liver Failure,High,219,CMC Vellore,Chennai,Yes
+R00251,41,Female,A-,Lung,HLA-A03-B15,Lung Disease,Low,384,Sri Ramachandra Hospital,Hyderabad,No
+R00252,19,Male,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,789,Apollo Hospital,Trichy,No
+R00253,67,Male,B-,Lung,HLA-A03-B15,Lung Disease,Critical,348,Fortis Hospital,Trichy,Yes
+R00254,49,Male,A-,Heart,HLA-A03-B15,Heart Failure,Critical,566,Sri Ramachandra Hospital,Trichy,No
+R00255,41,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,938,CMC Vellore,Madurai,Yes
+R00256,43,Female,O+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,686,Sri Ramachandra Hospital,Delhi,Yes
+R00257,38,Male,O-,Heart,HLA-A26-B40,Heart Failure,Medium,816,MIOT Hospital,Trichy,No
+R00258,68,Male,AB-,Pancreas,HLA-A30-B18,Pancreatic Disease,High,805,MIOT Hospital,Coimbatore,Yes
+R00259,52,Male,A+,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,898,Kauvery Hospital,Coimbatore,No
+R00260,26,Female,B-,Lung,HLA-A24-B44,Lung Disease,Medium,1465,Sri Ramachandra Hospital,Bangalore,Yes
+R00261,56,Female,O+,Lung,HLA-A30-B18,Lung Disease,Low,737,CMC Vellore,Coimbatore,Yes
+R00262,28,Male,O+,Heart,HLA-A26-B40,Heart Failure,Critical,217,Apollo Hospital,Coimbatore,Yes
+R00263,50,Male,O-,Liver,HLA-A26-B40,Liver Failure,Critical,949,Fortis Hospital,Vellore,Yes
+R00264,24,Female,O+,Lung,HLA-A02-B07,Lung Disease,Low,1496,Fortis Hospital,Vellore,Yes
+R00265,47,Male,O-,Heart,HLA-A26-B40,Heart Failure,Critical,200,Global Hospital,Hyderabad,Yes
+R00266,37,Male,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,1328,CMC Vellore,Madurai,Yes
+R00267,29,Male,AB-,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,475,Sri Ramachandra Hospital,Madurai,Yes
+R00268,43,Male,B-,Lung,HLA-A33-B58,Lung Disease,Critical,797,Apollo Hospital,Salem,Yes
+R00269,66,Male,A-,Heart,HLA-A03-B15,Heart Failure,High,668,AIIMS Delhi,Hyderabad,Yes
+R00270,60,Female,AB-,Heart,HLA-A30-B18,Heart Failure,Critical,1203,CMC Vellore,Vellore,Yes
+R00271,57,Male,AB+,Lung,HLA-A02-B07,Lung Disease,Medium,642,CMC Vellore,Salem,Yes
+R00272,29,Female,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,1222,Fortis Hospital,Delhi,No
+R00273,29,Female,B+,Lung,HLA-A03-B15,Lung Disease,Critical,592,Fortis Hospital,Madurai,Yes
+R00274,57,Male,AB-,Lung,HLA-A01-B08,Lung Disease,Critical,280,AIIMS Delhi,Bangalore,No
+R00275,61,Female,O+,Lung,HLA-A33-B58,Lung Disease,Critical,343,CMC Vellore,Delhi,Yes
+R00276,36,Male,AB+,Liver,HLA-A11-B35,Liver Failure,High,345,Global Hospital,Delhi,No
+R00277,50,Male,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,High,1111,Apollo Hospital,Hyderabad,Yes
+R00278,24,Male,AB+,Lung,HLA-A01-B08,Lung Disease,Critical,539,MIOT Hospital,Coimbatore,No
+R00279,67,Male,B-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,340,Fortis Hospital,Salem,Yes
+R00280,54,Female,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1442,Kauvery Hospital,Trichy,Yes
+R00281,75,Male,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,568,Fortis Hospital,Madurai,Yes
+R00282,63,Female,B-,Liver,HLA-A30-B18,Liver Failure,Critical,292,Kauvery Hospital,Bangalore,No
+R00283,22,Male,O+,Lung,HLA-A24-B44,Lung Disease,High,932,Global Hospital,Vellore,Yes
+R00284,64,Female,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,447,Sri Ramachandra Hospital,Salem,No
+R00285,38,Female,AB-,Heart,HLA-A03-B15,Heart Failure,Critical,704,Apollo Hospital,Chennai,Yes
+R00286,19,Male,B+,Lung,HLA-A33-B58,Lung Disease,Critical,2,Sri Ramachandra Hospital,Salem,Yes
+R00287,28,Female,A-,Heart,HLA-A26-B40,Heart Failure,High,169,MIOT Hospital,Madurai,Yes
+R00288,58,Female,B-,Lung,HLA-A30-B18,Lung Disease,Low,1442,CMC Vellore,Chennai,Yes
+R00289,22,Male,B-,Lung,HLA-A33-B58,Lung Disease,Low,17,MIOT Hospital,Coimbatore,No
+R00290,48,Male,B-,Liver,HLA-A30-B18,Liver Failure,Low,1497,CMC Vellore,Coimbatore,Yes
+R00291,74,Female,B+,Heart,HLA-A30-B18,Heart Failure,Medium,1314,Fortis Hospital,Coimbatore,Yes
+R00292,59,Male,O-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,1287,Fortis Hospital,Bangalore,No
+R00293,23,Male,B+,Liver,HLA-A02-B07,Liver Failure,Critical,720,Sri Ramachandra Hospital,Vellore,Yes
+R00294,35,Male,B-,Liver,HLA-A24-B44,Liver Failure,Low,1349,Kauvery Hospital,Salem,Yes
+R00295,36,Male,B-,Lung,HLA-A33-B58,Lung Disease,Critical,231,AIIMS Delhi,Hyderabad,Yes
+R00296,74,Male,AB-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,793,Sri Ramachandra Hospital,Vellore,Yes
+R00297,67,Male,A+,Lung,HLA-A02-B07,Lung Disease,Low,537,AIIMS Delhi,Chennai,Yes
+R00298,50,Female,O+,Lung,HLA-A30-B18,Lung Disease,Critical,169,Fortis Hospital,Trichy,Yes
+R00299,23,Male,B+,Heart,HLA-A26-B40,Heart Failure,Critical,1202,CMC Vellore,Trichy,No
+R00300,21,Male,A-,Liver,HLA-A30-B18,Liver Failure,Low,929,Apollo Hospital,Trichy,Yes
+R00301,18,Male,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,711,Kauvery Hospital,Madurai,Yes
+R00302,65,Female,A-,Liver,HLA-A01-B08,Liver Failure,High,880,Kauvery Hospital,Mumbai,Yes
+R00303,63,Male,O-,Heart,HLA-A33-B58,Heart Failure,High,114,Global Hospital,Delhi,Yes
+R00304,28,Female,A-,Heart,HLA-A02-B07,Heart Failure,Medium,1043,Apollo Hospital,Chennai,Yes
+R00305,20,Female,AB-,Liver,HLA-A30-B18,Liver Failure,Medium,367,Apollo Hospital,Mumbai,No
+R00306,38,Male,O+,Liver,HLA-A26-B40,Liver Failure,High,160,MIOT Hospital,Coimbatore,Yes
+R00307,32,Male,O+,Liver,HLA-A02-B07,Liver Failure,Critical,579,Kauvery Hospital,Vellore,Yes
+R00308,47,Male,AB-,Pancreas,HLA-A11-B35,Pancreatic Disease,High,1155,Kauvery Hospital,Delhi,Yes
+R00309,41,Female,B-,Lung,HLA-A11-B35,Lung Disease,Medium,14,Sri Ramachandra Hospital,Chennai,Yes
+R00310,40,Male,AB-,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,1490,Kauvery Hospital,Coimbatore,Yes
+R00311,33,Female,O-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,1458,Kauvery Hospital,Coimbatore,Yes
+R00312,75,Female,AB-,Liver,HLA-A33-B58,Liver Failure,Low,1190,CMC Vellore,Mumbai,Yes
+R00313,22,Male,O+,Lung,HLA-A03-B15,Lung Disease,Medium,598,Kauvery Hospital,Vellore,No
+R00314,38,Female,AB+,Heart,HLA-A11-B35,Heart Failure,Low,416,Fortis Hospital,Delhi,Yes
+R00315,24,Male,O-,Liver,HLA-A33-B58,Liver Failure,High,833,CMC Vellore,Mumbai,Yes
+R00316,46,Female,O-,Liver,HLA-A24-B44,Liver Failure,Low,186,Fortis Hospital,Trichy,Yes
+R00317,71,Female,B+,Liver,HLA-A02-B07,Liver Failure,Medium,729,Sri Ramachandra Hospital,Mumbai,Yes
+R00318,34,Male,A+,Heart,HLA-A30-B18,Heart Failure,Critical,1139,AIIMS Delhi,Coimbatore,No
+R00319,69,Male,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,456,Fortis Hospital,Salem,No
+R00320,61,Male,AB+,Heart,HLA-A02-B07,Heart Failure,Low,133,AIIMS Delhi,Hyderabad,Yes
+R00321,75,Female,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,104,Fortis Hospital,Delhi,No
+R00322,49,Male,O+,Lung,HLA-A30-B18,Lung Disease,Medium,725,AIIMS Delhi,Madurai,Yes
+R00323,46,Male,A+,Heart,HLA-A11-B35,Heart Failure,High,1022,Sri Ramachandra Hospital,Mumbai,No
+R00324,23,Female,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,409,AIIMS Delhi,Mumbai,Yes
+R00325,68,Female,O-,Lung,HLA-A33-B58,Lung Disease,High,1159,MIOT Hospital,Bangalore,Yes
+R00326,19,Female,B-,Liver,HLA-A01-B08,Liver Failure,High,120,Global Hospital,Mumbai,Yes
+R00327,32,Male,A-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,546,Apollo Hospital,Salem,No
+R00328,71,Male,B+,Heart,HLA-A11-B35,Heart Failure,High,1429,MIOT Hospital,Delhi,Yes
+R00329,54,Male,B-,Heart,HLA-A33-B58,Heart Failure,High,360,Global Hospital,Chennai,Yes
+R00330,32,Male,A+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,680,AIIMS Delhi,Madurai,Yes
+R00331,69,Female,A+,Liver,HLA-A01-B08,Liver Failure,Medium,1202,Fortis Hospital,Coimbatore,Yes
+R00332,41,Female,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,661,Fortis Hospital,Madurai,No
+R00333,59,Female,B+,Lung,HLA-A26-B40,Lung Disease,Medium,1364,Fortis Hospital,Bangalore,Yes
+R00334,26,Male,A+,Heart,HLA-A30-B18,Heart Failure,Low,373,MIOT Hospital,Delhi,Yes
+R00335,24,Female,B+,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,488,MIOT Hospital,Vellore,Yes
+R00336,70,Female,O-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,430,AIIMS Delhi,Coimbatore,Yes
+R00337,68,Male,A+,Heart,HLA-A01-B08,Heart Failure,Critical,898,Sri Ramachandra Hospital,Madurai,No
+R00338,74,Female,AB-,Lung,HLA-A30-B18,Lung Disease,Low,982,AIIMS Delhi,Madurai,No
+R00339,69,Male,AB+,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,535,CMC Vellore,Coimbatore,Yes
+R00340,74,Female,B+,Liver,HLA-A02-B07,Liver Failure,Low,693,Global Hospital,Chennai,No
+R00341,56,Female,B+,Liver,HLA-A01-B08,Liver Failure,Low,679,AIIMS Delhi,Salem,No
+R00342,64,Female,AB+,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,197,Apollo Hospital,Bangalore,No
+R00343,21,Female,A+,Liver,HLA-A30-B18,Liver Failure,Low,604,Global Hospital,Salem,Yes
+R00344,31,Male,AB+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,237,Kauvery Hospital,Bangalore,No
+R00345,75,Female,A-,Lung,HLA-A30-B18,Lung Disease,Medium,760,Sri Ramachandra Hospital,Vellore,Yes
+R00346,20,Female,O-,Lung,HLA-A33-B58,Lung Disease,High,464,Kauvery Hospital,Delhi,Yes
+R00347,66,Male,A-,Liver,HLA-A26-B40,Liver Failure,Critical,1208,AIIMS Delhi,Mumbai,Yes
+R00348,70,Female,O-,Lung,HLA-A11-B35,Lung Disease,Critical,613,CMC Vellore,Bangalore,Yes
+R00349,54,Male,A-,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,343,AIIMS Delhi,Salem,Yes
+R00350,45,Male,O+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,1219,Kauvery Hospital,Vellore,Yes
+R00351,42,Female,AB-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,26,Sri Ramachandra Hospital,Coimbatore,No
+R00352,27,Male,A-,Liver,HLA-A02-B07,Liver Failure,High,1097,MIOT Hospital,Bangalore,Yes
+R00353,59,Female,O-,Lung,HLA-A01-B08,Lung Disease,Medium,565,Sri Ramachandra Hospital,Madurai,No
+R00354,43,Female,B-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,551,MIOT Hospital,Chennai,Yes
+R00355,37,Female,O-,Heart,HLA-A02-B07,Heart Failure,Medium,276,Kauvery Hospital,Hyderabad,Yes
+R00356,64,Female,A-,Heart,HLA-A11-B35,Heart Failure,Critical,433,Sri Ramachandra Hospital,Hyderabad,Yes
+R00357,50,Male,A-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,278,Apollo Hospital,Madurai,Yes
+R00358,71,Male,B-,Liver,HLA-A01-B08,Liver Failure,Critical,104,MIOT Hospital,Salem,Yes
+R00359,70,Female,O+,Heart,HLA-A02-B07,Heart Failure,Low,496,MIOT Hospital,Hyderabad,No
+R00360,73,Female,AB-,Liver,HLA-A26-B40,Liver Failure,Medium,530,CMC Vellore,Trichy,Yes
+R00361,21,Male,B-,Lung,HLA-A11-B35,Lung Disease,Medium,1388,AIIMS Delhi,Trichy,No
+R00362,19,Male,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,1232,Apollo Hospital,Salem,Yes
+R00363,69,Female,AB+,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,715,Global Hospital,Trichy,Yes
+R00364,37,Female,A-,Lung,HLA-A01-B08,Lung Disease,High,1150,Kauvery Hospital,Trichy,Yes
+R00365,22,Female,AB+,Lung,HLA-A26-B40,Lung Disease,High,535,Kauvery Hospital,Salem,Yes
+R00366,66,Male,A+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,1395,Fortis Hospital,Chennai,No
+R00367,34,Female,O+,Heart,HLA-A30-B18,Heart Failure,Low,1195,AIIMS Delhi,Vellore,Yes
+R00368,58,Female,AB-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,1347,Fortis Hospital,Trichy,Yes
+R00369,26,Female,B+,Lung,HLA-A26-B40,Lung Disease,Low,456,MIOT Hospital,Salem,Yes
+R00370,68,Female,AB-,Lung,HLA-A24-B44,Lung Disease,High,950,CMC Vellore,Hyderabad,Yes
+R00371,55,Male,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,1395,Sri Ramachandra Hospital,Mumbai,Yes
+R00372,21,Male,B+,Lung,HLA-A11-B35,Lung Disease,High,839,Global Hospital,Madurai,Yes
+R00373,67,Male,O-,Liver,HLA-A26-B40,Liver Failure,Medium,642,Apollo Hospital,Chennai,No
+R00374,31,Male,B+,Heart,HLA-A33-B58,Heart Failure,Low,266,Sri Ramachandra Hospital,Bangalore,No
+R00375,48,Female,A+,Lung,HLA-A01-B08,Lung Disease,Medium,1497,MIOT Hospital,Chennai,Yes
+R00376,30,Male,A+,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,1421,MIOT Hospital,Trichy,Yes
+R00377,42,Female,B+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,611,Kauvery Hospital,Hyderabad,Yes
+R00378,74,Male,AB-,Lung,HLA-A33-B58,Lung Disease,High,386,Fortis Hospital,Bangalore,Yes
+R00379,32,Male,B-,Liver,HLA-A01-B08,Liver Failure,Medium,253,MIOT Hospital,Chennai,No
+R00380,67,Male,A+,Heart,HLA-A02-B07,Heart Failure,Low,99,CMC Vellore,Bangalore,No
+R00381,25,Female,O-,Lung,HLA-A03-B15,Lung Disease,Medium,1424,Apollo Hospital,Trichy,No
+R00382,60,Female,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,1048,CMC Vellore,Trichy,Yes
+R00383,49,Male,B-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,734,Sri Ramachandra Hospital,Trichy,Yes
+R00384,53,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,High,481,Apollo Hospital,Chennai,Yes
+R00385,71,Female,B+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,1482,CMC Vellore,Trichy,Yes
+R00386,36,Female,O-,Lung,HLA-A01-B08,Lung Disease,Low,358,Apollo Hospital,Trichy,Yes
+R00387,45,Male,A-,Heart,HLA-A01-B08,Heart Failure,Low,284,Fortis Hospital,Vellore,Yes
+R00388,57,Female,A-,Lung,HLA-A26-B40,Lung Disease,High,375,CMC Vellore,Bangalore,No
+R00389,35,Female,O-,Lung,HLA-A30-B18,Lung Disease,Medium,232,Fortis Hospital,Chennai,Yes
+R00390,44,Female,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,735,Apollo Hospital,Madurai,No
+R00391,25,Female,O-,Lung,HLA-A01-B08,Lung Disease,Low,536,MIOT Hospital,Chennai,Yes
+R00392,51,Male,O+,Heart,HLA-A11-B35,Heart Failure,Critical,709,Sri Ramachandra Hospital,Madurai,Yes
+R00393,59,Male,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,154,Global Hospital,Vellore,Yes
+R00394,35,Male,B-,Heart,HLA-A30-B18,Heart Failure,Critical,482,CMC Vellore,Hyderabad,No
+R00395,46,Male,O-,Pancreas,HLA-A33-B58,Pancreatic Disease,High,244,Global Hospital,Chennai,Yes
+R00396,44,Male,A+,Lung,HLA-A02-B07,Lung Disease,High,1042,AIIMS Delhi,Hyderabad,Yes
+R00397,70,Male,B-,Heart,HLA-A33-B58,Heart Failure,High,1148,Global Hospital,Vellore,No
+R00398,24,Male,A+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,1298,Kauvery Hospital,Mumbai,Yes
+R00399,20,Male,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,220,Kauvery Hospital,Delhi,Yes
+R00400,25,Female,B-,Liver,HLA-A33-B58,Liver Failure,Medium,1468,MIOT Hospital,Coimbatore,No
+R00401,58,Male,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,1022,Apollo Hospital,Mumbai,Yes
+R00402,45,Female,B+,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,213,Sri Ramachandra Hospital,Delhi,Yes
+R00403,74,Female,O+,Pancreas,HLA-A11-B35,Pancreatic Disease,High,815,MIOT Hospital,Trichy,No
+R00404,26,Female,AB+,Liver,HLA-A26-B40,Liver Failure,Medium,412,AIIMS Delhi,Delhi,Yes
+R00405,61,Male,B+,Heart,HLA-A26-B40,Heart Failure,Low,722,Global Hospital,Delhi,No
+R00406,36,Female,A+,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,781,Fortis Hospital,Chennai,Yes
+R00407,35,Male,AB+,Liver,HLA-A24-B44,Liver Failure,Medium,128,Kauvery Hospital,Salem,Yes
+R00408,70,Female,A-,Heart,HLA-A11-B35,Heart Failure,Critical,487,Kauvery Hospital,Chennai,No
+R00409,44,Female,A+,Lung,HLA-A01-B08,Lung Disease,High,416,Global Hospital,Salem,Yes
+R00410,52,Male,B-,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,364,CMC Vellore,Madurai,Yes
+R00411,25,Female,A+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,1140,Kauvery Hospital,Madurai,Yes
+R00412,72,Female,A+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,1454,Fortis Hospital,Chennai,Yes
+R00413,56,Male,AB+,Heart,HLA-A33-B58,Heart Failure,High,150,MIOT Hospital,Mumbai,Yes
+R00414,51,Male,B+,Liver,HLA-A30-B18,Liver Failure,Critical,189,MIOT Hospital,Salem,Yes
+R00415,39,Female,AB+,Heart,HLA-A11-B35,Heart Failure,Critical,1150,Apollo Hospital,Coimbatore,Yes
+R00416,33,Male,A+,Lung,HLA-A26-B40,Lung Disease,Critical,233,Sri Ramachandra Hospital,Trichy,Yes
+R00417,51,Female,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,608,AIIMS Delhi,Vellore,Yes
+R00418,28,Male,A-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,1404,Sri Ramachandra Hospital,Coimbatore,Yes
+R00419,71,Female,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,941,MIOT Hospital,Chennai,Yes
+R00420,21,Male,AB+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,530,Sri Ramachandra Hospital,Bangalore,No
+R00421,45,Female,A+,Lung,HLA-A30-B18,Lung Disease,Low,1096,Apollo Hospital,Delhi,Yes
+R00422,20,Male,AB-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,1405,Kauvery Hospital,Delhi,Yes
+R00423,66,Female,O+,Heart,HLA-A30-B18,Heart Failure,Low,971,Fortis Hospital,Mumbai,Yes
+R00424,65,Female,AB+,Liver,HLA-A03-B15,Liver Failure,High,1388,MIOT Hospital,Chennai,Yes
+R00425,20,Male,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,431,MIOT Hospital,Salem,No
+R00426,27,Male,B+,Pancreas,HLA-A11-B35,Pancreatic Disease,High,398,CMC Vellore,Madurai,Yes
+R00427,47,Male,AB+,Pancreas,HLA-A02-B07,Pancreatic Disease,High,202,AIIMS Delhi,Delhi,No
+R00428,40,Male,B-,Heart,HLA-A02-B07,Heart Failure,High,1269,CMC Vellore,Salem,Yes
+R00429,46,Female,AB+,Lung,HLA-A03-B15,Lung Disease,High,648,Sri Ramachandra Hospital,Madurai,Yes
+R00430,33,Male,O+,Heart,HLA-A24-B44,Heart Failure,High,276,MIOT Hospital,Hyderabad,No
+R00431,40,Female,O-,Lung,HLA-A02-B07,Lung Disease,Medium,1323,CMC Vellore,Trichy,Yes
+R00432,30,Female,A-,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,1039,Apollo Hospital,Delhi,No
+R00433,31,Male,AB+,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,750,Sri Ramachandra Hospital,Salem,Yes
+R00434,47,Male,O+,Liver,HLA-A26-B40,Liver Failure,Low,1358,AIIMS Delhi,Delhi,Yes
+R00435,26,Female,B+,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,1500,Global Hospital,Vellore,Yes
+R00436,66,Female,B-,Liver,HLA-A02-B07,Liver Failure,High,757,AIIMS Delhi,Chennai,Yes
+R00437,68,Female,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,96,Apollo Hospital,Vellore,Yes
+R00438,58,Female,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,1339,Sri Ramachandra Hospital,Vellore,Yes
+R00439,34,Female,B-,Pancreas,HLA-A30-B18,Pancreatic Disease,High,707,Global Hospital,Hyderabad,Yes
+R00440,74,Male,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,158,Kauvery Hospital,Salem,Yes
+R00441,28,Female,A-,Liver,HLA-A11-B35,Liver Failure,Critical,677,CMC Vellore,Hyderabad,No
+R00442,31,Male,O+,Lung,HLA-A01-B08,Lung Disease,Medium,89,Fortis Hospital,Delhi,Yes
+R00443,58,Male,B+,Liver,HLA-A01-B08,Liver Failure,Medium,529,Fortis Hospital,Mumbai,No
+R00444,54,Male,AB+,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,920,Global Hospital,Hyderabad,Yes
+R00445,71,Female,B+,Liver,HLA-A03-B15,Liver Failure,High,344,MIOT Hospital,Hyderabad,Yes
+R00446,42,Female,B+,Liver,HLA-A02-B07,Liver Failure,Low,415,Sri Ramachandra Hospital,Madurai,Yes
+R00447,48,Male,A-,Liver,HLA-A02-B07,Liver Failure,Critical,1351,Fortis Hospital,Delhi,Yes
+R00448,51,Female,AB-,Lung,HLA-A01-B08,Lung Disease,Critical,470,Global Hospital,Bangalore,Yes
+R00449,69,Male,O+,Pancreas,HLA-A03-B15,Pancreatic Disease,High,978,AIIMS Delhi,Coimbatore,Yes
+R00450,74,Female,AB+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,1453,Apollo Hospital,Delhi,Yes
+R00451,18,Female,B-,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,742,CMC Vellore,Madurai,No
+R00452,34,Female,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,High,1394,Sri Ramachandra Hospital,Salem,No
+R00453,68,Female,B+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,520,Kauvery Hospital,Delhi,Yes
+R00454,65,Male,A-,Lung,HLA-A11-B35,Lung Disease,Critical,1433,Fortis Hospital,Coimbatore,Yes
+R00455,43,Female,A+,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,1303,Apollo Hospital,Coimbatore,Yes
+R00456,56,Female,A-,Lung,HLA-A02-B07,Lung Disease,High,455,MIOT Hospital,Coimbatore,Yes
+R00457,43,Female,A+,Lung,HLA-A03-B15,Lung Disease,Critical,900,Apollo Hospital,Salem,Yes
+R00458,20,Male,B+,Liver,HLA-A01-B08,Liver Failure,High,490,Apollo Hospital,Madurai,Yes
+R00459,67,Female,AB-,Heart,HLA-A30-B18,Heart Failure,Critical,1201,AIIMS Delhi,Mumbai,Yes
+R00460,23,Female,AB-,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,464,AIIMS Delhi,Hyderabad,No
+R00461,18,Female,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,1145,CMC Vellore,Mumbai,Yes
+R00462,25,Female,AB+,Heart,HLA-A33-B58,Heart Failure,Critical,1154,Global Hospital,Salem,Yes
+R00463,61,Female,A+,Lung,HLA-A33-B58,Lung Disease,Low,529,CMC Vellore,Bangalore,Yes
+R00464,69,Female,O+,Liver,HLA-A26-B40,Liver Failure,Low,1436,Kauvery Hospital,Salem,Yes
+R00465,43,Female,A-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,643,MIOT Hospital,Salem,Yes
+R00466,65,Male,O-,Liver,HLA-A11-B35,Liver Failure,Medium,496,Kauvery Hospital,Salem,Yes
+R00467,71,Male,AB-,Liver,HLA-A03-B15,Liver Failure,Low,246,CMC Vellore,Hyderabad,Yes
+R00468,20,Female,AB-,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,1177,Kauvery Hospital,Hyderabad,Yes
+R00469,35,Female,B-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,1077,Sri Ramachandra Hospital,Hyderabad,Yes
+R00470,40,Female,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,1431,Global Hospital,Vellore,Yes
+R00471,61,Male,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,741,Kauvery Hospital,Madurai,Yes
+R00472,35,Female,AB-,Liver,HLA-A26-B40,Liver Failure,Medium,1022,Sri Ramachandra Hospital,Salem,No
+R00473,41,Female,AB+,Heart,HLA-A33-B58,Heart Failure,Medium,1171,Fortis Hospital,Delhi,Yes
+R00474,64,Female,B-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,402,Fortis Hospital,Madurai,No
+R00475,29,Female,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,997,Kauvery Hospital,Trichy,Yes
+R00476,24,Male,A+,Lung,HLA-A11-B35,Lung Disease,High,976,CMC Vellore,Hyderabad,Yes
+R00477,41,Female,AB+,Heart,HLA-A26-B40,Heart Failure,Low,844,CMC Vellore,Vellore,Yes
+R00478,54,Male,AB+,Pancreas,HLA-A26-B40,Pancreatic Disease,High,1379,Global Hospital,Hyderabad,Yes
+R00479,57,Female,O-,Lung,HLA-A03-B15,Lung Disease,Medium,1312,MIOT Hospital,Bangalore,No
+R00480,23,Male,AB-,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,649,Kauvery Hospital,Trichy,No
+R00481,74,Female,AB-,Heart,HLA-A33-B58,Heart Failure,Critical,343,Fortis Hospital,Chennai,Yes
+R00482,60,Female,A-,Liver,HLA-A11-B35,Liver Failure,Medium,814,CMC Vellore,Coimbatore,Yes
+R00483,53,Male,A+,Lung,HLA-A30-B18,Lung Disease,Low,213,Kauvery Hospital,Delhi,Yes
+R00484,59,Female,AB+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,582,Global Hospital,Madurai,Yes
+R00485,71,Male,A+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,667,Global Hospital,Hyderabad,Yes
+R00486,46,Male,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,1073,Kauvery Hospital,Vellore,No
+R00487,32,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,High,845,Kauvery Hospital,Madurai,Yes
+R00488,18,Male,AB-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,1096,Apollo Hospital,Hyderabad,No
+R00489,18,Female,AB+,Heart,HLA-A11-B35,Heart Failure,Low,1123,MIOT Hospital,Salem,No
+R00490,45,Female,B-,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,775,AIIMS Delhi,Trichy,Yes
+R00491,58,Male,AB+,Lung,HLA-A24-B44,Lung Disease,High,846,AIIMS Delhi,Coimbatore,Yes
+R00492,36,Male,O-,Liver,HLA-A33-B58,Liver Failure,High,1435,Global Hospital,Salem,Yes
+R00493,27,Male,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,578,Kauvery Hospital,Madurai,No
+R00494,32,Male,B+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,445,MIOT Hospital,Bangalore,Yes
+R00495,41,Female,A+,Lung,HLA-A26-B40,Lung Disease,Low,300,Apollo Hospital,Trichy,No
+R00496,52,Female,B+,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,782,Apollo Hospital,Coimbatore,Yes
+R00497,67,Female,B-,Lung,HLA-A01-B08,Lung Disease,Medium,944,CMC Vellore,Mumbai,Yes
+R00498,42,Female,AB-,Lung,HLA-A03-B15,Lung Disease,Low,1126,CMC Vellore,Trichy,No
+R00499,30,Female,A+,Heart,HLA-A11-B35,Heart Failure,Low,484,Sri Ramachandra Hospital,Vellore,Yes
+R00500,68,Female,A-,Liver,HLA-A30-B18,Liver Failure,Medium,19,Apollo Hospital,Delhi,No
+R00501,27,Female,A-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,1024,CMC Vellore,Delhi,Yes
+R00502,21,Female,B+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,1000,AIIMS Delhi,Vellore,Yes
+R00503,64,Male,A+,Lung,HLA-A30-B18,Lung Disease,High,1484,Fortis Hospital,Trichy,Yes
+R00504,63,Female,AB+,Lung,HLA-A33-B58,Lung Disease,Medium,1161,Fortis Hospital,Mumbai,Yes
+R00505,64,Female,AB+,Heart,HLA-A03-B15,Heart Failure,Low,1088,Fortis Hospital,Hyderabad,Yes
+R00506,52,Female,O-,Heart,HLA-A01-B08,Heart Failure,Critical,380,Apollo Hospital,Delhi,Yes
+R00507,33,Female,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,1074,Global Hospital,Mumbai,Yes
+R00508,36,Female,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,198,CMC Vellore,Chennai,Yes
+R00509,73,Male,B-,Liver,HLA-A02-B07,Liver Failure,Critical,393,CMC Vellore,Chennai,No
+R00510,51,Female,A+,Lung,HLA-A26-B40,Lung Disease,Medium,1241,CMC Vellore,Chennai,Yes
+R00511,74,Male,O-,Lung,HLA-A01-B08,Lung Disease,High,1143,Sri Ramachandra Hospital,Vellore,Yes
+R00512,35,Male,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,443,CMC Vellore,Coimbatore,Yes
+R00513,42,Male,B-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,1144,Sri Ramachandra Hospital,Coimbatore,Yes
+R00514,62,Female,A-,Lung,HLA-A03-B15,Lung Disease,Medium,1127,Sri Ramachandra Hospital,Mumbai,Yes
+R00515,52,Female,AB-,Liver,HLA-A26-B40,Liver Failure,High,762,Sri Ramachandra Hospital,Bangalore,Yes
+R00516,33,Male,O+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,927,Global Hospital,Bangalore,Yes
+R00517,36,Male,B+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,616,AIIMS Delhi,Salem,Yes
+R00518,67,Female,B+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,943,MIOT Hospital,Madurai,Yes
+R00519,41,Male,B-,Heart,HLA-A24-B44,Heart Failure,High,189,Sri Ramachandra Hospital,Delhi,Yes
+R00520,64,Female,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,1413,CMC Vellore,Delhi,Yes
+R00521,64,Female,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,713,Sri Ramachandra Hospital,Bangalore,Yes
+R00522,65,Male,O+,Liver,HLA-A01-B08,Liver Failure,High,1074,Apollo Hospital,Vellore,Yes
+R00523,50,Male,B+,Heart,HLA-A01-B08,Heart Failure,Critical,913,CMC Vellore,Salem,No
+R00524,68,Female,B+,Heart,HLA-A03-B15,Heart Failure,High,170,Global Hospital,Delhi,Yes
+R00525,43,Female,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,1430,Fortis Hospital,Madurai,No
+R00526,30,Female,O+,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,497,CMC Vellore,Trichy,No
+R00527,61,Male,A-,Heart,HLA-A30-B18,Heart Failure,Critical,749,MIOT Hospital,Salem,Yes
+R00528,56,Male,AB+,Heart,HLA-A03-B15,Heart Failure,High,1263,Global Hospital,Delhi,Yes
+R00529,20,Male,B-,Lung,HLA-A26-B40,Lung Disease,Medium,1492,CMC Vellore,Coimbatore,Yes
+R00530,57,Male,AB+,Liver,HLA-A01-B08,Liver Failure,High,1421,CMC Vellore,Trichy,No
+R00531,19,Female,B-,Lung,HLA-A11-B35,Lung Disease,Medium,1120,Kauvery Hospital,Mumbai,No
+R00532,64,Male,A+,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,524,Fortis Hospital,Chennai,Yes
+R00533,68,Female,A+,Liver,HLA-A33-B58,Liver Failure,Low,137,Sri Ramachandra Hospital,Trichy,Yes
+R00534,19,Female,O+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Critical,1042,CMC Vellore,Vellore,No
+R00535,52,Male,B+,Pancreas,HLA-A11-B35,Pancreatic Disease,Critical,1149,Apollo Hospital,Chennai,Yes
+R00536,37,Female,O-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,38,MIOT Hospital,Vellore,Yes
+R00537,33,Female,A+,Heart,HLA-A24-B44,Heart Failure,Critical,61,Kauvery Hospital,Salem,Yes
+R00538,75,Female,B+,Heart,HLA-A02-B07,Heart Failure,Critical,1067,AIIMS Delhi,Bangalore,Yes
+R00539,27,Female,AB+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,1111,Fortis Hospital,Salem,Yes
+R00540,52,Male,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,881,Fortis Hospital,Delhi,Yes
+R00541,22,Male,B+,Heart,HLA-A26-B40,Heart Failure,Medium,1490,Apollo Hospital,Vellore,No
+R00542,37,Female,AB+,Lung,HLA-A03-B15,Lung Disease,Medium,219,Fortis Hospital,Madurai,Yes
+R00543,57,Female,B-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,1408,Apollo Hospital,Vellore,Yes
+R00544,26,Female,AB-,Lung,HLA-A03-B15,Lung Disease,Critical,1007,Global Hospital,Madurai,Yes
+R00545,32,Male,O+,Liver,HLA-A01-B08,Liver Failure,High,846,AIIMS Delhi,Salem,Yes
+R00546,29,Female,O-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,506,Sri Ramachandra Hospital,Bangalore,Yes
+R00547,65,Female,AB-,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,1067,CMC Vellore,Hyderabad,No
+R00548,74,Male,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,1058,Apollo Hospital,Salem,Yes
+R00549,43,Female,AB+,Lung,HLA-A33-B58,Lung Disease,Medium,866,Kauvery Hospital,Delhi,Yes
+R00550,75,Male,O-,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,1480,CMC Vellore,Madurai,Yes
+R00551,44,Female,O-,Lung,HLA-A01-B08,Lung Disease,Medium,930,AIIMS Delhi,Hyderabad,Yes
+R00552,38,Male,A-,Heart,HLA-A02-B07,Heart Failure,Low,1447,Global Hospital,Vellore,Yes
+R00553,63,Female,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,90,Fortis Hospital,Vellore,Yes
+R00554,73,Male,B+,Liver,HLA-A01-B08,Liver Failure,Critical,631,Kauvery Hospital,Hyderabad,Yes
+R00555,25,Male,B-,Liver,HLA-A01-B08,Liver Failure,High,26,Global Hospital,Hyderabad,No
+R00556,69,Male,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,1206,Global Hospital,Hyderabad,No
+R00557,23,Male,B-,Lung,HLA-A24-B44,Lung Disease,Medium,101,Fortis Hospital,Madurai,Yes
+R00558,20,Male,A+,Heart,HLA-A24-B44,Heart Failure,High,180,Apollo Hospital,Coimbatore,No
+R00559,28,Female,B+,Liver,HLA-A33-B58,Liver Failure,High,74,CMC Vellore,Trichy,Yes
+R00560,75,Female,A-,Heart,HLA-A30-B18,Heart Failure,Low,600,Global Hospital,Madurai,Yes
+R00561,39,Female,B-,Heart,HLA-A11-B35,Heart Failure,Low,224,CMC Vellore,Hyderabad,Yes
+R00562,56,Female,AB+,Lung,HLA-A26-B40,Lung Disease,Medium,1259,Global Hospital,Mumbai,No
+R00563,69,Male,B-,Lung,HLA-A24-B44,Lung Disease,Medium,4,CMC Vellore,Chennai,No
+R00564,65,Male,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,684,MIOT Hospital,Mumbai,Yes
+R00565,58,Male,AB+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,631,Kauvery Hospital,Mumbai,Yes
+R00566,25,Female,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,360,AIIMS Delhi,Vellore,Yes
+R00567,48,Male,B+,Lung,HLA-A33-B58,Lung Disease,Medium,1285,Global Hospital,Mumbai,Yes
+R00568,68,Female,A+,Lung,HLA-A24-B44,Lung Disease,High,1138,Apollo Hospital,Salem,Yes
+R00569,22,Male,AB+,Heart,HLA-A01-B08,Heart Failure,High,769,Fortis Hospital,Delhi,No
+R00570,56,Male,AB+,Liver,HLA-A26-B40,Liver Failure,Low,557,Sri Ramachandra Hospital,Coimbatore,No
+R00571,41,Female,AB+,Liver,HLA-A11-B35,Liver Failure,High,359,CMC Vellore,Vellore,Yes
+R00572,23,Female,A+,Liver,HLA-A33-B58,Liver Failure,Medium,390,MIOT Hospital,Hyderabad,Yes
+R00573,27,Male,B+,Heart,HLA-A11-B35,Heart Failure,Low,941,Sri Ramachandra Hospital,Mumbai,Yes
+R00574,37,Male,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,95,CMC Vellore,Mumbai,Yes
+R00575,54,Female,B-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,395,Kauvery Hospital,Trichy,Yes
+R00576,60,Male,AB+,Lung,HLA-A03-B15,Lung Disease,Medium,561,CMC Vellore,Chennai,Yes
+R00577,52,Female,AB-,Liver,HLA-A24-B44,Liver Failure,Medium,1443,Kauvery Hospital,Delhi,Yes
+R00578,22,Female,AB-,Liver,HLA-A33-B58,Liver Failure,Low,267,Apollo Hospital,Hyderabad,Yes
+R00579,42,Male,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,367,Global Hospital,Delhi,Yes
+R00580,39,Male,A-,Heart,HLA-A33-B58,Heart Failure,Medium,191,Global Hospital,Coimbatore,No
+R00581,61,Female,O-,Heart,HLA-A11-B35,Heart Failure,Medium,295,Kauvery Hospital,Vellore,No
+R00582,62,Female,AB-,Liver,HLA-A33-B58,Liver Failure,Critical,62,CMC Vellore,Hyderabad,Yes
+R00583,48,Female,B+,Heart,HLA-A24-B44,Heart Failure,High,1238,Fortis Hospital,Mumbai,Yes
+R00584,70,Male,AB-,Lung,HLA-A02-B07,Lung Disease,High,1092,Global Hospital,Bangalore,No
+R00585,57,Male,B+,Liver,HLA-A33-B58,Liver Failure,Critical,136,MIOT Hospital,Salem,No
+R00586,54,Female,B-,Lung,HLA-A03-B15,Lung Disease,Low,1458,Global Hospital,Coimbatore,No
+R00587,53,Male,O-,Heart,HLA-A03-B15,Heart Failure,High,832,CMC Vellore,Delhi,Yes
+R00588,67,Female,AB-,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,186,AIIMS Delhi,Madurai,Yes
+R00589,60,Male,O-,Liver,HLA-A24-B44,Liver Failure,Critical,1261,Global Hospital,Salem,Yes
+R00590,37,Female,O+,Heart,HLA-A26-B40,Heart Failure,Low,1194,Apollo Hospital,Delhi,No
+R00591,72,Female,A+,Liver,HLA-A26-B40,Liver Failure,Low,2,MIOT Hospital,Coimbatore,Yes
+R00592,33,Female,O+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,832,Sri Ramachandra Hospital,Bangalore,Yes
+R00593,48,Male,B-,Liver,HLA-A30-B18,Liver Failure,High,855,Fortis Hospital,Trichy,Yes
+R00594,18,Male,A+,Liver,HLA-A03-B15,Liver Failure,Critical,1348,Sri Ramachandra Hospital,Madurai,Yes
+R00595,59,Female,O-,Liver,HLA-A30-B18,Liver Failure,Medium,931,Sri Ramachandra Hospital,Mumbai,No
+R00596,40,Male,B+,Lung,HLA-A30-B18,Lung Disease,Low,1184,Global Hospital,Salem,Yes
+R00597,52,Female,A+,Lung,HLA-A01-B08,Lung Disease,Critical,1444,MIOT Hospital,Coimbatore,No
+R00598,27,Female,O-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,503,Global Hospital,Coimbatore,Yes
+R00599,21,Female,A+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,1050,Global Hospital,Delhi,Yes
+R00600,40,Female,AB+,Lung,HLA-A03-B15,Lung Disease,Low,1424,Kauvery Hospital,Delhi,Yes
+R00601,58,Female,B+,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,1279,Apollo Hospital,Trichy,No
+R00602,26,Male,AB+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,1262,Kauvery Hospital,Trichy,Yes
+R00603,65,Male,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,758,Fortis Hospital,Trichy,Yes
+R00604,29,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Medium,1220,Fortis Hospital,Hyderabad,No
+R00605,33,Female,B+,Lung,HLA-A11-B35,Lung Disease,High,112,Kauvery Hospital,Coimbatore,Yes
+R00606,47,Female,O-,Liver,HLA-A24-B44,Liver Failure,Critical,1091,AIIMS Delhi,Bangalore,No
+R00607,34,Male,O+,Lung,HLA-A01-B08,Lung Disease,High,920,Sri Ramachandra Hospital,Vellore,Yes
+R00608,52,Female,O+,Kidney,HLA-A24-B44,Chronic Kidney Disease,High,554,Kauvery Hospital,Coimbatore,Yes
+R00609,43,Female,B-,Pancreas,HLA-A11-B35,Pancreatic Disease,High,1388,Fortis Hospital,Vellore,Yes
+R00610,71,Male,A+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,1076,CMC Vellore,Hyderabad,Yes
+R00611,64,Female,AB+,Liver,HLA-A11-B35,Liver Failure,Low,49,CMC Vellore,Chennai,Yes
+R00612,58,Male,A-,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,770,Fortis Hospital,Coimbatore,Yes
+R00613,36,Female,A-,Heart,HLA-A33-B58,Heart Failure,High,875,MIOT Hospital,Trichy,Yes
+R00614,35,Male,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,124,Kauvery Hospital,Trichy,Yes
+R00615,22,Female,B-,Lung,HLA-A30-B18,Lung Disease,Medium,1322,Global Hospital,Coimbatore,Yes
+R00616,67,Female,B-,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,1466,Kauvery Hospital,Coimbatore,Yes
+R00617,22,Female,O-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,305,Apollo Hospital,Chennai,No
+R00618,27,Female,O+,Heart,HLA-A01-B08,Heart Failure,Critical,980,Sri Ramachandra Hospital,Bangalore,Yes
+R00619,32,Male,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,1162,MIOT Hospital,Vellore,Yes
+R00620,21,Male,AB-,Lung,HLA-A26-B40,Lung Disease,Low,942,Kauvery Hospital,Salem,Yes
+R00621,20,Female,B-,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,219,MIOT Hospital,Hyderabad,Yes
+R00622,65,Male,B+,Lung,HLA-A01-B08,Lung Disease,Medium,52,AIIMS Delhi,Hyderabad,No
+R00623,68,Female,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,76,MIOT Hospital,Chennai,Yes
+R00624,43,Male,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,1187,AIIMS Delhi,Coimbatore,Yes
+R00625,49,Male,O-,Liver,HLA-A01-B08,Liver Failure,Medium,1437,Fortis Hospital,Chennai,Yes
+R00626,75,Female,A-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,1211,CMC Vellore,Coimbatore,Yes
+R00627,56,Male,A-,Lung,HLA-A11-B35,Lung Disease,Critical,691,Sri Ramachandra Hospital,Vellore,Yes
+R00628,52,Male,AB-,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,1215,Fortis Hospital,Vellore,Yes
+R00629,35,Male,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1134,Fortis Hospital,Hyderabad,Yes
+R00630,20,Male,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,33,Global Hospital,Coimbatore,Yes
+R00631,29,Male,AB+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,1418,Fortis Hospital,Salem,Yes
+R00632,51,Female,O+,Heart,HLA-A11-B35,Heart Failure,Medium,1251,Apollo Hospital,Delhi,Yes
+R00633,57,Male,AB+,Lung,HLA-A26-B40,Lung Disease,Critical,10,AIIMS Delhi,Salem,Yes
+R00634,24,Female,B-,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,567,Apollo Hospital,Salem,Yes
+R00635,61,Female,O-,Liver,HLA-A03-B15,Liver Failure,Medium,1373,Apollo Hospital,Chennai,Yes
+R00636,31,Female,AB+,Heart,HLA-A26-B40,Heart Failure,Critical,89,CMC Vellore,Chennai,Yes
+R00637,68,Male,O-,Liver,HLA-A02-B07,Liver Failure,Low,482,Global Hospital,Delhi,Yes
+R00638,30,Female,B-,Lung,HLA-A02-B07,Lung Disease,High,467,CMC Vellore,Salem,No
+R00639,42,Male,A-,Liver,HLA-A33-B58,Liver Failure,Critical,112,Sri Ramachandra Hospital,Madurai,Yes
+R00640,47,Male,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,938,AIIMS Delhi,Vellore,Yes
+R00641,39,Male,A+,Liver,HLA-A01-B08,Liver Failure,High,280,CMC Vellore,Hyderabad,No
+R00642,28,Female,B-,Lung,HLA-A24-B44,Lung Disease,Medium,1307,Fortis Hospital,Delhi,Yes
+R00643,44,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,572,Apollo Hospital,Bangalore,Yes
+R00644,38,Female,B-,Liver,HLA-A03-B15,Liver Failure,Low,856,Apollo Hospital,Chennai,No
+R00645,20,Female,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,927,Global Hospital,Salem,Yes
+R00646,66,Male,O+,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,735,Kauvery Hospital,Salem,Yes
+R00647,48,Female,B+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,932,Global Hospital,Madurai,No
+R00648,68,Female,O-,Liver,HLA-A01-B08,Liver Failure,Low,789,MIOT Hospital,Mumbai,Yes
+R00649,45,Female,B-,Heart,HLA-A02-B07,Heart Failure,High,113,MIOT Hospital,Chennai,Yes
+R00650,41,Female,A+,Lung,HLA-A26-B40,Lung Disease,High,359,CMC Vellore,Mumbai,Yes
+R00651,39,Male,A-,Liver,HLA-A33-B58,Liver Failure,Medium,462,MIOT Hospital,Vellore,Yes
+R00652,61,Female,AB+,Pancreas,HLA-A01-B08,Pancreatic Disease,Low,764,MIOT Hospital,Hyderabad,No
+R00653,51,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,1272,MIOT Hospital,Coimbatore,Yes
+R00654,23,Male,O+,Lung,HLA-A03-B15,Lung Disease,High,158,CMC Vellore,Madurai,Yes
+R00655,62,Male,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,1067,Apollo Hospital,Trichy,No
+R00656,26,Female,AB-,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,1321,Apollo Hospital,Trichy,Yes
+R00657,19,Male,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,1343,MIOT Hospital,Hyderabad,No
+R00658,37,Male,AB+,Lung,HLA-A03-B15,Lung Disease,High,465,Global Hospital,Vellore,Yes
+R00659,27,Female,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,1267,Fortis Hospital,Mumbai,Yes
+R00660,29,Male,B+,Liver,HLA-A11-B35,Liver Failure,Low,85,MIOT Hospital,Delhi,Yes
+R00661,34,Female,B+,Lung,HLA-A11-B35,Lung Disease,Low,1364,MIOT Hospital,Vellore,Yes
+R00662,46,Male,AB+,Heart,HLA-A02-B07,Heart Failure,Low,829,Global Hospital,Madurai,No
+R00663,27,Male,AB-,Heart,HLA-A24-B44,Heart Failure,Critical,594,Fortis Hospital,Delhi,No
+R00664,62,Male,O-,Heart,HLA-A01-B08,Heart Failure,Medium,1389,CMC Vellore,Trichy,Yes
+R00665,57,Male,O-,Lung,HLA-A26-B40,Lung Disease,Low,669,Apollo Hospital,Delhi,Yes
+R00666,51,Male,AB+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,172,Global Hospital,Coimbatore,No
+R00667,49,Female,A+,Liver,HLA-A26-B40,Liver Failure,Critical,303,Sri Ramachandra Hospital,Vellore,No
+R00668,18,Female,AB-,Heart,HLA-A26-B40,Heart Failure,High,913,CMC Vellore,Salem,No
+R00669,69,Female,AB+,Lung,HLA-A03-B15,Lung Disease,Critical,1493,Sri Ramachandra Hospital,Madurai,Yes
+R00670,31,Female,O-,Liver,HLA-A26-B40,Liver Failure,Low,1210,Sri Ramachandra Hospital,Coimbatore,Yes
+R00671,58,Female,O+,Lung,HLA-A03-B15,Lung Disease,Critical,1455,Fortis Hospital,Salem,Yes
+R00672,36,Female,A+,Lung,HLA-A24-B44,Lung Disease,High,1012,Global Hospital,Salem,Yes
+R00673,27,Female,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,1340,Kauvery Hospital,Bangalore,Yes
+R00674,62,Male,A+,Lung,HLA-A02-B07,Lung Disease,High,1010,CMC Vellore,Delhi,Yes
+R00675,48,Female,AB+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,765,Apollo Hospital,Trichy,Yes
+R00676,21,Male,AB-,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,732,Fortis Hospital,Chennai,Yes
+R00677,44,Female,A+,Heart,HLA-A24-B44,Heart Failure,High,1085,CMC Vellore,Mumbai,Yes
+R00678,66,Male,B+,Liver,HLA-A26-B40,Liver Failure,High,1403,Kauvery Hospital,Trichy,Yes
+R00679,52,Female,B+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,1062,Kauvery Hospital,Vellore,No
+R00680,39,Male,A-,Lung,HLA-A11-B35,Lung Disease,Medium,1031,AIIMS Delhi,Salem,Yes
+R00681,47,Male,A-,Lung,HLA-A03-B15,Lung Disease,Low,983,MIOT Hospital,Trichy,Yes
+R00682,70,Female,AB-,Liver,HLA-A03-B15,Liver Failure,High,59,CMC Vellore,Salem,Yes
+R00683,62,Male,AB+,Liver,HLA-A03-B15,Liver Failure,Medium,267,CMC Vellore,Bangalore,Yes
+R00684,19,Female,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,221,Apollo Hospital,Mumbai,Yes
+R00685,25,Female,A+,Lung,HLA-A02-B07,Lung Disease,High,1368,Apollo Hospital,Coimbatore,Yes
+R00686,31,Male,B+,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,186,Fortis Hospital,Trichy,Yes
+R00687,28,Male,A-,Heart,HLA-A02-B07,Heart Failure,Low,1084,AIIMS Delhi,Salem,Yes
+R00688,75,Male,A-,Liver,HLA-A11-B35,Liver Failure,Critical,751,Fortis Hospital,Hyderabad,Yes
+R00689,71,Female,O+,Liver,HLA-A30-B18,Liver Failure,Medium,1054,AIIMS Delhi,Bangalore,Yes
+R00690,25,Female,A-,Heart,HLA-A03-B15,Heart Failure,Critical,740,Kauvery Hospital,Mumbai,Yes
+R00691,38,Female,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,936,Kauvery Hospital,Hyderabad,Yes
+R00692,44,Female,O+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,975,MIOT Hospital,Madurai,Yes
+R00693,61,Male,O+,Lung,HLA-A33-B58,Lung Disease,Low,245,Fortis Hospital,Bangalore,No
+R00694,24,Male,A-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,694,AIIMS Delhi,Delhi,No
+R00695,32,Female,O-,Kidney,HLA-A24-B44,Chronic Kidney Disease,High,1319,Sri Ramachandra Hospital,Vellore,No
+R00696,43,Female,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,222,CMC Vellore,Trichy,No
+R00697,32,Male,A+,Lung,HLA-A02-B07,Lung Disease,Low,140,Global Hospital,Chennai,Yes
+R00698,56,Female,B+,Lung,HLA-A24-B44,Lung Disease,Low,157,Global Hospital,Hyderabad,Yes
+R00699,60,Female,O-,Heart,HLA-A24-B44,Heart Failure,High,1108,Apollo Hospital,Chennai,No
+R00700,42,Female,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,942,Apollo Hospital,Chennai,Yes
+R00701,60,Female,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,276,Kauvery Hospital,Bangalore,No
+R00702,54,Female,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,1038,Apollo Hospital,Bangalore,Yes
+R00703,55,Female,AB-,Lung,HLA-A24-B44,Lung Disease,High,126,Apollo Hospital,Delhi,Yes
+R00704,71,Female,AB-,Liver,HLA-A01-B08,Liver Failure,High,780,CMC Vellore,Bangalore,Yes
+R00705,44,Female,A+,Heart,HLA-A11-B35,Heart Failure,Medium,481,Kauvery Hospital,Delhi,Yes
+R00706,73,Female,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,41,MIOT Hospital,Chennai,No
+R00707,54,Female,AB+,Lung,HLA-A01-B08,Lung Disease,Critical,1205,Apollo Hospital,Vellore,No
+R00708,42,Female,A-,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,1415,AIIMS Delhi,Vellore,No
+R00709,69,Female,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,893,AIIMS Delhi,Hyderabad,Yes
+R00710,31,Female,AB+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,1175,Sri Ramachandra Hospital,Salem,Yes
+R00711,24,Female,AB+,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,875,AIIMS Delhi,Vellore,Yes
+R00712,50,Female,O+,Heart,HLA-A26-B40,Heart Failure,Medium,849,Sri Ramachandra Hospital,Trichy,No
+R00713,29,Male,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,1354,Global Hospital,Trichy,No
+R00714,64,Male,B-,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,303,AIIMS Delhi,Madurai,Yes
+R00715,44,Female,A-,Lung,HLA-A11-B35,Lung Disease,Critical,547,Kauvery Hospital,Madurai,Yes
+R00716,33,Female,B-,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,394,Apollo Hospital,Salem,Yes
+R00717,49,Female,O+,Lung,HLA-A01-B08,Lung Disease,Medium,327,Kauvery Hospital,Madurai,Yes
+R00718,68,Female,B+,Heart,HLA-A01-B08,Heart Failure,Critical,41,Apollo Hospital,Coimbatore,Yes
+R00719,37,Male,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,813,Fortis Hospital,Salem,Yes
+R00720,65,Male,AB+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,488,CMC Vellore,Vellore,Yes
+R00721,65,Female,B-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,296,CMC Vellore,Madurai,Yes
+R00722,46,Female,AB+,Heart,HLA-A01-B08,Heart Failure,Critical,1093,MIOT Hospital,Coimbatore,Yes
+R00723,45,Female,B-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,744,Global Hospital,Vellore,Yes
+R00724,59,Male,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,1132,Sri Ramachandra Hospital,Trichy,Yes
+R00725,52,Male,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,805,Kauvery Hospital,Trichy,Yes
+R00726,37,Male,B+,Liver,HLA-A33-B58,Liver Failure,High,1320,Sri Ramachandra Hospital,Chennai,Yes
+R00727,70,Female,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,1470,Sri Ramachandra Hospital,Coimbatore,Yes
+R00728,50,Male,AB-,Heart,HLA-A30-B18,Heart Failure,High,929,Apollo Hospital,Chennai,Yes
+R00729,68,Male,A+,Lung,HLA-A30-B18,Lung Disease,Medium,1287,Kauvery Hospital,Vellore,Yes
+R00730,28,Male,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,925,Global Hospital,Madurai,Yes
+R00731,61,Female,AB+,Liver,HLA-A11-B35,Liver Failure,Low,849,MIOT Hospital,Madurai,No
+R00732,71,Male,A+,Lung,HLA-A01-B08,Lung Disease,Medium,183,Global Hospital,Salem,Yes
+R00733,21,Female,O+,Liver,HLA-A24-B44,Liver Failure,Medium,183,MIOT Hospital,Madurai,Yes
+R00734,63,Female,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,460,AIIMS Delhi,Salem,Yes
+R00735,65,Female,O+,Heart,HLA-A03-B15,Heart Failure,Critical,424,AIIMS Delhi,Trichy,Yes
+R00736,29,Female,B+,Lung,HLA-A01-B08,Lung Disease,High,537,AIIMS Delhi,Delhi,No
+R00737,41,Female,A-,Liver,HLA-A01-B08,Liver Failure,Critical,273,MIOT Hospital,Bangalore,Yes
+R00738,63,Female,AB+,Lung,HLA-A02-B07,Lung Disease,Low,1141,Apollo Hospital,Chennai,Yes
+R00739,48,Female,A+,Liver,HLA-A01-B08,Liver Failure,High,1034,Sri Ramachandra Hospital,Trichy,No
+R00740,26,Male,B+,Heart,HLA-A24-B44,Heart Failure,Medium,1032,Global Hospital,Vellore,No
+R00741,23,Female,O+,Liver,HLA-A03-B15,Liver Failure,High,240,MIOT Hospital,Chennai,Yes
+R00742,73,Female,AB-,Lung,HLA-A30-B18,Lung Disease,High,540,Kauvery Hospital,Mumbai,Yes
+R00743,75,Male,AB-,Lung,HLA-A33-B58,Lung Disease,Medium,1139,Global Hospital,Chennai,Yes
+R00744,21,Male,B+,Liver,HLA-A01-B08,Liver Failure,Critical,533,Fortis Hospital,Hyderabad,No
+R00745,75,Female,A+,Kidney,HLA-A33-B58,Chronic Kidney Disease,High,1453,Global Hospital,Hyderabad,No
+R00746,72,Male,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,418,Kauvery Hospital,Madurai,Yes
+R00747,70,Female,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,853,CMC Vellore,Salem,No
+R00748,74,Female,A+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,808,MIOT Hospital,Delhi,Yes
+R00749,27,Male,A-,Heart,HLA-A33-B58,Heart Failure,Critical,930,Kauvery Hospital,Delhi,Yes
+R00750,20,Female,AB-,Heart,HLA-A03-B15,Heart Failure,Medium,100,Kauvery Hospital,Vellore,Yes
+R00751,53,Female,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,365,AIIMS Delhi,Bangalore,Yes
+R00752,72,Male,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,584,Fortis Hospital,Coimbatore,Yes
+R00753,69,Female,AB+,Lung,HLA-A03-B15,Lung Disease,High,1363,CMC Vellore,Vellore,Yes
+R00754,46,Female,O-,Lung,HLA-A24-B44,Lung Disease,Critical,185,Sri Ramachandra Hospital,Vellore,Yes
+R00755,58,Female,A-,Lung,HLA-A01-B08,Lung Disease,High,950,AIIMS Delhi,Madurai,No
+R00756,58,Male,AB+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,163,Global Hospital,Trichy,Yes
+R00757,61,Female,B-,Liver,HLA-A30-B18,Liver Failure,High,1165,Apollo Hospital,Mumbai,Yes
+R00758,50,Male,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,952,Kauvery Hospital,Vellore,Yes
+R00759,23,Male,A-,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,374,Sri Ramachandra Hospital,Chennai,Yes
+R00760,74,Female,AB-,Lung,HLA-A33-B58,Lung Disease,Critical,1278,Kauvery Hospital,Vellore,Yes
+R00761,29,Male,AB+,Liver,HLA-A02-B07,Liver Failure,Critical,1095,Apollo Hospital,Chennai,No
+R00762,18,Male,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,1348,Global Hospital,Trichy,Yes
+R00763,69,Female,A-,Lung,HLA-A03-B15,Lung Disease,Medium,29,AIIMS Delhi,Coimbatore,Yes
+R00764,72,Male,B-,Liver,HLA-A33-B58,Liver Failure,Medium,1331,AIIMS Delhi,Bangalore,Yes
+R00765,37,Female,B+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,45,CMC Vellore,Madurai,Yes
+R00766,49,Female,A+,Lung,HLA-A33-B58,Lung Disease,Medium,413,Kauvery Hospital,Delhi,No
+R00767,39,Male,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,1016,Kauvery Hospital,Chennai,No
+R00768,49,Female,B-,Lung,HLA-A01-B08,Lung Disease,Low,865,MIOT Hospital,Mumbai,Yes
+R00769,75,Female,O-,Heart,HLA-A02-B07,Heart Failure,Critical,1276,MIOT Hospital,Hyderabad,No
+R00770,28,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,High,898,AIIMS Delhi,Mumbai,Yes
+R00771,61,Female,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,High,1481,Sri Ramachandra Hospital,Bangalore,Yes
+R00772,69,Male,B-,Lung,HLA-A24-B44,Lung Disease,Low,1367,Global Hospital,Madurai,Yes
+R00773,28,Female,A-,Liver,HLA-A30-B18,Liver Failure,Critical,622,AIIMS Delhi,Salem,Yes
+R00774,40,Female,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,1032,Apollo Hospital,Coimbatore,Yes
+R00775,25,Male,A-,Lung,HLA-A11-B35,Lung Disease,Critical,529,MIOT Hospital,Vellore,Yes
+R00776,35,Male,A-,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,937,CMC Vellore,Coimbatore,Yes
+R00777,20,Male,B+,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,741,Fortis Hospital,Trichy,No
+R00778,49,Male,B+,Pancreas,HLA-A26-B40,Pancreatic Disease,High,283,CMC Vellore,Salem,No
+R00779,67,Male,B-,Lung,HLA-A33-B58,Lung Disease,High,588,Fortis Hospital,Coimbatore,Yes
+R00780,63,Female,AB-,Heart,HLA-A11-B35,Heart Failure,Medium,1085,Sri Ramachandra Hospital,Salem,Yes
+R00781,44,Female,O-,Lung,HLA-A26-B40,Lung Disease,Low,907,Fortis Hospital,Chennai,Yes
+R00782,39,Female,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,126,Sri Ramachandra Hospital,Chennai,Yes
+R00783,21,Female,O+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,1478,MIOT Hospital,Vellore,Yes
+R00784,75,Male,O+,Heart,HLA-A33-B58,Heart Failure,Medium,1115,Global Hospital,Vellore,No
+R00785,74,Female,A-,Liver,HLA-A01-B08,Liver Failure,High,799,Fortis Hospital,Mumbai,Yes
+R00786,23,Female,AB-,Liver,HLA-A03-B15,Liver Failure,Low,58,Kauvery Hospital,Salem,Yes
+R00787,50,Male,A+,Lung,HLA-A26-B40,Lung Disease,High,1285,MIOT Hospital,Coimbatore,Yes
+R00788,46,Female,A+,Kidney,HLA-A33-B58,Chronic Kidney Disease,High,484,AIIMS Delhi,Vellore,Yes
+R00789,60,Male,O+,Heart,HLA-A11-B35,Heart Failure,Low,672,AIIMS Delhi,Vellore,No
+R00790,27,Female,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,128,Sri Ramachandra Hospital,Madurai,No
+R00791,46,Male,AB-,Liver,HLA-A30-B18,Liver Failure,Critical,541,Global Hospital,Bangalore,No
+R00792,64,Female,B+,Lung,HLA-A03-B15,Lung Disease,Medium,993,Global Hospital,Madurai,Yes
+R00793,47,Female,A+,Liver,HLA-A03-B15,Liver Failure,High,244,Sri Ramachandra Hospital,Coimbatore,Yes
+R00794,54,Female,A+,Heart,HLA-A03-B15,Heart Failure,Low,761,Kauvery Hospital,Vellore,Yes
+R00795,49,Male,B+,Heart,HLA-A03-B15,Heart Failure,Critical,100,Kauvery Hospital,Trichy,Yes
+R00796,70,Female,A+,Liver,HLA-A02-B07,Liver Failure,High,139,Apollo Hospital,Bangalore,No
+R00797,37,Female,AB-,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,1475,Fortis Hospital,Madurai,No
+R00798,60,Female,B+,Lung,HLA-A26-B40,Lung Disease,Low,1280,Sri Ramachandra Hospital,Bangalore,Yes
+R00799,39,Male,O-,Lung,HLA-A24-B44,Lung Disease,Low,340,Apollo Hospital,Delhi,Yes
+R00800,59,Male,A-,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,1168,AIIMS Delhi,Hyderabad,Yes
+R00801,60,Male,A+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,503,Global Hospital,Coimbatore,Yes
+R00802,55,Male,O-,Lung,HLA-A01-B08,Lung Disease,High,896,Fortis Hospital,Bangalore,Yes
+R00803,38,Female,AB+,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,204,Fortis Hospital,Trichy,Yes
+R00804,34,Male,B+,Liver,HLA-A24-B44,Liver Failure,Critical,1390,Fortis Hospital,Chennai,Yes
+R00805,19,Male,AB+,Liver,HLA-A30-B18,Liver Failure,Low,656,Fortis Hospital,Bangalore,Yes
+R00806,42,Male,A+,Heart,HLA-A11-B35,Heart Failure,Medium,1223,AIIMS Delhi,Hyderabad,No
+R00807,35,Male,AB-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,135,Global Hospital,Chennai,No
+R00808,74,Male,AB+,Liver,HLA-A02-B07,Liver Failure,Medium,1137,Fortis Hospital,Trichy,No
+R00809,23,Male,B+,Lung,HLA-A26-B40,Lung Disease,Medium,503,Sri Ramachandra Hospital,Mumbai,No
+R00810,18,Female,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,124,Global Hospital,Trichy,Yes
+R00811,40,Male,AB+,Lung,HLA-A01-B08,Lung Disease,Medium,1094,CMC Vellore,Trichy,Yes
+R00812,62,Male,B+,Lung,HLA-A24-B44,Lung Disease,Critical,432,MIOT Hospital,Vellore,Yes
+R00813,35,Male,AB-,Lung,HLA-A26-B40,Lung Disease,Medium,942,MIOT Hospital,Chennai,Yes
+R00814,56,Female,A+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,847,Global Hospital,Bangalore,Yes
+R00815,52,Male,O-,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,771,MIOT Hospital,Bangalore,Yes
+R00816,25,Female,AB-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Critical,20,AIIMS Delhi,Chennai,Yes
+R00817,30,Male,AB+,Heart,HLA-A11-B35,Heart Failure,Medium,1012,MIOT Hospital,Chennai,Yes
+R00818,75,Male,A+,Lung,HLA-A11-B35,Lung Disease,Critical,228,Kauvery Hospital,Delhi,No
+R00819,53,Male,B+,Liver,HLA-A02-B07,Liver Failure,Medium,134,Fortis Hospital,Trichy,Yes
+R00820,64,Female,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,High,1395,Global Hospital,Chennai,No
+R00821,72,Female,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,250,Global Hospital,Hyderabad,Yes
+R00822,66,Male,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,High,861,Global Hospital,Vellore,Yes
+R00823,30,Female,A-,Lung,HLA-A01-B08,Lung Disease,Medium,1413,Sri Ramachandra Hospital,Coimbatore,Yes
+R00824,28,Female,AB+,Liver,HLA-A02-B07,Liver Failure,Low,58,Global Hospital,Bangalore,Yes
+R00825,69,Female,AB+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,970,AIIMS Delhi,Vellore,Yes
+R00826,51,Male,A-,Heart,HLA-A33-B58,Heart Failure,Low,1281,Global Hospital,Delhi,Yes
+R00827,21,Male,O+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,262,Apollo Hospital,Hyderabad,Yes
+R00828,57,Female,A-,Heart,HLA-A02-B07,Heart Failure,Low,1146,Apollo Hospital,Trichy,No
+R00829,24,Female,B-,Lung,HLA-A01-B08,Lung Disease,Critical,787,Global Hospital,Bangalore,Yes
+R00830,59,Male,O-,Heart,HLA-A26-B40,Heart Failure,Medium,222,CMC Vellore,Chennai,Yes
+R00831,68,Male,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,863,Global Hospital,Delhi,No
+R00832,33,Male,A+,Liver,HLA-A01-B08,Liver Failure,Medium,639,Sri Ramachandra Hospital,Mumbai,Yes
+R00833,55,Male,B+,Heart,HLA-A33-B58,Heart Failure,High,1236,MIOT Hospital,Trichy,Yes
+R00834,51,Male,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,865,MIOT Hospital,Salem,Yes
+R00835,68,Male,AB-,Liver,HLA-A11-B35,Liver Failure,Critical,1423,Global Hospital,Delhi,Yes
+R00836,54,Female,AB+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,333,CMC Vellore,Hyderabad,Yes
+R00837,32,Male,B-,Lung,HLA-A11-B35,Lung Disease,Critical,1278,AIIMS Delhi,Salem,No
+R00838,69,Female,B-,Heart,HLA-A30-B18,Heart Failure,Medium,14,MIOT Hospital,Chennai,Yes
+R00839,19,Male,B+,Heart,HLA-A24-B44,Heart Failure,Critical,399,MIOT Hospital,Chennai,Yes
+R00840,30,Female,B+,Liver,HLA-A11-B35,Liver Failure,High,1473,Fortis Hospital,Vellore,Yes
+R00841,30,Male,B+,Liver,HLA-A24-B44,Liver Failure,Low,43,Fortis Hospital,Bangalore,Yes
+R00842,31,Female,O-,Heart,HLA-A11-B35,Heart Failure,High,763,Fortis Hospital,Mumbai,No
+R00843,25,Male,B+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,1091,Sri Ramachandra Hospital,Vellore,Yes
+R00844,45,Male,A+,Pancreas,HLA-A11-B35,Pancreatic Disease,High,305,MIOT Hospital,Salem,Yes
+R00845,73,Male,O-,Heart,HLA-A11-B35,Heart Failure,Low,964,CMC Vellore,Madurai,No
+R00846,41,Female,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,High,1460,MIOT Hospital,Mumbai,No
+R00847,48,Female,O+,Lung,HLA-A01-B08,Lung Disease,Medium,450,AIIMS Delhi,Hyderabad,Yes
+R00848,31,Female,O+,Lung,HLA-A30-B18,Lung Disease,Medium,767,Kauvery Hospital,Mumbai,Yes
+R00849,66,Male,AB+,Liver,HLA-A33-B58,Liver Failure,High,472,Apollo Hospital,Hyderabad,Yes
+R00850,46,Female,O+,Lung,HLA-A30-B18,Lung Disease,High,1019,MIOT Hospital,Trichy,No
+R00851,29,Female,B-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,736,CMC Vellore,Trichy,Yes
+R00852,32,Male,A-,Heart,HLA-A02-B07,Heart Failure,High,79,AIIMS Delhi,Vellore,Yes
+R00853,34,Female,AB+,Heart,HLA-A11-B35,Heart Failure,Medium,1467,Kauvery Hospital,Chennai,Yes
+R00854,70,Female,O+,Heart,HLA-A30-B18,Heart Failure,Low,967,Fortis Hospital,Bangalore,Yes
+R00855,64,Male,O-,Liver,HLA-A11-B35,Liver Failure,Critical,1480,Global Hospital,Vellore,Yes
+R00856,72,Male,O+,Heart,HLA-A30-B18,Heart Failure,Medium,899,Global Hospital,Mumbai,Yes
+R00857,26,Male,AB+,Heart,HLA-A01-B08,Heart Failure,Critical,1350,MIOT Hospital,Vellore,Yes
+R00858,45,Female,AB+,Lung,HLA-A26-B40,Lung Disease,Low,1163,Apollo Hospital,Madurai,Yes
+R00859,54,Female,O+,Heart,HLA-A11-B35,Heart Failure,Critical,131,Sri Ramachandra Hospital,Salem,No
+R00860,39,Female,AB+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,214,Fortis Hospital,Chennai,No
+R00861,29,Male,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,422,AIIMS Delhi,Trichy,Yes
+R00862,21,Female,A+,Lung,HLA-A03-B15,Lung Disease,High,842,Sri Ramachandra Hospital,Madurai,Yes
+R00863,52,Female,O-,Liver,HLA-A02-B07,Liver Failure,Critical,423,Fortis Hospital,Salem,Yes
+R00864,70,Female,B+,Lung,HLA-A24-B44,Lung Disease,Medium,1030,Global Hospital,Trichy,Yes
+R00865,27,Female,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Medium,1077,MIOT Hospital,Delhi,No
+R00866,47,Male,A-,Lung,HLA-A24-B44,Lung Disease,Critical,711,Kauvery Hospital,Bangalore,Yes
+R00867,33,Male,O+,Lung,HLA-A33-B58,Lung Disease,Critical,1350,Fortis Hospital,Delhi,Yes
+R00868,62,Male,B-,Lung,HLA-A03-B15,Lung Disease,High,1287,Kauvery Hospital,Coimbatore,Yes
+R00869,44,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Low,1034,MIOT Hospital,Bangalore,No
+R00870,34,Male,A+,Liver,HLA-A33-B58,Liver Failure,Low,150,Global Hospital,Bangalore,Yes
+R00871,72,Male,O+,Lung,HLA-A01-B08,Lung Disease,Low,514,CMC Vellore,Madurai,Yes
+R00872,49,Female,A-,Lung,HLA-A02-B07,Lung Disease,Medium,1462,Global Hospital,Madurai,No
+R00873,71,Male,B+,Heart,HLA-A01-B08,Heart Failure,Low,363,Kauvery Hospital,Coimbatore,No
+R00874,22,Male,AB+,Liver,HLA-A03-B15,Liver Failure,Critical,734,Fortis Hospital,Salem,Yes
+R00875,31,Female,A+,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,1414,Kauvery Hospital,Hyderabad,Yes
+R00876,18,Male,O+,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,768,AIIMS Delhi,Salem,Yes
+R00877,44,Male,A+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,1393,CMC Vellore,Salem,Yes
+R00878,64,Male,A+,Liver,HLA-A30-B18,Liver Failure,Low,670,MIOT Hospital,Mumbai,Yes
+R00879,31,Female,O+,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,438,CMC Vellore,Vellore,Yes
+R00880,18,Female,AB-,Liver,HLA-A01-B08,Liver Failure,Critical,436,Global Hospital,Salem,Yes
+R00881,59,Female,A+,Heart,HLA-A02-B07,Heart Failure,Medium,842,Kauvery Hospital,Delhi,No
+R00882,63,Male,AB+,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,1293,Sri Ramachandra Hospital,Madurai,Yes
+R00883,58,Female,O-,Liver,HLA-A02-B07,Liver Failure,High,37,Global Hospital,Bangalore,Yes
+R00884,55,Male,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,Low,633,AIIMS Delhi,Bangalore,Yes
+R00885,23,Male,B+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,608,AIIMS Delhi,Madurai,No
+R00886,59,Male,B-,Liver,HLA-A33-B58,Liver Failure,High,275,Kauvery Hospital,Vellore,Yes
+R00887,68,Female,AB+,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,679,MIOT Hospital,Salem,Yes
+R00888,21,Male,B-,Pancreas,HLA-A30-B18,Pancreatic Disease,High,376,Global Hospital,Chennai,Yes
+R00889,22,Male,A+,Lung,HLA-A03-B15,Lung Disease,Medium,258,CMC Vellore,Madurai,Yes
+R00890,50,Male,O+,Liver,HLA-A33-B58,Liver Failure,High,337,AIIMS Delhi,Salem,No
+R00891,56,Male,AB+,Liver,HLA-A24-B44,Liver Failure,Critical,1302,AIIMS Delhi,Trichy,No
+R00892,41,Female,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,904,Sri Ramachandra Hospital,Mumbai,No
+R00893,70,Female,A+,Liver,HLA-A30-B18,Liver Failure,Critical,171,Kauvery Hospital,Delhi,Yes
+R00894,64,Male,AB+,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,627,Global Hospital,Trichy,No
+R00895,56,Female,A-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,1465,Global Hospital,Salem,Yes
+R00896,18,Male,AB-,Liver,HLA-A33-B58,Liver Failure,Critical,852,Sri Ramachandra Hospital,Vellore,No
+R00897,37,Male,O+,Lung,HLA-A01-B08,Lung Disease,Low,789,Fortis Hospital,Salem,No
+R00898,67,Female,O-,Heart,HLA-A26-B40,Heart Failure,Low,1334,Sri Ramachandra Hospital,Bangalore,Yes
+R00899,48,Male,AB-,Liver,HLA-A01-B08,Liver Failure,Medium,536,Global Hospital,Madurai,Yes
+R00900,56,Male,A+,Liver,HLA-A02-B07,Liver Failure,Low,1320,Sri Ramachandra Hospital,Bangalore,Yes
+R00901,30,Female,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,1417,Kauvery Hospital,Mumbai,No
+R00902,37,Female,A-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,293,Kauvery Hospital,Salem,No
+R00903,18,Male,O-,Heart,HLA-A01-B08,Heart Failure,Low,144,Sri Ramachandra Hospital,Mumbai,No
+R00904,64,Female,B+,Heart,HLA-A03-B15,Heart Failure,High,382,Fortis Hospital,Salem,No
+R00905,50,Male,O-,Liver,HLA-A11-B35,Liver Failure,Medium,412,Apollo Hospital,Madurai,Yes
+R00906,75,Female,O-,Heart,HLA-A02-B07,Heart Failure,Medium,164,Kauvery Hospital,Coimbatore,No
+R00907,35,Male,AB-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,979,Global Hospital,Coimbatore,Yes
+R00908,35,Male,A+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,1070,Apollo Hospital,Bangalore,Yes
+R00909,48,Female,O+,Lung,HLA-A26-B40,Lung Disease,High,1397,MIOT Hospital,Vellore,Yes
+R00910,60,Female,O+,Heart,HLA-A01-B08,Heart Failure,High,677,CMC Vellore,Chennai,No
+R00911,64,Male,A+,Lung,HLA-A02-B07,Lung Disease,High,1433,AIIMS Delhi,Vellore,No
+R00912,61,Female,O+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,1307,MIOT Hospital,Chennai,Yes
+R00913,69,Female,O-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Critical,820,CMC Vellore,Vellore,No
+R00914,60,Male,O+,Lung,HLA-A24-B44,Lung Disease,Medium,1459,Fortis Hospital,Mumbai,Yes
+R00915,49,Male,AB+,Liver,HLA-A33-B58,Liver Failure,Medium,914,CMC Vellore,Hyderabad,Yes
+R00916,31,Male,A-,Liver,HLA-A02-B07,Liver Failure,Critical,1466,Apollo Hospital,Madurai,Yes
+R00917,67,Female,B-,Lung,HLA-A24-B44,Lung Disease,Critical,1374,CMC Vellore,Madurai,No
+R00918,68,Female,B-,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,773,Sri Ramachandra Hospital,Mumbai,No
+R00919,32,Female,A-,Liver,HLA-A24-B44,Liver Failure,Low,229,CMC Vellore,Vellore,Yes
+R00920,54,Female,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,1182,Apollo Hospital,Trichy,Yes
+R00921,52,Male,O+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,748,Fortis Hospital,Mumbai,Yes
+R00922,43,Male,O-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,608,AIIMS Delhi,Hyderabad,No
+R00923,56,Female,B+,Liver,HLA-A01-B08,Liver Failure,High,633,CMC Vellore,Trichy,No
+R00924,49,Female,O+,Liver,HLA-A01-B08,Liver Failure,High,313,AIIMS Delhi,Salem,Yes
+R00925,72,Female,O+,Liver,HLA-A24-B44,Liver Failure,Medium,45,Sri Ramachandra Hospital,Vellore,No
+R00926,40,Female,O+,Lung,HLA-A02-B07,Lung Disease,High,579,AIIMS Delhi,Mumbai,No
+R00927,26,Female,A+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,1341,Fortis Hospital,Delhi,Yes
+R00928,62,Female,AB+,Lung,HLA-A03-B15,Lung Disease,Medium,447,AIIMS Delhi,Chennai,Yes
+R00929,24,Male,O+,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,116,CMC Vellore,Vellore,No
+R00930,21,Male,AB-,Liver,HLA-A30-B18,Liver Failure,Medium,1285,Sri Ramachandra Hospital,Salem,Yes
+R00931,33,Female,O-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,1337,Sri Ramachandra Hospital,Coimbatore,No
+R00932,35,Female,AB-,Lung,HLA-A01-B08,Lung Disease,Low,239,CMC Vellore,Coimbatore,No
+R00933,32,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,1215,Fortis Hospital,Bangalore,No
+R00934,37,Male,A-,Lung,HLA-A26-B40,Lung Disease,Low,1462,Fortis Hospital,Bangalore,Yes
+R00935,53,Female,A-,Lung,HLA-A02-B07,Lung Disease,Medium,1349,CMC Vellore,Madurai,Yes
+R00936,53,Female,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,264,AIIMS Delhi,Madurai,Yes
+R00937,34,Male,A-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,745,Fortis Hospital,Bangalore,Yes
+R00938,37,Male,AB+,Liver,HLA-A33-B58,Liver Failure,Medium,1182,Global Hospital,Vellore,Yes
+R00939,52,Male,A-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,76,AIIMS Delhi,Madurai,Yes
+R00940,26,Male,AB-,Liver,HLA-A24-B44,Liver Failure,Medium,1494,Sri Ramachandra Hospital,Coimbatore,Yes
+R00941,42,Male,O+,Heart,HLA-A33-B58,Heart Failure,Low,521,Sri Ramachandra Hospital,Madurai,Yes
+R00942,58,Female,B-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,860,Fortis Hospital,Vellore,No
+R00943,19,Male,A-,Lung,HLA-A24-B44,Lung Disease,Low,1089,CMC Vellore,Mumbai,No
+R00944,39,Male,AB-,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,300,AIIMS Delhi,Trichy,Yes
+R00945,42,Male,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,360,Kauvery Hospital,Delhi,No
+R00946,51,Female,AB+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,99,Fortis Hospital,Vellore,No
+R00947,40,Female,O-,Liver,HLA-A03-B15,Liver Failure,High,20,Fortis Hospital,Madurai,Yes
+R00948,54,Female,A+,Lung,HLA-A26-B40,Lung Disease,Medium,1389,Sri Ramachandra Hospital,Hyderabad,Yes
+R00949,40,Female,AB+,Lung,HLA-A24-B44,Lung Disease,Critical,1067,AIIMS Delhi,Trichy,Yes
+R00950,44,Female,A-,Heart,HLA-A02-B07,Heart Failure,Low,1495,AIIMS Delhi,Coimbatore,Yes
+R00951,21,Male,AB+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,869,Fortis Hospital,Hyderabad,No
+R00952,61,Male,O+,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,15,Sri Ramachandra Hospital,Mumbai,Yes
+R00953,65,Male,O-,Liver,HLA-A03-B15,Liver Failure,Medium,359,CMC Vellore,Vellore,Yes
+R00954,40,Male,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,350,MIOT Hospital,Coimbatore,Yes
+R00955,71,Male,AB+,Liver,HLA-A24-B44,Liver Failure,Critical,602,Kauvery Hospital,Salem,Yes
+R00956,43,Male,AB+,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,1266,Global Hospital,Chennai,Yes
+R00957,57,Female,AB-,Kidney,HLA-A24-B44,Chronic Kidney Disease,High,220,Apollo Hospital,Vellore,Yes
+R00958,40,Male,A-,Lung,HLA-A30-B18,Lung Disease,Critical,405,CMC Vellore,Mumbai,Yes
+R00959,25,Female,A+,Lung,HLA-A03-B15,Lung Disease,High,464,Global Hospital,Bangalore,Yes
+R00960,41,Female,B+,Heart,HLA-A24-B44,Heart Failure,Low,899,Global Hospital,Madurai,Yes
+R00961,65,Female,A+,Heart,HLA-A26-B40,Heart Failure,Medium,227,AIIMS Delhi,Trichy,Yes
+R00962,43,Female,AB-,Liver,HLA-A01-B08,Liver Failure,Medium,1365,AIIMS Delhi,Hyderabad,Yes
+R00963,44,Female,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,819,Sri Ramachandra Hospital,Madurai,Yes
+R00964,68,Male,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1025,Apollo Hospital,Salem,Yes
+R00965,45,Male,O+,Heart,HLA-A33-B58,Heart Failure,High,578,Global Hospital,Coimbatore,No
+R00966,57,Male,B+,Liver,HLA-A11-B35,Liver Failure,High,236,Kauvery Hospital,Salem,No
+R00967,48,Male,B+,Liver,HLA-A11-B35,Liver Failure,Medium,470,CMC Vellore,Madurai,No
+R00968,35,Male,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,1263,AIIMS Delhi,Coimbatore,Yes
+R00969,44,Female,B-,Lung,HLA-A11-B35,Lung Disease,High,873,Global Hospital,Chennai,No
+R00970,37,Male,AB+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,719,Sri Ramachandra Hospital,Salem,Yes
+R00971,29,Male,A+,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,435,Kauvery Hospital,Hyderabad,Yes
+R00972,24,Female,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,745,MIOT Hospital,Trichy,Yes
+R00973,60,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,741,MIOT Hospital,Salem,Yes
+R00974,55,Female,A-,Liver,HLA-A02-B07,Liver Failure,Medium,1290,CMC Vellore,Chennai,Yes
+R00975,63,Female,A-,Liver,HLA-A02-B07,Liver Failure,High,618,Global Hospital,Salem,Yes
+R00976,26,Male,O+,Kidney,HLA-A24-B44,Chronic Kidney Disease,High,750,Global Hospital,Coimbatore,No
+R00977,48,Female,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1427,Fortis Hospital,Trichy,Yes
+R00978,21,Male,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,339,Global Hospital,Mumbai,No
+R00979,67,Female,O+,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,377,Apollo Hospital,Madurai,Yes
+R00980,62,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,High,452,Kauvery Hospital,Trichy,Yes
+R00981,32,Male,B-,Liver,HLA-A24-B44,Liver Failure,Low,1310,Fortis Hospital,Trichy,Yes
+R00982,73,Male,B-,Heart,HLA-A11-B35,Heart Failure,Low,3,MIOT Hospital,Delhi,Yes
+R00983,23,Female,B+,Heart,HLA-A30-B18,Heart Failure,High,665,Apollo Hospital,Chennai,Yes
+R00984,64,Female,B+,Liver,HLA-A24-B44,Liver Failure,Low,1101,CMC Vellore,Bangalore,Yes
+R00985,53,Male,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,High,551,AIIMS Delhi,Delhi,No
+R00986,46,Male,O+,Liver,HLA-A26-B40,Liver Failure,Medium,982,CMC Vellore,Hyderabad,Yes
+R00987,29,Male,B-,Lung,HLA-A33-B58,Lung Disease,Medium,1327,Kauvery Hospital,Chennai,Yes
+R00988,74,Male,O+,Liver,HLA-A11-B35,Liver Failure,Low,294,CMC Vellore,Bangalore,Yes
+R00989,59,Female,A-,Lung,HLA-A03-B15,Lung Disease,Low,1236,CMC Vellore,Bangalore,No
+R00990,25,Male,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,172,Kauvery Hospital,Madurai,Yes
+R00991,68,Male,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,286,Global Hospital,Delhi,No
+R00992,37,Female,O-,Liver,HLA-A03-B15,Liver Failure,Medium,115,Kauvery Hospital,Mumbai,Yes
+R00993,70,Male,A-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,1048,Sri Ramachandra Hospital,Madurai,Yes
+R00994,19,Male,O+,Liver,HLA-A30-B18,Liver Failure,Medium,724,Kauvery Hospital,Salem,No
+R00995,49,Male,A-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,578,MIOT Hospital,Coimbatore,Yes
+R00996,41,Male,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,878,MIOT Hospital,Delhi,Yes
+R00997,27,Female,AB+,Lung,HLA-A26-B40,Lung Disease,Low,556,Global Hospital,Vellore,Yes
+R00998,68,Male,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,303,Sri Ramachandra Hospital,Hyderabad,No
+R00999,25,Female,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,662,Fortis Hospital,Madurai,No
+R01000,38,Female,O+,Heart,HLA-A33-B58,Heart Failure,Critical,1233,MIOT Hospital,Madurai,Yes
+R01001,44,Female,O-,Lung,HLA-A11-B35,Lung Disease,Critical,172,Sri Ramachandra Hospital,Mumbai,Yes
+R01002,33,Female,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,743,Global Hospital,Madurai,Yes
+R01003,40,Female,B+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,296,Sri Ramachandra Hospital,Salem,Yes
+R01004,21,Male,A-,Liver,HLA-A03-B15,Liver Failure,Critical,54,Sri Ramachandra Hospital,Vellore,Yes
+R01005,60,Male,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,301,MIOT Hospital,Madurai,Yes
+R01006,22,Male,O+,Liver,HLA-A03-B15,Liver Failure,Medium,963,Fortis Hospital,Mumbai,Yes
+R01007,44,Female,O-,Lung,HLA-A01-B08,Lung Disease,High,228,Fortis Hospital,Chennai,Yes
+R01008,66,Male,B+,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,868,Global Hospital,Mumbai,Yes
+R01009,50,Female,B-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,557,CMC Vellore,Mumbai,No
+R01010,65,Male,O+,Liver,HLA-A01-B08,Liver Failure,Medium,804,Fortis Hospital,Mumbai,Yes
+R01011,48,Female,O+,Lung,HLA-A30-B18,Lung Disease,Medium,112,MIOT Hospital,Bangalore,Yes
+R01012,24,Male,A-,Heart,HLA-A26-B40,Heart Failure,High,58,AIIMS Delhi,Trichy,Yes
+R01013,24,Male,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,High,385,AIIMS Delhi,Chennai,Yes
+R01014,23,Male,O-,Heart,HLA-A01-B08,Heart Failure,Low,645,CMC Vellore,Trichy,Yes
+R01015,66,Female,O+,Heart,HLA-A11-B35,Heart Failure,High,801,MIOT Hospital,Madurai,Yes
+R01016,44,Male,B+,Heart,HLA-A01-B08,Heart Failure,Critical,977,Apollo Hospital,Trichy,Yes
+R01017,61,Female,A-,Liver,HLA-A02-B07,Liver Failure,Medium,442,Fortis Hospital,Madurai,Yes
+R01018,68,Male,AB-,Lung,HLA-A24-B44,Lung Disease,High,1277,Sri Ramachandra Hospital,Chennai,No
+R01019,31,Male,B+,Liver,HLA-A33-B58,Liver Failure,Low,31,Fortis Hospital,Trichy,Yes
+R01020,24,Female,AB-,Lung,HLA-A03-B15,Lung Disease,High,331,CMC Vellore,Trichy,Yes
+R01021,23,Male,B+,Heart,HLA-A33-B58,Heart Failure,High,970,Kauvery Hospital,Hyderabad,Yes
+R01022,54,Female,A+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,822,Sri Ramachandra Hospital,Delhi,Yes
+R01023,41,Female,AB-,Lung,HLA-A02-B07,Lung Disease,Critical,1037,Global Hospital,Trichy,Yes
+R01024,59,Male,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,216,Kauvery Hospital,Bangalore,Yes
+R01025,43,Male,B-,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,1371,CMC Vellore,Vellore,No
+R01026,59,Female,A-,Lung,HLA-A02-B07,Lung Disease,Medium,1499,CMC Vellore,Bangalore,No
+R01027,43,Female,A-,Liver,HLA-A26-B40,Liver Failure,High,1238,Global Hospital,Salem,No
+R01028,35,Female,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,299,AIIMS Delhi,Vellore,Yes
+R01029,67,Female,A+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,970,AIIMS Delhi,Chennai,Yes
+R01030,66,Female,AB+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,172,Fortis Hospital,Coimbatore,Yes
+R01031,23,Female,O-,Lung,HLA-A30-B18,Lung Disease,Medium,1372,Kauvery Hospital,Madurai,Yes
+R01032,75,Female,AB-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,407,MIOT Hospital,Bangalore,No
+R01033,52,Male,O+,Lung,HLA-A26-B40,Lung Disease,Critical,21,AIIMS Delhi,Coimbatore,Yes
+R01034,60,Female,A+,Heart,HLA-A03-B15,Heart Failure,Critical,303,Global Hospital,Vellore,Yes
+R01035,34,Male,O-,Lung,HLA-A03-B15,Lung Disease,Critical,1309,CMC Vellore,Chennai,Yes
+R01036,44,Male,O+,Liver,HLA-A11-B35,Liver Failure,High,430,AIIMS Delhi,Delhi,Yes
+R01037,70,Female,A+,Heart,HLA-A24-B44,Heart Failure,High,1029,CMC Vellore,Hyderabad,No
+R01038,44,Female,AB-,Lung,HLA-A30-B18,Lung Disease,High,233,Fortis Hospital,Hyderabad,No
+R01039,29,Male,O+,Heart,HLA-A30-B18,Heart Failure,High,1351,Sri Ramachandra Hospital,Trichy,Yes
+R01040,69,Male,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,213,Global Hospital,Delhi,Yes
+R01041,50,Male,AB+,Lung,HLA-A30-B18,Lung Disease,Medium,457,Global Hospital,Mumbai,No
+R01042,30,Female,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,846,Sri Ramachandra Hospital,Chennai,Yes
+R01043,50,Female,AB+,Liver,HLA-A24-B44,Liver Failure,High,850,AIIMS Delhi,Chennai,No
+R01044,18,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,687,Fortis Hospital,Delhi,No
+R01045,53,Female,B-,Liver,HLA-A30-B18,Liver Failure,Low,1184,Sri Ramachandra Hospital,Madurai,No
+R01046,43,Female,B+,Liver,HLA-A30-B18,Liver Failure,Medium,204,Fortis Hospital,Mumbai,Yes
+R01047,68,Female,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,High,418,CMC Vellore,Coimbatore,Yes
+R01048,18,Male,A+,Lung,HLA-A02-B07,Lung Disease,Critical,52,Fortis Hospital,Hyderabad,Yes
+R01049,33,Male,AB+,Liver,HLA-A11-B35,Liver Failure,Medium,1488,Sri Ramachandra Hospital,Trichy,Yes
+R01050,23,Male,A+,Heart,HLA-A02-B07,Heart Failure,Low,941,CMC Vellore,Coimbatore,Yes
+R01051,34,Male,A-,Heart,HLA-A02-B07,Heart Failure,Critical,741,AIIMS Delhi,Bangalore,Yes
+R01052,68,Male,O+,Lung,HLA-A02-B07,Lung Disease,Critical,1282,CMC Vellore,Salem,No
+R01053,74,Female,O-,Lung,HLA-A03-B15,Lung Disease,Medium,612,Apollo Hospital,Madurai,Yes
+R01054,39,Female,O-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,1069,Kauvery Hospital,Coimbatore,Yes
+R01055,19,Male,B+,Pancreas,HLA-A11-B35,Pancreatic Disease,High,236,AIIMS Delhi,Chennai,Yes
+R01056,32,Male,B+,Liver,HLA-A24-B44,Liver Failure,High,987,AIIMS Delhi,Coimbatore,Yes
+R01057,59,Female,O-,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,1050,Sri Ramachandra Hospital,Salem,Yes
+R01058,30,Female,O+,Liver,HLA-A02-B07,Liver Failure,High,340,AIIMS Delhi,Hyderabad,No
+R01059,45,Female,AB-,Lung,HLA-A02-B07,Lung Disease,Critical,880,AIIMS Delhi,Delhi,Yes
+R01060,75,Male,O-,Heart,HLA-A03-B15,Heart Failure,Low,1048,Kauvery Hospital,Delhi,No
+R01061,56,Female,O+,Heart,HLA-A01-B08,Heart Failure,Low,369,MIOT Hospital,Bangalore,Yes
+R01062,33,Male,B-,Heart,HLA-A26-B40,Heart Failure,High,298,MIOT Hospital,Coimbatore,Yes
+R01063,62,Male,AB-,Heart,HLA-A11-B35,Heart Failure,Critical,1163,MIOT Hospital,Salem,Yes
+R01064,36,Male,B-,Lung,HLA-A02-B07,Lung Disease,High,1467,CMC Vellore,Delhi,No
+R01065,38,Female,B-,Lung,HLA-A11-B35,Lung Disease,Low,1012,Global Hospital,Chennai,Yes
+R01066,25,Male,O-,Lung,HLA-A03-B15,Lung Disease,High,1211,Sri Ramachandra Hospital,Salem,Yes
+R01067,19,Male,O-,Heart,HLA-A24-B44,Heart Failure,Medium,825,Apollo Hospital,Mumbai,Yes
+R01068,59,Male,A-,Heart,HLA-A33-B58,Heart Failure,Low,851,Kauvery Hospital,Trichy,Yes
+R01069,43,Male,AB-,Heart,HLA-A33-B58,Heart Failure,Low,806,Kauvery Hospital,Hyderabad,No
+R01070,71,Female,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,98,Apollo Hospital,Madurai,Yes
+R01071,73,Female,B-,Heart,HLA-A03-B15,Heart Failure,Low,392,MIOT Hospital,Mumbai,Yes
+R01072,34,Male,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,154,Kauvery Hospital,Vellore,No
+R01073,62,Male,B+,Heart,HLA-A33-B58,Heart Failure,Low,259,MIOT Hospital,Madurai,No
+R01074,60,Male,B-,Lung,HLA-A33-B58,Lung Disease,Critical,575,MIOT Hospital,Hyderabad,Yes
+R01075,34,Female,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,1351,AIIMS Delhi,Coimbatore,Yes
+R01076,21,Male,A+,Lung,HLA-A11-B35,Lung Disease,Critical,789,AIIMS Delhi,Hyderabad,Yes
+R01077,31,Female,AB+,Heart,HLA-A33-B58,Heart Failure,Medium,1034,CMC Vellore,Madurai,Yes
+R01078,42,Female,B-,Heart,HLA-A30-B18,Heart Failure,Medium,141,Kauvery Hospital,Bangalore,Yes
+R01079,73,Male,B+,Heart,HLA-A33-B58,Heart Failure,Low,226,AIIMS Delhi,Chennai,No
+R01080,35,Male,O-,Liver,HLA-A33-B58,Liver Failure,High,544,CMC Vellore,Mumbai,Yes
+R01081,45,Male,B+,Heart,HLA-A30-B18,Heart Failure,Critical,1041,MIOT Hospital,Chennai,No
+R01082,41,Male,A+,Heart,HLA-A30-B18,Heart Failure,Critical,398,Kauvery Hospital,Salem,No
+R01083,56,Female,O-,Liver,HLA-A30-B18,Liver Failure,Low,1396,Apollo Hospital,Salem,Yes
+R01084,25,Male,A+,Liver,HLA-A24-B44,Liver Failure,Medium,135,CMC Vellore,Trichy,Yes
+R01085,62,Female,O+,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,451,Kauvery Hospital,Hyderabad,Yes
+R01086,68,Male,AB-,Liver,HLA-A24-B44,Liver Failure,High,7,CMC Vellore,Madurai,No
+R01087,72,Male,B+,Heart,HLA-A26-B40,Heart Failure,Low,342,Fortis Hospital,Vellore,No
+R01088,18,Female,O+,Liver,HLA-A26-B40,Liver Failure,Low,364,Kauvery Hospital,Coimbatore,Yes
+R01089,56,Female,O-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,507,Global Hospital,Coimbatore,Yes
+R01090,54,Female,B-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,193,CMC Vellore,Trichy,Yes
+R01091,49,Female,AB+,Lung,HLA-A33-B58,Lung Disease,High,747,Global Hospital,Chennai,Yes
+R01092,63,Female,O-,Heart,HLA-A02-B07,Heart Failure,High,1405,Apollo Hospital,Madurai,No
+R01093,60,Male,AB-,Liver,HLA-A33-B58,Liver Failure,Low,501,Sri Ramachandra Hospital,Vellore,Yes
+R01094,30,Female,A-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,1080,Fortis Hospital,Trichy,Yes
+R01095,43,Female,AB+,Heart,HLA-A24-B44,Heart Failure,Medium,85,MIOT Hospital,Delhi,Yes
+R01096,68,Female,AB-,Lung,HLA-A24-B44,Lung Disease,Low,18,Global Hospital,Madurai,No
+R01097,51,Female,B+,Liver,HLA-A24-B44,Liver Failure,Critical,591,CMC Vellore,Trichy,Yes
+R01098,20,Male,AB+,Lung,HLA-A02-B07,Lung Disease,Low,1001,Kauvery Hospital,Chennai,No
+R01099,60,Male,A+,Heart,HLA-A24-B44,Heart Failure,Medium,718,Kauvery Hospital,Mumbai,Yes
+R01100,63,Female,B+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Critical,1199,CMC Vellore,Trichy,Yes
+R01101,48,Female,B-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,818,CMC Vellore,Trichy,Yes
+R01102,37,Male,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,1400,AIIMS Delhi,Trichy,Yes
+R01103,53,Male,AB+,Lung,HLA-A24-B44,Lung Disease,Low,609,Global Hospital,Mumbai,Yes
+R01104,68,Female,A-,Lung,HLA-A03-B15,Lung Disease,Critical,1422,MIOT Hospital,Mumbai,Yes
+R01105,40,Female,O-,Lung,HLA-A30-B18,Lung Disease,Critical,945,Apollo Hospital,Mumbai,Yes
+R01106,23,Male,AB+,Lung,HLA-A11-B35,Lung Disease,High,261,Kauvery Hospital,Chennai,No
+R01107,43,Male,O-,Liver,HLA-A33-B58,Liver Failure,Low,174,Apollo Hospital,Trichy,Yes
+R01108,56,Male,AB+,Heart,HLA-A33-B58,Heart Failure,High,125,CMC Vellore,Delhi,Yes
+R01109,51,Male,O-,Liver,HLA-A03-B15,Liver Failure,Medium,1384,Fortis Hospital,Trichy,Yes
+R01110,69,Female,B-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,1,Fortis Hospital,Delhi,Yes
+R01111,24,Male,B-,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,51,Global Hospital,Bangalore,Yes
+R01112,37,Female,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,1120,Kauvery Hospital,Delhi,No
+R01113,25,Female,B+,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,291,AIIMS Delhi,Madurai,Yes
+R01114,48,Female,AB+,Lung,HLA-A02-B07,Lung Disease,Critical,753,Kauvery Hospital,Bangalore,No
+R01115,47,Female,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,581,Global Hospital,Coimbatore,No
+R01116,55,Female,A+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,727,Fortis Hospital,Hyderabad,No
+R01117,18,Male,AB-,Heart,HLA-A11-B35,Heart Failure,High,1447,Sri Ramachandra Hospital,Mumbai,Yes
+R01118,59,Male,AB-,Liver,HLA-A26-B40,Liver Failure,Critical,1465,Fortis Hospital,Trichy,Yes
+R01119,22,Female,O+,Lung,HLA-A33-B58,Lung Disease,Medium,1180,Kauvery Hospital,Madurai,Yes
+R01120,55,Female,O+,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,61,Fortis Hospital,Salem,Yes
+R01121,49,Female,AB-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,216,Fortis Hospital,Bangalore,No
+R01122,21,Female,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,905,MIOT Hospital,Delhi,Yes
+R01123,38,Male,O-,Liver,HLA-A30-B18,Liver Failure,Medium,1306,AIIMS Delhi,Salem,Yes
+R01124,46,Female,B-,Lung,HLA-A11-B35,Lung Disease,Medium,889,AIIMS Delhi,Coimbatore,Yes
+R01125,31,Male,B+,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,836,CMC Vellore,Vellore,Yes
+R01126,49,Male,B-,Pancreas,HLA-A33-B58,Pancreatic Disease,High,731,Fortis Hospital,Coimbatore,No
+R01127,58,Female,A-,Lung,HLA-A02-B07,Lung Disease,Medium,1060,Kauvery Hospital,Coimbatore,Yes
+R01128,32,Male,AB-,Lung,HLA-A01-B08,Lung Disease,Medium,594,Kauvery Hospital,Bangalore,Yes
+R01129,73,Male,AB+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,1061,Kauvery Hospital,Bangalore,Yes
+R01130,62,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,67,MIOT Hospital,Bangalore,Yes
+R01131,39,Male,B+,Liver,HLA-A11-B35,Liver Failure,High,1359,Apollo Hospital,Salem,No
+R01132,69,Male,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,1226,CMC Vellore,Mumbai,No
+R01133,35,Male,A-,Liver,HLA-A01-B08,Liver Failure,Critical,1040,AIIMS Delhi,Vellore,No
+R01134,37,Male,A+,Lung,HLA-A01-B08,Lung Disease,Low,402,Sri Ramachandra Hospital,Chennai,No
+R01135,42,Female,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,1126,Fortis Hospital,Coimbatore,No
+R01136,75,Female,AB-,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,895,Apollo Hospital,Salem,Yes
+R01137,55,Male,B-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,31,AIIMS Delhi,Chennai,Yes
+R01138,26,Female,B+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,644,MIOT Hospital,Delhi,Yes
+R01139,26,Female,O-,Heart,HLA-A02-B07,Heart Failure,Low,157,Kauvery Hospital,Mumbai,Yes
+R01140,63,Female,B-,Lung,HLA-A33-B58,Lung Disease,High,752,Kauvery Hospital,Salem,Yes
+R01141,62,Male,A+,Heart,HLA-A26-B40,Heart Failure,Critical,1445,Global Hospital,Trichy,Yes
+R01142,26,Male,AB+,Liver,HLA-A11-B35,Liver Failure,Low,763,Fortis Hospital,Chennai,Yes
+R01143,59,Female,A-,Lung,HLA-A01-B08,Lung Disease,Critical,70,Kauvery Hospital,Trichy,No
+R01144,70,Male,A+,Heart,HLA-A24-B44,Heart Failure,Critical,1015,Apollo Hospital,Bangalore,No
+R01145,20,Male,B-,Lung,HLA-A30-B18,Lung Disease,Medium,1352,Sri Ramachandra Hospital,Mumbai,Yes
+R01146,20,Female,A+,Heart,HLA-A26-B40,Heart Failure,High,1211,AIIMS Delhi,Chennai,Yes
+R01147,45,Female,A+,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,1478,Kauvery Hospital,Mumbai,No
+R01148,54,Female,B+,Lung,HLA-A30-B18,Lung Disease,Critical,488,Fortis Hospital,Chennai,Yes
+R01149,23,Male,AB+,Heart,HLA-A26-B40,Heart Failure,Critical,80,Kauvery Hospital,Vellore,Yes
+R01150,68,Male,A-,Heart,HLA-A24-B44,Heart Failure,High,542,Fortis Hospital,Hyderabad,No
+R01151,46,Male,O-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,984,AIIMS Delhi,Bangalore,Yes
+R01152,23,Female,AB-,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,369,Kauvery Hospital,Trichy,Yes
+R01153,26,Male,B+,Lung,HLA-A03-B15,Lung Disease,Low,477,CMC Vellore,Chennai,Yes
+R01154,73,Female,AB-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,125,Kauvery Hospital,Trichy,Yes
+R01155,52,Male,B-,Heart,HLA-A26-B40,Heart Failure,Low,159,Global Hospital,Coimbatore,Yes
+R01156,31,Female,AB-,Liver,HLA-A30-B18,Liver Failure,Low,1315,Sri Ramachandra Hospital,Trichy,Yes
+R01157,38,Female,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,964,Kauvery Hospital,Delhi,Yes
+R01158,41,Male,AB+,Liver,HLA-A03-B15,Liver Failure,Low,218,AIIMS Delhi,Vellore,Yes
+R01159,42,Male,B+,Liver,HLA-A30-B18,Liver Failure,Low,159,AIIMS Delhi,Delhi,No
+R01160,64,Male,A+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,650,Kauvery Hospital,Salem,Yes
+R01161,39,Male,AB-,Liver,HLA-A11-B35,Liver Failure,Critical,645,CMC Vellore,Salem,No
+R01162,41,Male,AB-,Lung,HLA-A02-B07,Lung Disease,High,1339,Global Hospital,Delhi,Yes
+R01163,68,Female,B-,Lung,HLA-A03-B15,Lung Disease,Medium,835,Fortis Hospital,Delhi,Yes
+R01164,39,Female,A-,Heart,HLA-A02-B07,Heart Failure,Critical,863,Fortis Hospital,Delhi,No
+R01165,75,Male,O-,Liver,HLA-A01-B08,Liver Failure,Medium,248,Sri Ramachandra Hospital,Trichy,No
+R01166,26,Male,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,150,Fortis Hospital,Mumbai,No
+R01167,40,Male,O+,Lung,HLA-A11-B35,Lung Disease,High,244,MIOT Hospital,Vellore,Yes
+R01168,22,Female,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,893,Kauvery Hospital,Hyderabad,Yes
+R01169,64,Male,B+,Liver,HLA-A01-B08,Liver Failure,High,1381,Global Hospital,Bangalore,Yes
+R01170,29,Female,A-,Lung,HLA-A11-B35,Lung Disease,High,1011,MIOT Hospital,Chennai,No
+R01171,38,Female,AB-,Heart,HLA-A03-B15,Heart Failure,Medium,86,AIIMS Delhi,Bangalore,Yes
+R01172,74,Female,A-,Pancreas,HLA-A26-B40,Pancreatic Disease,High,340,CMC Vellore,Trichy,Yes
+R01173,46,Male,B+,Lung,HLA-A24-B44,Lung Disease,High,1242,CMC Vellore,Salem,Yes
+R01174,24,Male,B+,Liver,HLA-A01-B08,Liver Failure,Low,1106,AIIMS Delhi,Chennai,No
+R01175,41,Male,AB+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,1067,Fortis Hospital,Hyderabad,Yes
+R01176,63,Male,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,539,CMC Vellore,Madurai,Yes
+R01177,40,Male,B-,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,321,MIOT Hospital,Trichy,No
+R01178,61,Male,AB-,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,206,MIOT Hospital,Salem,Yes
+R01179,33,Male,O+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,544,Global Hospital,Madurai,No
+R01180,64,Female,AB+,Liver,HLA-A03-B15,Liver Failure,Medium,1301,CMC Vellore,Mumbai,Yes
+R01181,45,Male,O-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,80,Sri Ramachandra Hospital,Trichy,No
+R01182,33,Female,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,High,475,Kauvery Hospital,Hyderabad,No
+R01183,56,Female,O-,Lung,HLA-A24-B44,Lung Disease,Low,449,CMC Vellore,Trichy,No
+R01184,38,Male,O+,Lung,HLA-A02-B07,Lung Disease,Medium,952,MIOT Hospital,Coimbatore,Yes
+R01185,63,Male,O-,Lung,HLA-A33-B58,Lung Disease,Critical,1408,AIIMS Delhi,Chennai,Yes
+R01186,50,Male,O+,Heart,HLA-A01-B08,Heart Failure,High,536,MIOT Hospital,Bangalore,No
+R01187,45,Female,AB+,Lung,HLA-A01-B08,Lung Disease,High,995,AIIMS Delhi,Vellore,Yes
+R01188,46,Female,B-,Heart,HLA-A03-B15,Heart Failure,Medium,1281,CMC Vellore,Delhi,Yes
+R01189,56,Male,A+,Liver,HLA-A30-B18,Liver Failure,Low,1444,MIOT Hospital,Vellore,Yes
+R01190,51,Male,AB-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,1098,Sri Ramachandra Hospital,Salem,Yes
+R01191,41,Female,O+,Liver,HLA-A11-B35,Liver Failure,Medium,28,Apollo Hospital,Chennai,Yes
+R01192,43,Female,A+,Pancreas,HLA-A03-B15,Pancreatic Disease,High,618,Apollo Hospital,Salem,Yes
+R01193,35,Male,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Medium,553,CMC Vellore,Coimbatore,Yes
+R01194,64,Female,A+,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,196,Sri Ramachandra Hospital,Salem,Yes
+R01195,45,Male,AB+,Heart,HLA-A24-B44,Heart Failure,Critical,416,CMC Vellore,Trichy,No
+R01196,36,Female,A-,Lung,HLA-A11-B35,Lung Disease,Critical,1149,Kauvery Hospital,Hyderabad,Yes
+R01197,50,Male,O+,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,1491,Sri Ramachandra Hospital,Vellore,Yes
+R01198,32,Male,O+,Lung,HLA-A11-B35,Lung Disease,Critical,758,Global Hospital,Delhi,Yes
+R01199,39,Male,A-,Heart,HLA-A02-B07,Heart Failure,Medium,426,Global Hospital,Delhi,Yes
+R01200,27,Female,O-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,1011,Kauvery Hospital,Bangalore,Yes
+R01201,71,Male,A+,Heart,HLA-A26-B40,Heart Failure,Critical,12,Kauvery Hospital,Salem,No
+R01202,49,Female,B-,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,1452,Global Hospital,Mumbai,Yes
+R01203,45,Male,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,332,CMC Vellore,Madurai,Yes
+R01204,73,Male,A+,Lung,HLA-A30-B18,Lung Disease,Critical,350,Global Hospital,Madurai,No
+R01205,18,Female,A-,Lung,HLA-A30-B18,Lung Disease,High,1475,Kauvery Hospital,Mumbai,Yes
+R01206,74,Female,B+,Pancreas,HLA-A03-B15,Pancreatic Disease,High,1072,AIIMS Delhi,Delhi,Yes
+R01207,56,Female,O-,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,677,Fortis Hospital,Madurai,No
+R01208,38,Female,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,138,Apollo Hospital,Trichy,Yes
+R01209,62,Male,O-,Liver,HLA-A26-B40,Liver Failure,Low,126,Global Hospital,Delhi,Yes
+R01210,40,Male,AB-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,563,Kauvery Hospital,Bangalore,Yes
+R01211,57,Female,AB+,Heart,HLA-A11-B35,Heart Failure,Low,1214,Fortis Hospital,Coimbatore,Yes
+R01212,29,Female,A-,Heart,HLA-A03-B15,Heart Failure,Critical,677,Kauvery Hospital,Delhi,No
+R01213,28,Male,B-,Liver,HLA-A11-B35,Liver Failure,Low,1260,Fortis Hospital,Madurai,Yes
+R01214,73,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Low,281,Global Hospital,Bangalore,No
+R01215,37,Male,B-,Heart,HLA-A30-B18,Heart Failure,Critical,790,Global Hospital,Vellore,Yes
+R01216,38,Male,B-,Pancreas,HLA-A03-B15,Pancreatic Disease,High,1457,Fortis Hospital,Bangalore,No
+R01217,62,Female,A-,Lung,HLA-A30-B18,Lung Disease,High,365,Apollo Hospital,Vellore,No
+R01218,64,Female,B-,Heart,HLA-A11-B35,Heart Failure,Critical,767,Fortis Hospital,Chennai,Yes
+R01219,41,Male,A+,Lung,HLA-A24-B44,Lung Disease,High,193,MIOT Hospital,Trichy,Yes
+R01220,35,Male,AB+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,90,Kauvery Hospital,Trichy,Yes
+R01221,70,Male,O-,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,356,Global Hospital,Mumbai,Yes
+R01222,41,Male,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,170,Sri Ramachandra Hospital,Coimbatore,Yes
+R01223,58,Male,AB-,Lung,HLA-A02-B07,Lung Disease,High,398,Apollo Hospital,Vellore,Yes
+R01224,75,Female,A+,Liver,HLA-A30-B18,Liver Failure,Critical,1368,Apollo Hospital,Coimbatore,Yes
+R01225,27,Female,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,92,Kauvery Hospital,Delhi,Yes
+R01226,44,Male,A+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,1149,MIOT Hospital,Coimbatore,Yes
+R01227,54,Male,O-,Lung,HLA-A02-B07,Lung Disease,Low,186,Fortis Hospital,Coimbatore,Yes
+R01228,55,Male,B+,Heart,HLA-A01-B08,Heart Failure,Medium,1307,MIOT Hospital,Hyderabad,Yes
+R01229,37,Male,B+,Liver,HLA-A24-B44,Liver Failure,Low,777,Kauvery Hospital,Madurai,Yes
+R01230,54,Female,O+,Liver,HLA-A11-B35,Liver Failure,Medium,559,AIIMS Delhi,Madurai,Yes
+R01231,62,Female,AB+,Heart,HLA-A02-B07,Heart Failure,Critical,728,MIOT Hospital,Vellore,No
+R01232,20,Female,B+,Liver,HLA-A11-B35,Liver Failure,Critical,711,Kauvery Hospital,Salem,Yes
+R01233,53,Female,A-,Pancreas,HLA-A11-B35,Pancreatic Disease,High,447,Global Hospital,Trichy,Yes
+R01234,51,Male,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,1202,MIOT Hospital,Vellore,No
+R01235,75,Male,AB-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,17,Fortis Hospital,Bangalore,No
+R01236,39,Male,B+,Heart,HLA-A26-B40,Heart Failure,High,334,Global Hospital,Mumbai,Yes
+R01237,46,Female,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,499,Kauvery Hospital,Vellore,Yes
+R01238,61,Female,AB+,Lung,HLA-A01-B08,Lung Disease,Medium,1039,CMC Vellore,Bangalore,No
+R01239,54,Female,A+,Heart,HLA-A03-B15,Heart Failure,Medium,616,AIIMS Delhi,Delhi,Yes
+R01240,60,Female,A+,Liver,HLA-A02-B07,Liver Failure,High,290,MIOT Hospital,Hyderabad,No
+R01241,47,Male,B+,Liver,HLA-A11-B35,Liver Failure,Medium,618,Kauvery Hospital,Coimbatore,Yes
+R01242,72,Male,O+,Liver,HLA-A02-B07,Liver Failure,Medium,316,MIOT Hospital,Chennai,No
+R01243,40,Male,O-,Liver,HLA-A30-B18,Liver Failure,Medium,968,Sri Ramachandra Hospital,Hyderabad,Yes
+R01244,42,Male,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,670,Kauvery Hospital,Bangalore,No
+R01245,22,Female,O-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,1247,Fortis Hospital,Salem,Yes
+R01246,39,Male,O+,Heart,HLA-A02-B07,Heart Failure,Medium,283,Global Hospital,Salem,Yes
+R01247,37,Female,A-,Liver,HLA-A26-B40,Liver Failure,Critical,1340,Fortis Hospital,Bangalore,Yes
+R01248,37,Female,O-,Heart,HLA-A01-B08,Heart Failure,High,864,Fortis Hospital,Madurai,No
+R01249,71,Male,O-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,1406,CMC Vellore,Bangalore,Yes
+R01250,38,Male,O+,Liver,HLA-A33-B58,Liver Failure,Low,996,Sri Ramachandra Hospital,Bangalore,Yes
+R01251,45,Female,A-,Heart,HLA-A33-B58,Heart Failure,High,970,MIOT Hospital,Mumbai,Yes
+R01252,68,Male,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,308,Apollo Hospital,Vellore,Yes
+R01253,50,Female,O+,Liver,HLA-A01-B08,Liver Failure,Critical,577,Apollo Hospital,Coimbatore,No
+R01254,41,Male,AB-,Lung,HLA-A24-B44,Lung Disease,Critical,692,Kauvery Hospital,Chennai,Yes
+R01255,36,Female,O+,Liver,HLA-A01-B08,Liver Failure,Critical,665,Kauvery Hospital,Chennai,Yes
+R01256,64,Male,O+,Heart,HLA-A11-B35,Heart Failure,Medium,173,CMC Vellore,Madurai,Yes
+R01257,45,Female,AB-,Lung,HLA-A33-B58,Lung Disease,Medium,1073,Global Hospital,Chennai,Yes
+R01258,41,Male,B+,Heart,HLA-A02-B07,Heart Failure,Critical,1050,CMC Vellore,Vellore,Yes
+R01259,43,Male,B+,Lung,HLA-A24-B44,Lung Disease,Low,888,CMC Vellore,Salem,Yes
+R01260,57,Male,A+,Heart,HLA-A26-B40,Heart Failure,Critical,441,Sri Ramachandra Hospital,Trichy,Yes
+R01261,50,Male,O+,Heart,HLA-A03-B15,Heart Failure,High,559,Apollo Hospital,Bangalore,Yes
+R01262,68,Female,B+,Kidney,HLA-A24-B44,Chronic Kidney Disease,High,948,MIOT Hospital,Coimbatore,Yes
+R01263,19,Female,B-,Liver,HLA-A02-B07,Liver Failure,High,1492,Global Hospital,Delhi,No
+R01264,39,Female,O-,Pancreas,HLA-A01-B08,Pancreatic Disease,High,698,MIOT Hospital,Vellore,No
+R01265,47,Female,B-,Liver,HLA-A03-B15,Liver Failure,Critical,524,Sri Ramachandra Hospital,Chennai,Yes
+R01266,53,Female,A-,Lung,HLA-A11-B35,Lung Disease,High,623,Kauvery Hospital,Vellore,No
+R01267,19,Male,B+,Lung,HLA-A26-B40,Lung Disease,Critical,851,Apollo Hospital,Trichy,No
+R01268,42,Male,O+,Liver,HLA-A02-B07,Liver Failure,Low,811,AIIMS Delhi,Salem,Yes
+R01269,36,Male,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,721,AIIMS Delhi,Bangalore,Yes
+R01270,67,Female,A-,Heart,HLA-A26-B40,Heart Failure,Critical,462,Sri Ramachandra Hospital,Hyderabad,No
+R01271,70,Female,B+,Heart,HLA-A03-B15,Heart Failure,Critical,591,Apollo Hospital,Mumbai,Yes
+R01272,59,Male,A-,Lung,HLA-A30-B18,Lung Disease,Critical,857,Sri Ramachandra Hospital,Salem,Yes
+R01273,32,Male,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,666,AIIMS Delhi,Madurai,No
+R01274,41,Male,O+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,938,MIOT Hospital,Salem,Yes
+R01275,63,Male,AB-,Lung,HLA-A03-B15,Lung Disease,High,133,Apollo Hospital,Salem,No
+R01276,33,Female,B-,Lung,HLA-A03-B15,Lung Disease,Critical,1025,CMC Vellore,Delhi,Yes
+R01277,33,Female,A-,Liver,HLA-A01-B08,Liver Failure,Low,1397,Sri Ramachandra Hospital,Mumbai,No
+R01278,22,Female,AB+,Lung,HLA-A02-B07,Lung Disease,Low,899,Global Hospital,Chennai,Yes
+R01279,71,Male,AB-,Lung,HLA-A30-B18,Lung Disease,Critical,878,CMC Vellore,Coimbatore,Yes
+R01280,66,Male,B+,Heart,HLA-A26-B40,Heart Failure,Critical,1345,MIOT Hospital,Madurai,Yes
+R01281,31,Female,A-,Lung,HLA-A26-B40,Lung Disease,Low,939,Global Hospital,Salem,Yes
+R01282,36,Female,AB-,Heart,HLA-A33-B58,Heart Failure,High,1164,Kauvery Hospital,Delhi,Yes
+R01283,27,Female,A+,Liver,HLA-A11-B35,Liver Failure,High,1155,MIOT Hospital,Trichy,Yes
+R01284,54,Female,O-,Liver,HLA-A33-B58,Liver Failure,High,317,Fortis Hospital,Madurai,Yes
+R01285,34,Male,A+,Lung,HLA-A11-B35,Lung Disease,High,304,Apollo Hospital,Trichy,Yes
+R01286,65,Female,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,High,1319,Fortis Hospital,Delhi,Yes
+R01287,41,Female,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,360,Global Hospital,Bangalore,Yes
+R01288,39,Male,AB+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,308,Kauvery Hospital,Delhi,Yes
+R01289,40,Female,O-,Liver,HLA-A01-B08,Liver Failure,Medium,415,MIOT Hospital,Chennai,No
+R01290,39,Male,AB+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,915,AIIMS Delhi,Salem,Yes
+R01291,62,Male,B-,Liver,HLA-A33-B58,Liver Failure,Medium,83,Kauvery Hospital,Mumbai,Yes
+R01292,65,Male,A-,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,125,AIIMS Delhi,Salem,Yes
+R01293,66,Female,O-,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,654,CMC Vellore,Salem,No
+R01294,46,Male,O-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,1111,AIIMS Delhi,Delhi,No
+R01295,54,Male,O+,Heart,HLA-A02-B07,Heart Failure,Critical,1317,AIIMS Delhi,Delhi,No
+R01296,34,Female,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,674,Global Hospital,Mumbai,Yes
+R01297,34,Male,AB-,Heart,HLA-A24-B44,Heart Failure,High,1282,Global Hospital,Coimbatore,Yes
+R01298,18,Female,O-,Lung,HLA-A33-B58,Lung Disease,Medium,367,CMC Vellore,Bangalore,Yes
+R01299,73,Female,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,223,AIIMS Delhi,Salem,Yes
+R01300,37,Female,O-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,1249,AIIMS Delhi,Delhi,Yes
+R01301,28,Male,O+,Heart,HLA-A03-B15,Heart Failure,Medium,1250,Fortis Hospital,Vellore,No
+R01302,68,Female,AB+,Pancreas,HLA-A11-B35,Pancreatic Disease,High,967,Kauvery Hospital,Vellore,Yes
+R01303,39,Female,AB-,Heart,HLA-A33-B58,Heart Failure,High,872,Sri Ramachandra Hospital,Bangalore,Yes
+R01304,21,Female,AB-,Lung,HLA-A03-B15,Lung Disease,Critical,562,Apollo Hospital,Salem,Yes
+R01305,36,Female,A+,Heart,HLA-A26-B40,Heart Failure,Critical,784,MIOT Hospital,Mumbai,Yes
+R01306,57,Female,AB+,Liver,HLA-A02-B07,Liver Failure,Low,498,Fortis Hospital,Vellore,No
+R01307,48,Male,O+,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,574,Sri Ramachandra Hospital,Chennai,Yes
+R01308,58,Female,AB+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,583,CMC Vellore,Hyderabad,Yes
+R01309,38,Female,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1176,AIIMS Delhi,Mumbai,Yes
+R01310,33,Female,AB+,Lung,HLA-A24-B44,Lung Disease,Low,288,CMC Vellore,Vellore,Yes
+R01311,65,Male,B+,Lung,HLA-A26-B40,Lung Disease,Critical,467,Global Hospital,Vellore,Yes
+R01312,61,Female,AB+,Liver,HLA-A01-B08,Liver Failure,Medium,245,Sri Ramachandra Hospital,Bangalore,No
+R01313,69,Male,A+,Lung,HLA-A26-B40,Lung Disease,Low,1159,Sri Ramachandra Hospital,Chennai,Yes
+R01314,49,Female,AB-,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,1158,CMC Vellore,Mumbai,Yes
+R01315,28,Male,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,1401,Sri Ramachandra Hospital,Trichy,No
+R01316,74,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Medium,1327,MIOT Hospital,Hyderabad,No
+R01317,43,Female,A+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,18,AIIMS Delhi,Vellore,No
+R01318,34,Male,AB-,Liver,HLA-A33-B58,Liver Failure,Medium,1177,MIOT Hospital,Delhi,Yes
+R01319,67,Male,B-,Liver,HLA-A24-B44,Liver Failure,Medium,207,Apollo Hospital,Mumbai,Yes
+R01320,52,Female,A-,Liver,HLA-A26-B40,Liver Failure,High,472,AIIMS Delhi,Salem,Yes
+R01321,45,Female,B-,Liver,HLA-A11-B35,Liver Failure,High,56,Fortis Hospital,Hyderabad,Yes
+R01322,19,Female,B-,Lung,HLA-A30-B18,Lung Disease,Low,916,Global Hospital,Bangalore,Yes
+R01323,67,Female,A-,Liver,HLA-A02-B07,Liver Failure,Medium,1038,CMC Vellore,Madurai,Yes
+R01324,49,Female,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Medium,431,CMC Vellore,Mumbai,Yes
+R01325,34,Male,O-,Lung,HLA-A01-B08,Lung Disease,Low,779,Sri Ramachandra Hospital,Bangalore,Yes
+R01326,41,Female,A-,Heart,HLA-A30-B18,Heart Failure,High,470,CMC Vellore,Bangalore,No
+R01327,35,Female,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,364,Apollo Hospital,Madurai,Yes
+R01328,62,Female,A+,Liver,HLA-A01-B08,Liver Failure,Medium,1354,Kauvery Hospital,Vellore,No
+R01329,44,Male,B+,Liver,HLA-A03-B15,Liver Failure,Medium,748,CMC Vellore,Madurai,Yes
+R01330,31,Female,O+,Lung,HLA-A26-B40,Lung Disease,High,1274,MIOT Hospital,Chennai,Yes
+R01331,19,Female,A+,Heart,HLA-A03-B15,Heart Failure,Critical,96,Sri Ramachandra Hospital,Delhi,Yes
+R01332,24,Male,AB-,Liver,HLA-A11-B35,Liver Failure,Low,860,CMC Vellore,Coimbatore,No
+R01333,44,Female,B+,Lung,HLA-A01-B08,Lung Disease,High,976,Global Hospital,Trichy,Yes
+R01334,60,Female,A-,Heart,HLA-A33-B58,Heart Failure,Critical,1170,AIIMS Delhi,Madurai,Yes
+R01335,26,Male,B-,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,1469,Sri Ramachandra Hospital,Trichy,Yes
+R01336,32,Female,B+,Liver,HLA-A24-B44,Liver Failure,High,1456,Global Hospital,Delhi,Yes
+R01337,38,Female,AB-,Liver,HLA-A03-B15,Liver Failure,Low,789,Apollo Hospital,Salem,Yes
+R01338,27,Male,B-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,661,Apollo Hospital,Delhi,No
+R01339,72,Female,B-,Lung,HLA-A30-B18,Lung Disease,Critical,440,Global Hospital,Delhi,Yes
+R01340,46,Male,AB+,Pancreas,HLA-A26-B40,Pancreatic Disease,High,382,Kauvery Hospital,Vellore,No
+R01341,47,Male,AB-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,749,Sri Ramachandra Hospital,Chennai,Yes
+R01342,32,Female,A-,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,259,MIOT Hospital,Trichy,No
+R01343,53,Male,B+,Lung,HLA-A30-B18,Lung Disease,Medium,291,AIIMS Delhi,Chennai,Yes
+R01344,51,Male,A+,Heart,HLA-A26-B40,Heart Failure,Medium,1421,Fortis Hospital,Vellore,Yes
+R01345,61,Male,B-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,415,Kauvery Hospital,Chennai,No
+R01346,42,Female,O-,Heart,HLA-A33-B58,Heart Failure,High,279,Kauvery Hospital,Chennai,Yes
+R01347,63,Female,B-,Heart,HLA-A02-B07,Heart Failure,Low,841,Fortis Hospital,Madurai,No
+R01348,66,Male,O+,Liver,HLA-A03-B15,Liver Failure,Critical,801,AIIMS Delhi,Salem,Yes
+R01349,32,Female,B+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,1487,Fortis Hospital,Salem,No
+R01350,61,Female,AB-,Liver,HLA-A01-B08,Liver Failure,Low,1067,Kauvery Hospital,Mumbai,Yes
+R01351,48,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,1109,Global Hospital,Madurai,Yes
+R01352,74,Female,A+,Heart,HLA-A30-B18,Heart Failure,High,232,Global Hospital,Bangalore,Yes
+R01353,66,Female,B-,Lung,HLA-A02-B07,Lung Disease,Low,1499,MIOT Hospital,Salem,No
+R01354,44,Male,A-,Lung,HLA-A24-B44,Lung Disease,High,516,MIOT Hospital,Bangalore,Yes
+R01355,23,Male,A-,Heart,HLA-A33-B58,Heart Failure,Medium,1200,Global Hospital,Salem,No
+R01356,24,Female,O+,Heart,HLA-A30-B18,Heart Failure,Low,1233,CMC Vellore,Delhi,Yes
+R01357,24,Male,B-,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,807,Apollo Hospital,Vellore,No
+R01358,54,Male,O+,Lung,HLA-A30-B18,Lung Disease,Low,443,Fortis Hospital,Chennai,Yes
+R01359,36,Female,A+,Kidney,HLA-A33-B58,Chronic Kidney Disease,High,735,MIOT Hospital,Vellore,Yes
+R01360,46,Male,AB-,Heart,HLA-A33-B58,Heart Failure,High,329,AIIMS Delhi,Mumbai,Yes
+R01361,66,Female,B+,Lung,HLA-A33-B58,Lung Disease,Low,684,MIOT Hospital,Delhi,Yes
+R01362,71,Female,A-,Heart,HLA-A02-B07,Heart Failure,Critical,641,Global Hospital,Madurai,No
+R01363,34,Female,AB-,Liver,HLA-A26-B40,Liver Failure,Critical,741,Fortis Hospital,Madurai,Yes
+R01364,25,Male,AB+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,816,CMC Vellore,Salem,Yes
+R01365,63,Female,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1092,MIOT Hospital,Bangalore,Yes
+R01366,24,Female,A-,Lung,HLA-A26-B40,Lung Disease,Medium,907,Apollo Hospital,Salem,Yes
+R01367,19,Female,B-,Heart,HLA-A11-B35,Heart Failure,Medium,463,Global Hospital,Salem,Yes
+R01368,36,Male,A+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,849,AIIMS Delhi,Bangalore,Yes
+R01369,55,Female,O+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,540,Sri Ramachandra Hospital,Vellore,Yes
+R01370,38,Female,A-,Liver,HLA-A03-B15,Liver Failure,High,1439,AIIMS Delhi,Mumbai,Yes
+R01371,68,Female,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,1475,MIOT Hospital,Mumbai,Yes
+R01372,35,Male,O-,Lung,HLA-A33-B58,Lung Disease,Critical,1211,Sri Ramachandra Hospital,Coimbatore,Yes
+R01373,53,Female,A+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,1447,Fortis Hospital,Coimbatore,Yes
+R01374,64,Female,AB+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,883,Fortis Hospital,Bangalore,Yes
+R01375,37,Female,AB-,Lung,HLA-A11-B35,Lung Disease,Critical,296,MIOT Hospital,Chennai,Yes
+R01376,55,Male,A-,Heart,HLA-A02-B07,Heart Failure,Critical,1496,Fortis Hospital,Salem,Yes
+R01377,67,Male,B+,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,1493,CMC Vellore,Vellore,Yes
+R01378,43,Female,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,284,MIOT Hospital,Madurai,Yes
+R01379,40,Male,O+,Heart,HLA-A24-B44,Heart Failure,Critical,186,Fortis Hospital,Trichy,No
+R01380,32,Female,A-,Liver,HLA-A26-B40,Liver Failure,Critical,193,Kauvery Hospital,Chennai,Yes
+R01381,21,Female,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,1084,Apollo Hospital,Chennai,Yes
+R01382,37,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Medium,387,Global Hospital,Madurai,Yes
+R01383,24,Male,AB-,Heart,HLA-A03-B15,Heart Failure,Critical,1447,Fortis Hospital,Mumbai,Yes
+R01384,19,Male,A-,Lung,HLA-A24-B44,Lung Disease,High,221,MIOT Hospital,Madurai,Yes
+R01385,49,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,1349,Sri Ramachandra Hospital,Hyderabad,Yes
+R01386,22,Female,B-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,491,Global Hospital,Salem,No
+R01387,40,Male,O-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,1359,MIOT Hospital,Mumbai,No
+R01388,59,Male,AB+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,918,AIIMS Delhi,Trichy,No
+R01389,45,Female,A-,Lung,HLA-A33-B58,Lung Disease,Low,1007,CMC Vellore,Vellore,No
+R01390,42,Female,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,1081,Apollo Hospital,Salem,Yes
+R01391,75,Male,AB-,Heart,HLA-A01-B08,Heart Failure,Low,97,Kauvery Hospital,Bangalore,Yes
+R01392,52,Male,O+,Heart,HLA-A03-B15,Heart Failure,High,1395,Apollo Hospital,Salem,Yes
+R01393,29,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Medium,1015,AIIMS Delhi,Delhi,Yes
+R01394,42,Male,A-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,493,MIOT Hospital,Madurai,No
+R01395,41,Female,A+,Liver,HLA-A03-B15,Liver Failure,Medium,1227,AIIMS Delhi,Delhi,Yes
+R01396,61,Female,B-,Lung,HLA-A24-B44,Lung Disease,Critical,1414,Apollo Hospital,Bangalore,No
+R01397,35,Male,O-,Lung,HLA-A24-B44,Lung Disease,Low,1284,Sri Ramachandra Hospital,Chennai,No
+R01398,60,Male,A-,Liver,HLA-A02-B07,Liver Failure,Low,326,Global Hospital,Coimbatore,Yes
+R01399,38,Male,AB+,Pancreas,HLA-A30-B18,Pancreatic Disease,High,1099,Kauvery Hospital,Trichy,Yes
+R01400,66,Male,O+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,1137,Global Hospital,Salem,Yes
+R01401,20,Female,O-,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,469,Apollo Hospital,Bangalore,Yes
+R01402,66,Male,B-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,898,Fortis Hospital,Hyderabad,Yes
+R01403,67,Male,B-,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,1165,Apollo Hospital,Madurai,Yes
+R01404,29,Female,O-,Heart,HLA-A11-B35,Heart Failure,Low,802,Sri Ramachandra Hospital,Madurai,Yes
+R01405,22,Male,B+,Pancreas,HLA-A11-B35,Pancreatic Disease,High,1348,Global Hospital,Chennai,No
+R01406,71,Male,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,1121,MIOT Hospital,Chennai,Yes
+R01407,44,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,79,Fortis Hospital,Coimbatore,Yes
+R01408,42,Male,A+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,460,Apollo Hospital,Delhi,Yes
+R01409,59,Female,O+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,921,AIIMS Delhi,Hyderabad,Yes
+R01410,58,Female,O-,Heart,HLA-A03-B15,Heart Failure,Critical,1099,MIOT Hospital,Salem,Yes
+R01411,58,Male,O+,Heart,HLA-A24-B44,Heart Failure,Medium,754,Apollo Hospital,Bangalore,Yes
+R01412,20,Female,O+,Liver,HLA-A11-B35,Liver Failure,Critical,257,MIOT Hospital,Salem,No
+R01413,74,Female,O-,Lung,HLA-A33-B58,Lung Disease,Critical,796,Global Hospital,Vellore,Yes
+R01414,60,Female,B+,Heart,HLA-A11-B35,Heart Failure,Medium,445,AIIMS Delhi,Delhi,Yes
+R01415,41,Female,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,High,438,Sri Ramachandra Hospital,Madurai,No
+R01416,52,Female,AB+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,409,AIIMS Delhi,Vellore,Yes
+R01417,51,Female,B+,Lung,HLA-A33-B58,Lung Disease,Low,1422,AIIMS Delhi,Bangalore,Yes
+R01418,65,Male,O+,Heart,HLA-A11-B35,Heart Failure,Medium,843,MIOT Hospital,Hyderabad,Yes
+R01419,66,Female,AB-,Liver,HLA-A01-B08,Liver Failure,Low,134,CMC Vellore,Chennai,Yes
+R01420,39,Male,AB-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,309,AIIMS Delhi,Trichy,Yes
+R01421,57,Female,O-,Heart,HLA-A33-B58,Heart Failure,High,1441,Fortis Hospital,Trichy,Yes
+R01422,69,Male,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,243,Sri Ramachandra Hospital,Madurai,No
+R01423,62,Male,A-,Heart,HLA-A03-B15,Heart Failure,Critical,199,Apollo Hospital,Madurai,No
+R01424,42,Female,B+,Lung,HLA-A01-B08,Lung Disease,High,904,Fortis Hospital,Hyderabad,Yes
+R01425,60,Female,AB-,Lung,HLA-A02-B07,Lung Disease,High,142,Fortis Hospital,Madurai,Yes
+R01426,27,Male,B-,Lung,HLA-A26-B40,Lung Disease,High,1457,CMC Vellore,Vellore,No
+R01427,57,Female,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,394,Kauvery Hospital,Mumbai,Yes
+R01428,38,Male,A+,Lung,HLA-A11-B35,Lung Disease,High,539,Global Hospital,Bangalore,Yes
+R01429,35,Female,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,268,Apollo Hospital,Delhi,Yes
+R01430,42,Male,O-,Heart,HLA-A30-B18,Heart Failure,Critical,74,Kauvery Hospital,Bangalore,Yes
+R01431,69,Female,O+,Heart,HLA-A26-B40,Heart Failure,Medium,710,Kauvery Hospital,Mumbai,Yes
+R01432,36,Female,A-,Lung,HLA-A33-B58,Lung Disease,Low,1365,MIOT Hospital,Mumbai,Yes
+R01433,69,Male,A-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,363,MIOT Hospital,Coimbatore,Yes
+R01434,69,Male,A-,Pancreas,HLA-A02-B07,Pancreatic Disease,Low,1481,Apollo Hospital,Vellore,Yes
+R01435,55,Female,AB-,Liver,HLA-A02-B07,Liver Failure,Low,116,Fortis Hospital,Salem,Yes
+R01436,23,Male,A+,Liver,HLA-A30-B18,Liver Failure,Medium,431,Apollo Hospital,Coimbatore,No
+R01437,58,Male,O-,Heart,HLA-A11-B35,Heart Failure,Critical,1240,Fortis Hospital,Hyderabad,Yes
+R01438,73,Male,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,163,Fortis Hospital,Salem,Yes
+R01439,74,Male,A-,Liver,HLA-A02-B07,Liver Failure,Medium,384,MIOT Hospital,Salem,Yes
+R01440,58,Female,O+,Lung,HLA-A24-B44,Lung Disease,Medium,874,Kauvery Hospital,Vellore,Yes
+R01441,18,Female,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,127,CMC Vellore,Hyderabad,Yes
+R01442,57,Female,A-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,1382,CMC Vellore,Vellore,Yes
+R01443,61,Male,AB+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,734,Global Hospital,Vellore,No
+R01444,66,Female,AB-,Heart,HLA-A11-B35,Heart Failure,Medium,1203,Fortis Hospital,Chennai,Yes
+R01445,47,Female,AB-,Lung,HLA-A30-B18,Lung Disease,Critical,952,Global Hospital,Madurai,Yes
+R01446,44,Male,B+,Lung,HLA-A26-B40,Lung Disease,Critical,1295,Fortis Hospital,Bangalore,Yes
+R01447,45,Male,B+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,195,Apollo Hospital,Bangalore,No
+R01448,35,Female,B-,Liver,HLA-A01-B08,Liver Failure,Critical,804,Fortis Hospital,Trichy,Yes
+R01449,30,Female,O-,Liver,HLA-A30-B18,Liver Failure,Critical,328,Global Hospital,Chennai,Yes
+R01450,22,Female,O-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,482,Global Hospital,Salem,No
+R01451,18,Female,B+,Lung,HLA-A26-B40,Lung Disease,High,1401,Sri Ramachandra Hospital,Delhi,Yes
+R01452,26,Female,AB-,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,757,Global Hospital,Coimbatore,Yes
+R01453,41,Female,B-,Lung,HLA-A11-B35,Lung Disease,High,1410,AIIMS Delhi,Vellore,No
+R01454,53,Female,AB-,Heart,HLA-A11-B35,Heart Failure,Medium,660,AIIMS Delhi,Delhi,Yes
+R01455,49,Female,A+,Liver,HLA-A26-B40,Liver Failure,Low,787,Fortis Hospital,Delhi,Yes
+R01456,51,Female,O-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,921,Sri Ramachandra Hospital,Salem,Yes
+R01457,41,Male,O-,Liver,HLA-A11-B35,Liver Failure,Medium,1297,Apollo Hospital,Vellore,Yes
+R01458,48,Male,AB+,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,644,AIIMS Delhi,Salem,Yes
+R01459,64,Male,B-,Heart,HLA-A24-B44,Heart Failure,Medium,771,Sri Ramachandra Hospital,Chennai,Yes
+R01460,31,Male,AB+,Heart,HLA-A01-B08,Heart Failure,Low,1335,Sri Ramachandra Hospital,Coimbatore,Yes
+R01461,67,Male,O-,Lung,HLA-A30-B18,Lung Disease,Medium,1217,Global Hospital,Vellore,Yes
+R01462,47,Female,B-,Heart,HLA-A33-B58,Heart Failure,High,334,Fortis Hospital,Vellore,Yes
+R01463,21,Female,O-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,646,Sri Ramachandra Hospital,Mumbai,Yes
+R01464,59,Female,O+,Lung,HLA-A03-B15,Lung Disease,High,1256,Apollo Hospital,Trichy,Yes
+R01465,66,Male,A+,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,131,CMC Vellore,Madurai,Yes
+R01466,51,Male,B-,Kidney,HLA-A02-B07,Chronic Kidney Disease,High,732,MIOT Hospital,Coimbatore,No
+R01467,66,Male,O-,Heart,HLA-A30-B18,Heart Failure,Low,1075,Sri Ramachandra Hospital,Bangalore,Yes
+R01468,70,Male,B-,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,237,Kauvery Hospital,Salem,Yes
+R01469,59,Male,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Critical,87,Apollo Hospital,Salem,Yes
+R01470,73,Male,AB-,Liver,HLA-A26-B40,Liver Failure,Critical,1300,Sri Ramachandra Hospital,Chennai,Yes
+R01471,19,Female,A-,Lung,HLA-A01-B08,Lung Disease,Medium,1208,Apollo Hospital,Salem,Yes
+R01472,49,Male,AB-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,1043,Fortis Hospital,Bangalore,Yes
+R01473,52,Male,AB+,Liver,HLA-A24-B44,Liver Failure,High,1047,Sri Ramachandra Hospital,Madurai,Yes
+R01474,34,Female,B-,Pancreas,HLA-A26-B40,Pancreatic Disease,High,805,CMC Vellore,Trichy,No
+R01475,46,Female,B-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,86,Sri Ramachandra Hospital,Coimbatore,Yes
+R01476,66,Female,B-,Liver,HLA-A24-B44,Liver Failure,High,950,Apollo Hospital,Salem,Yes
+R01477,50,Male,AB+,Liver,HLA-A01-B08,Liver Failure,Medium,371,MIOT Hospital,Salem,No
+R01478,64,Female,O-,Lung,HLA-A30-B18,Lung Disease,Medium,1007,Global Hospital,Mumbai,Yes
+R01479,22,Male,A+,Liver,HLA-A01-B08,Liver Failure,Low,23,Kauvery Hospital,Chennai,Yes
+R01480,42,Male,A-,Lung,HLA-A01-B08,Lung Disease,High,441,AIIMS Delhi,Bangalore,Yes
+R01481,35,Female,A+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,246,Kauvery Hospital,Madurai,Yes
+R01482,74,Male,A-,Lung,HLA-A01-B08,Lung Disease,Critical,358,Apollo Hospital,Coimbatore,Yes
+R01483,47,Female,AB+,Liver,HLA-A01-B08,Liver Failure,Critical,130,Fortis Hospital,Salem,Yes
+R01484,61,Female,A+,Lung,HLA-A01-B08,Lung Disease,Critical,886,Global Hospital,Bangalore,Yes
+R01485,54,Male,A-,Kidney,HLA-A24-B44,Chronic Kidney Disease,High,1473,Global Hospital,Salem,Yes
+R01486,60,Female,B-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Critical,4,Apollo Hospital,Delhi,No
+R01487,62,Female,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,High,746,CMC Vellore,Delhi,Yes
+R01488,70,Female,B+,Lung,HLA-A26-B40,Lung Disease,High,1488,Fortis Hospital,Vellore,Yes
+R01489,29,Female,AB-,Lung,HLA-A33-B58,Lung Disease,High,599,Fortis Hospital,Hyderabad,No
+R01490,45,Male,AB+,Heart,HLA-A03-B15,Heart Failure,High,735,Global Hospital,Hyderabad,Yes
+R01491,39,Male,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,422,Sri Ramachandra Hospital,Coimbatore,No
+R01492,50,Male,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,1128,Fortis Hospital,Salem,Yes
+R01493,25,Female,AB-,Lung,HLA-A30-B18,Lung Disease,Critical,449,MIOT Hospital,Bangalore,Yes
+R01494,58,Female,B+,Liver,HLA-A11-B35,Liver Failure,Low,1034,CMC Vellore,Hyderabad,Yes
+R01495,62,Female,B-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,429,CMC Vellore,Salem,Yes
+R01496,19,Female,A-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,1394,CMC Vellore,Coimbatore,Yes
+R01497,25,Female,AB-,Lung,HLA-A30-B18,Lung Disease,Low,1430,Kauvery Hospital,Vellore,No
+R01498,31,Female,O+,Heart,HLA-A33-B58,Heart Failure,Low,1391,Global Hospital,Chennai,No
+R01499,40,Male,AB+,Heart,HLA-A33-B58,Heart Failure,Critical,1104,CMC Vellore,Bangalore,Yes
+R01500,19,Female,A+,Lung,HLA-A33-B58,Lung Disease,Low,973,Kauvery Hospital,Mumbai,Yes
+R01501,33,Male,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,495,Global Hospital,Chennai,Yes
+R01502,53,Female,B-,Heart,HLA-A30-B18,Heart Failure,Low,22,Fortis Hospital,Delhi,Yes
+R01503,46,Male,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,High,1428,Sri Ramachandra Hospital,Mumbai,Yes
+R01504,55,Male,O-,Heart,HLA-A03-B15,Heart Failure,Critical,601,Fortis Hospital,Chennai,Yes
+R01505,39,Female,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,408,Global Hospital,Hyderabad,Yes
+R01506,42,Male,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,375,AIIMS Delhi,Vellore,No
+R01507,63,Female,A-,Liver,HLA-A02-B07,Liver Failure,Medium,286,Fortis Hospital,Delhi,Yes
+R01508,49,Female,O+,Lung,HLA-A01-B08,Lung Disease,High,1301,CMC Vellore,Bangalore,No
+R01509,35,Female,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,179,Kauvery Hospital,Vellore,No
+R01510,50,Male,B+,Lung,HLA-A02-B07,Lung Disease,Low,332,CMC Vellore,Delhi,Yes
+R01511,46,Female,AB+,Liver,HLA-A33-B58,Liver Failure,Low,1345,Fortis Hospital,Delhi,No
+R01512,53,Male,B-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,616,Fortis Hospital,Bangalore,Yes
+R01513,21,Male,A-,Heart,HLA-A24-B44,Heart Failure,Low,622,Fortis Hospital,Vellore,Yes
+R01514,69,Male,B-,Lung,HLA-A33-B58,Lung Disease,Critical,981,AIIMS Delhi,Coimbatore,Yes
+R01515,53,Male,B+,Lung,HLA-A03-B15,Lung Disease,Medium,140,Global Hospital,Mumbai,Yes
+R01516,28,Male,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,538,Sri Ramachandra Hospital,Chennai,No
+R01517,73,Female,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,1376,MIOT Hospital,Bangalore,No
+R01518,71,Male,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,1324,Fortis Hospital,Salem,Yes
+R01519,67,Male,O+,Lung,HLA-A01-B08,Lung Disease,Critical,136,CMC Vellore,Madurai,Yes
+R01520,35,Female,AB+,Heart,HLA-A33-B58,Heart Failure,High,622,MIOT Hospital,Trichy,No
+R01521,49,Female,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,High,187,Global Hospital,Vellore,Yes
+R01522,58,Female,AB+,Heart,HLA-A24-B44,Heart Failure,Medium,642,MIOT Hospital,Salem,Yes
+R01523,37,Male,AB-,Heart,HLA-A30-B18,Heart Failure,High,541,Sri Ramachandra Hospital,Salem,Yes
+R01524,30,Female,AB-,Heart,HLA-A11-B35,Heart Failure,Critical,1192,Fortis Hospital,Coimbatore,Yes
+R01525,31,Female,B+,Liver,HLA-A33-B58,Liver Failure,High,504,Sri Ramachandra Hospital,Hyderabad,Yes
+R01526,47,Female,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,518,CMC Vellore,Bangalore,No
+R01527,22,Male,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,1128,Kauvery Hospital,Mumbai,No
+R01528,35,Male,O+,Liver,HLA-A33-B58,Liver Failure,Low,976,Sri Ramachandra Hospital,Bangalore,Yes
+R01529,26,Male,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,85,CMC Vellore,Trichy,Yes
+R01530,52,Female,B+,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,420,Apollo Hospital,Delhi,Yes
+R01531,25,Female,AB+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,493,AIIMS Delhi,Salem,Yes
+R01532,40,Male,B+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,451,Fortis Hospital,Bangalore,Yes
+R01533,57,Male,B+,Pancreas,HLA-A02-B07,Pancreatic Disease,High,996,CMC Vellore,Coimbatore,Yes
+R01534,32,Male,O-,Lung,HLA-A03-B15,Lung Disease,Medium,452,Kauvery Hospital,Coimbatore,Yes
+R01535,60,Female,O+,Liver,HLA-A30-B18,Liver Failure,Critical,438,AIIMS Delhi,Coimbatore,Yes
+R01536,63,Female,O-,Lung,HLA-A03-B15,Lung Disease,Critical,1260,Sri Ramachandra Hospital,Chennai,Yes
+R01537,74,Female,O+,Liver,HLA-A26-B40,Liver Failure,High,43,Global Hospital,Mumbai,No
+R01538,56,Male,AB-,Lung,HLA-A03-B15,Lung Disease,Low,1231,Sri Ramachandra Hospital,Madurai,No
+R01539,31,Female,AB-,Liver,HLA-A30-B18,Liver Failure,High,510,Kauvery Hospital,Salem,No
+R01540,74,Female,A+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,927,Apollo Hospital,Bangalore,Yes
+R01541,42,Male,O-,Heart,HLA-A30-B18,Heart Failure,Critical,869,CMC Vellore,Bangalore,Yes
+R01542,32,Female,AB-,Heart,HLA-A24-B44,Heart Failure,Critical,324,Fortis Hospital,Salem,Yes
+R01543,42,Female,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,1449,Fortis Hospital,Coimbatore,Yes
+R01544,23,Female,O-,Heart,HLA-A03-B15,Heart Failure,High,291,Sri Ramachandra Hospital,Trichy,Yes
+R01545,44,Female,B+,Liver,HLA-A02-B07,Liver Failure,Medium,189,Apollo Hospital,Delhi,Yes
+R01546,53,Female,O+,Heart,HLA-A03-B15,Heart Failure,Medium,36,AIIMS Delhi,Delhi,Yes
+R01547,67,Male,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,948,MIOT Hospital,Madurai,Yes
+R01548,29,Male,A+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,558,Apollo Hospital,Mumbai,Yes
+R01549,26,Male,A+,Lung,HLA-A33-B58,Lung Disease,Medium,271,AIIMS Delhi,Delhi,Yes
+R01550,68,Female,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,Critical,359,CMC Vellore,Salem,Yes
+R01551,66,Male,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,2,Kauvery Hospital,Hyderabad,No
+R01552,53,Female,O-,Lung,HLA-A26-B40,Lung Disease,Critical,515,Sri Ramachandra Hospital,Madurai,No
+R01553,69,Male,B-,Liver,HLA-A02-B07,Liver Failure,High,612,CMC Vellore,Delhi,No
+R01554,42,Female,AB-,Lung,HLA-A01-B08,Lung Disease,High,998,AIIMS Delhi,Chennai,Yes
+R01555,67,Male,O-,Lung,HLA-A03-B15,Lung Disease,High,812,AIIMS Delhi,Madurai,Yes
+R01556,75,Female,AB+,Liver,HLA-A33-B58,Liver Failure,Critical,956,Global Hospital,Vellore,Yes
+R01557,26,Female,A+,Lung,HLA-A11-B35,Lung Disease,Medium,1311,CMC Vellore,Trichy,Yes
+R01558,40,Female,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,1226,Kauvery Hospital,Vellore,No
+R01559,73,Female,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,397,Kauvery Hospital,Mumbai,Yes
+R01560,24,Male,AB+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,1044,AIIMS Delhi,Mumbai,Yes
+R01561,46,Female,AB-,Kidney,HLA-A33-B58,Chronic Kidney Disease,High,1274,MIOT Hospital,Trichy,Yes
+R01562,69,Male,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,1053,Apollo Hospital,Mumbai,Yes
+R01563,70,Female,AB-,Liver,HLA-A33-B58,Liver Failure,High,295,Fortis Hospital,Salem,Yes
+R01564,42,Female,O+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,91,Kauvery Hospital,Chennai,Yes
+R01565,44,Male,O+,Liver,HLA-A03-B15,Liver Failure,Critical,1121,Kauvery Hospital,Salem,Yes
+R01566,28,Male,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,449,Global Hospital,Madurai,No
+R01567,23,Female,AB-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,529,MIOT Hospital,Vellore,Yes
+R01568,51,Female,B-,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,889,Global Hospital,Trichy,Yes
+R01569,37,Female,O+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,528,CMC Vellore,Madurai,Yes
+R01570,74,Male,O-,Liver,HLA-A03-B15,Liver Failure,Low,1429,MIOT Hospital,Bangalore,No
+R01571,54,Female,AB+,Lung,HLA-A02-B07,Lung Disease,Medium,333,Global Hospital,Coimbatore,Yes
+R01572,45,Female,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,970,Apollo Hospital,Vellore,Yes
+R01573,37,Male,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,1206,AIIMS Delhi,Bangalore,No
+R01574,36,Male,B+,Liver,HLA-A26-B40,Liver Failure,Medium,1225,MIOT Hospital,Delhi,No
+R01575,24,Male,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,1107,Sri Ramachandra Hospital,Hyderabad,Yes
+R01576,21,Male,O-,Liver,HLA-A03-B15,Liver Failure,Low,274,Kauvery Hospital,Vellore,Yes
+R01577,23,Male,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,205,Apollo Hospital,Delhi,Yes
+R01578,57,Male,B-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,1005,CMC Vellore,Trichy,Yes
+R01579,71,Male,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,947,Kauvery Hospital,Madurai,Yes
+R01580,56,Male,AB+,Lung,HLA-A01-B08,Lung Disease,Critical,694,Fortis Hospital,Hyderabad,No
+R01581,50,Female,AB+,Heart,HLA-A30-B18,Heart Failure,Critical,482,Kauvery Hospital,Vellore,Yes
+R01582,47,Male,B+,Liver,HLA-A01-B08,Liver Failure,Low,121,CMC Vellore,Madurai,Yes
+R01583,26,Male,A-,Lung,HLA-A24-B44,Lung Disease,High,1409,MIOT Hospital,Delhi,Yes
+R01584,45,Female,A-,Lung,HLA-A24-B44,Lung Disease,Medium,970,Apollo Hospital,Vellore,Yes
+R01585,30,Female,A-,Lung,HLA-A01-B08,Lung Disease,Low,517,Sri Ramachandra Hospital,Madurai,No
+R01586,60,Female,AB-,Lung,HLA-A33-B58,Lung Disease,Medium,670,Sri Ramachandra Hospital,Vellore,Yes
+R01587,73,Male,AB+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,998,MIOT Hospital,Madurai,Yes
+R01588,33,Female,AB+,Liver,HLA-A11-B35,Liver Failure,Medium,856,Apollo Hospital,Chennai,Yes
+R01589,69,Female,AB-,Heart,HLA-A01-B08,Heart Failure,Low,989,AIIMS Delhi,Salem,Yes
+R01590,61,Female,O+,Heart,HLA-A11-B35,Heart Failure,Critical,1498,Apollo Hospital,Hyderabad,Yes
+R01591,66,Female,A+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,37,Sri Ramachandra Hospital,Delhi,Yes
+R01592,71,Female,O-,Lung,HLA-A11-B35,Lung Disease,High,1211,AIIMS Delhi,Hyderabad,Yes
+R01593,75,Male,B-,Heart,HLA-A24-B44,Heart Failure,Critical,544,Apollo Hospital,Mumbai,Yes
+R01594,32,Female,B-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,881,Apollo Hospital,Coimbatore,Yes
+R01595,70,Female,A+,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,1018,AIIMS Delhi,Mumbai,Yes
+R01596,72,Male,O+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,1117,AIIMS Delhi,Chennai,No
+R01597,39,Male,O-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,266,Kauvery Hospital,Madurai,Yes
+R01598,44,Male,O+,Heart,HLA-A11-B35,Heart Failure,Medium,741,CMC Vellore,Trichy,Yes
+R01599,62,Male,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,7,AIIMS Delhi,Coimbatore,Yes
+R01600,25,Female,AB-,Liver,HLA-A02-B07,Liver Failure,Critical,1047,CMC Vellore,Hyderabad,Yes
+R01601,40,Male,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,388,Kauvery Hospital,Chennai,Yes
+R01602,28,Male,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,981,MIOT Hospital,Chennai,Yes
+R01603,68,Female,A-,Lung,HLA-A30-B18,Lung Disease,Medium,344,AIIMS Delhi,Delhi,No
+R01604,65,Male,B-,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,794,MIOT Hospital,Vellore,Yes
+R01605,20,Female,B-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,36,MIOT Hospital,Vellore,No
+R01606,38,Female,A-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,1218,CMC Vellore,Delhi,Yes
+R01607,49,Female,A-,Lung,HLA-A01-B08,Lung Disease,High,504,Kauvery Hospital,Mumbai,No
+R01608,20,Male,A+,Heart,HLA-A24-B44,Heart Failure,Medium,1426,Kauvery Hospital,Bangalore,Yes
+R01609,39,Female,A-,Heart,HLA-A26-B40,Heart Failure,Low,1021,Kauvery Hospital,Trichy,No
+R01610,19,Female,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,282,CMC Vellore,Vellore,Yes
+R01611,34,Female,AB-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,1181,AIIMS Delhi,Delhi,Yes
+R01612,21,Female,AB+,Liver,HLA-A02-B07,Liver Failure,High,1132,Kauvery Hospital,Coimbatore,No
+R01613,37,Female,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,107,Fortis Hospital,Coimbatore,Yes
+R01614,18,Male,O-,Pancreas,HLA-A01-B08,Pancreatic Disease,Critical,740,Sri Ramachandra Hospital,Mumbai,Yes
+R01615,28,Male,A-,Heart,HLA-A26-B40,Heart Failure,Medium,380,CMC Vellore,Chennai,No
+R01616,64,Male,B+,Liver,HLA-A11-B35,Liver Failure,Critical,11,Kauvery Hospital,Delhi,Yes
+R01617,53,Male,A+,Lung,HLA-A30-B18,Lung Disease,Medium,1256,Sri Ramachandra Hospital,Salem,Yes
+R01618,26,Female,O+,Heart,HLA-A24-B44,Heart Failure,High,511,CMC Vellore,Bangalore,Yes
+R01619,49,Male,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,519,Fortis Hospital,Delhi,Yes
+R01620,25,Male,B+,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,512,Apollo Hospital,Coimbatore,No
+R01621,31,Female,A-,Liver,HLA-A01-B08,Liver Failure,Medium,1469,CMC Vellore,Chennai,No
+R01622,39,Male,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,1484,CMC Vellore,Vellore,Yes
+R01623,42,Female,O-,Lung,HLA-A11-B35,Lung Disease,Medium,424,Sri Ramachandra Hospital,Vellore,Yes
+R01624,49,Female,AB+,Liver,HLA-A30-B18,Liver Failure,Low,517,Apollo Hospital,Bangalore,No
+R01625,21,Male,O-,Liver,HLA-A24-B44,Liver Failure,Medium,847,CMC Vellore,Trichy,Yes
+R01626,35,Male,O+,Heart,HLA-A01-B08,Heart Failure,Critical,1085,CMC Vellore,Delhi,No
+R01627,37,Male,O-,Heart,HLA-A11-B35,Heart Failure,High,977,Sri Ramachandra Hospital,Trichy,Yes
+R01628,32,Female,B+,Lung,HLA-A01-B08,Lung Disease,Medium,1322,Global Hospital,Bangalore,Yes
+R01629,50,Male,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,High,1070,Kauvery Hospital,Coimbatore,Yes
+R01630,69,Female,O+,Pancreas,HLA-A01-B08,Pancreatic Disease,Low,1162,CMC Vellore,Salem,Yes
+R01631,69,Male,B+,Heart,HLA-A33-B58,Heart Failure,Low,306,Apollo Hospital,Vellore,No
+R01632,39,Male,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,Medium,223,Kauvery Hospital,Bangalore,Yes
+R01633,55,Male,O+,Heart,HLA-A26-B40,Heart Failure,Low,779,Global Hospital,Delhi,Yes
+R01634,38,Male,AB-,Liver,HLA-A26-B40,Liver Failure,Critical,494,MIOT Hospital,Hyderabad,Yes
+R01635,53,Male,A-,Lung,HLA-A02-B07,Lung Disease,Medium,474,Sri Ramachandra Hospital,Chennai,Yes
+R01636,44,Male,A-,Lung,HLA-A33-B58,Lung Disease,Medium,453,AIIMS Delhi,Salem,Yes
+R01637,20,Female,A+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,575,Global Hospital,Salem,Yes
+R01638,33,Male,A-,Heart,HLA-A24-B44,Heart Failure,Medium,91,Global Hospital,Trichy,Yes
+R01639,71,Female,B-,Kidney,HLA-A30-B18,Chronic Kidney Disease,High,205,CMC Vellore,Mumbai,Yes
+R01640,35,Male,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,High,927,Fortis Hospital,Chennai,Yes
+R01641,19,Female,B-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,480,Apollo Hospital,Madurai,Yes
+R01642,30,Male,AB+,Liver,HLA-A33-B58,Liver Failure,Low,1356,Global Hospital,Salem,Yes
+R01643,25,Male,AB-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,316,CMC Vellore,Madurai,No
+R01644,18,Male,AB-,Lung,HLA-A01-B08,Lung Disease,Medium,1402,Sri Ramachandra Hospital,Coimbatore,Yes
+R01645,31,Male,B+,Liver,HLA-A30-B18,Liver Failure,Low,891,AIIMS Delhi,Madurai,Yes
+R01646,63,Female,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,920,Sri Ramachandra Hospital,Madurai,No
+R01647,38,Female,B-,Heart,HLA-A01-B08,Heart Failure,Medium,832,Kauvery Hospital,Bangalore,No
+R01648,73,Male,B+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,1435,CMC Vellore,Mumbai,No
+R01649,59,Male,A+,Lung,HLA-A03-B15,Lung Disease,Medium,259,AIIMS Delhi,Chennai,Yes
+R01650,52,Male,AB-,Liver,HLA-A02-B07,Liver Failure,High,535,MIOT Hospital,Mumbai,Yes
+R01651,20,Female,O-,Liver,HLA-A11-B35,Liver Failure,Medium,452,CMC Vellore,Mumbai,Yes
+R01652,46,Male,O+,Pancreas,HLA-A02-B07,Pancreatic Disease,High,944,Fortis Hospital,Trichy,Yes
+R01653,20,Male,A+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,172,MIOT Hospital,Madurai,Yes
+R01654,62,Male,O-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,1104,MIOT Hospital,Chennai,Yes
+R01655,40,Female,O+,Liver,HLA-A02-B07,Liver Failure,High,599,Kauvery Hospital,Madurai,Yes
+R01656,70,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,1070,CMC Vellore,Madurai,Yes
+R01657,50,Male,AB-,Heart,HLA-A30-B18,Heart Failure,Critical,83,Sri Ramachandra Hospital,Hyderabad,Yes
+R01658,56,Male,A+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,774,MIOT Hospital,Vellore,Yes
+R01659,64,Female,B+,Heart,HLA-A30-B18,Heart Failure,Critical,1154,CMC Vellore,Salem,No
+R01660,69,Female,B-,Liver,HLA-A26-B40,Liver Failure,High,1355,Apollo Hospital,Vellore,Yes
+R01661,68,Female,A+,Liver,HLA-A01-B08,Liver Failure,Critical,109,Sri Ramachandra Hospital,Salem,Yes
+R01662,56,Female,AB-,Lung,HLA-A01-B08,Lung Disease,Medium,258,CMC Vellore,Chennai,Yes
+R01663,25,Female,AB+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,536,Kauvery Hospital,Madurai,No
+R01664,74,Male,B-,Lung,HLA-A30-B18,Lung Disease,Medium,1083,CMC Vellore,Bangalore,Yes
+R01665,27,Male,B+,Liver,HLA-A30-B18,Liver Failure,High,1487,Fortis Hospital,Mumbai,Yes
+R01666,37,Male,A+,Lung,HLA-A11-B35,Lung Disease,Critical,1469,Fortis Hospital,Vellore,No
+R01667,24,Female,AB+,Liver,HLA-A02-B07,Liver Failure,Critical,84,Sri Ramachandra Hospital,Trichy,No
+R01668,40,Female,AB+,Liver,HLA-A01-B08,Liver Failure,Medium,826,AIIMS Delhi,Vellore,Yes
+R01669,61,Male,AB+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,1370,CMC Vellore,Hyderabad,No
+R01670,44,Female,AB+,Heart,HLA-A01-B08,Heart Failure,Medium,1497,CMC Vellore,Vellore,Yes
+R01671,62,Male,AB+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,954,Apollo Hospital,Vellore,Yes
+R01672,61,Male,AB+,Heart,HLA-A11-B35,Heart Failure,Medium,443,AIIMS Delhi,Vellore,Yes
+R01673,34,Female,A-,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,290,CMC Vellore,Coimbatore,Yes
+R01674,47,Female,A-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,494,CMC Vellore,Salem,No
+R01675,26,Female,AB-,Liver,HLA-A11-B35,Liver Failure,Low,833,Apollo Hospital,Coimbatore,Yes
+R01676,66,Female,AB-,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,946,Sri Ramachandra Hospital,Mumbai,Yes
+R01677,29,Male,A+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,686,Sri Ramachandra Hospital,Coimbatore,Yes
+R01678,51,Male,B-,Pancreas,HLA-A30-B18,Pancreatic Disease,High,968,Global Hospital,Trichy,Yes
+R01679,25,Female,A+,Pancreas,HLA-A11-B35,Pancreatic Disease,Critical,754,MIOT Hospital,Madurai,Yes
+R01680,37,Male,A-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,1105,Kauvery Hospital,Salem,Yes
+R01681,51,Female,AB-,Lung,HLA-A01-B08,Lung Disease,Medium,835,AIIMS Delhi,Madurai,Yes
+R01682,56,Male,A-,Liver,HLA-A11-B35,Liver Failure,Critical,564,MIOT Hospital,Vellore,No
+R01683,23,Female,A+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,1065,Sri Ramachandra Hospital,Chennai,Yes
+R01684,67,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,878,Sri Ramachandra Hospital,Chennai,Yes
+R01685,65,Male,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,396,Apollo Hospital,Mumbai,Yes
+R01686,42,Female,A-,Heart,HLA-A01-B08,Heart Failure,Critical,316,Global Hospital,Coimbatore,Yes
+R01687,24,Male,B-,Liver,HLA-A24-B44,Liver Failure,High,729,Apollo Hospital,Bangalore,Yes
+R01688,54,Male,O-,Lung,HLA-A33-B58,Lung Disease,Critical,1150,Fortis Hospital,Delhi,Yes
+R01689,71,Female,AB+,Pancreas,HLA-A01-B08,Pancreatic Disease,Low,496,Kauvery Hospital,Mumbai,Yes
+R01690,46,Male,AB-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,977,Fortis Hospital,Bangalore,Yes
+R01691,32,Female,A-,Liver,HLA-A01-B08,Liver Failure,Low,1367,MIOT Hospital,Hyderabad,Yes
+R01692,70,Male,AB-,Pancreas,HLA-A02-B07,Pancreatic Disease,High,586,Fortis Hospital,Chennai,No
+R01693,55,Male,O+,Heart,HLA-A30-B18,Heart Failure,Critical,1346,Kauvery Hospital,Mumbai,No
+R01694,74,Female,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,1305,AIIMS Delhi,Madurai,Yes
+R01695,24,Female,A+,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,359,AIIMS Delhi,Coimbatore,Yes
+R01696,36,Male,O+,Liver,HLA-A30-B18,Liver Failure,Low,836,Apollo Hospital,Mumbai,No
+R01697,43,Male,O-,Liver,HLA-A30-B18,Liver Failure,Low,1315,Global Hospital,Madurai,Yes
+R01698,53,Male,B-,Heart,HLA-A26-B40,Heart Failure,High,1332,AIIMS Delhi,Mumbai,Yes
+R01699,66,Male,AB+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,835,CMC Vellore,Madurai,No
+R01700,19,Male,O+,Heart,HLA-A26-B40,Heart Failure,Medium,890,Kauvery Hospital,Coimbatore,No
+R01701,42,Female,O+,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,31,Global Hospital,Bangalore,Yes
+R01702,67,Male,AB-,Liver,HLA-A26-B40,Liver Failure,Low,516,AIIMS Delhi,Trichy,No
+R01703,27,Male,AB+,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,61,Fortis Hospital,Hyderabad,Yes
+R01704,18,Female,O+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,113,CMC Vellore,Bangalore,Yes
+R01705,23,Male,AB-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Low,136,Sri Ramachandra Hospital,Mumbai,Yes
+R01706,59,Female,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,659,Apollo Hospital,Hyderabad,No
+R01707,73,Male,O-,Liver,HLA-A30-B18,Liver Failure,Medium,104,MIOT Hospital,Salem,Yes
+R01708,19,Female,O-,Heart,HLA-A33-B58,Heart Failure,High,801,Fortis Hospital,Chennai,No
+R01709,64,Female,O+,Liver,HLA-A03-B15,Liver Failure,Medium,706,Apollo Hospital,Mumbai,Yes
+R01710,64,Female,O+,Lung,HLA-A01-B08,Lung Disease,Medium,1158,CMC Vellore,Trichy,Yes
+R01711,51,Female,A-,Lung,HLA-A11-B35,Lung Disease,Medium,416,Global Hospital,Salem,Yes
+R01712,38,Female,B+,Liver,HLA-A11-B35,Liver Failure,High,822,CMC Vellore,Hyderabad,Yes
+R01713,18,Male,B+,Lung,HLA-A02-B07,Lung Disease,Low,1235,Fortis Hospital,Chennai,No
+R01714,32,Female,B-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,958,Global Hospital,Mumbai,Yes
+R01715,25,Male,B-,Lung,HLA-A33-B58,Lung Disease,Low,1368,Kauvery Hospital,Trichy,Yes
+R01716,21,Male,AB-,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,811,Kauvery Hospital,Mumbai,Yes
+R01717,45,Female,AB+,Kidney,HLA-A01-B08,Chronic Kidney Disease,Medium,926,AIIMS Delhi,Trichy,Yes
+R01718,48,Male,B+,Lung,HLA-A33-B58,Lung Disease,Critical,1367,Fortis Hospital,Madurai,Yes
+R01719,71,Male,A-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,210,AIIMS Delhi,Trichy,No
+R01720,54,Female,O-,Liver,HLA-A33-B58,Liver Failure,Medium,873,AIIMS Delhi,Mumbai,Yes
+R01721,72,Male,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,694,AIIMS Delhi,Delhi,No
+R01722,49,Female,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,980,Apollo Hospital,Bangalore,No
+R01723,75,Female,B+,Liver,HLA-A01-B08,Liver Failure,High,5,Sri Ramachandra Hospital,Mumbai,Yes
+R01724,60,Male,B+,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,672,Fortis Hospital,Coimbatore,No
+R01725,18,Female,O-,Heart,HLA-A02-B07,Heart Failure,High,830,Fortis Hospital,Coimbatore,Yes
+R01726,54,Male,AB-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Critical,1217,Apollo Hospital,Mumbai,Yes
+R01727,45,Female,A+,Liver,HLA-A03-B15,Liver Failure,Medium,78,MIOT Hospital,Chennai,Yes
+R01728,45,Female,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,High,1241,MIOT Hospital,Delhi,Yes
+R01729,36,Female,O-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,1424,Global Hospital,Coimbatore,Yes
+R01730,33,Female,O-,Liver,HLA-A30-B18,Liver Failure,Critical,402,Fortis Hospital,Chennai,No
+R01731,42,Male,A-,Heart,HLA-A33-B58,Heart Failure,Critical,1251,Global Hospital,Bangalore,Yes
+R01732,54,Female,O-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,656,AIIMS Delhi,Hyderabad,Yes
+R01733,38,Male,O+,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,756,Apollo Hospital,Trichy,Yes
+R01734,66,Female,O+,Heart,HLA-A26-B40,Heart Failure,Critical,1166,Apollo Hospital,Chennai,Yes
+R01735,35,Male,AB-,Liver,HLA-A26-B40,Liver Failure,High,515,Fortis Hospital,Mumbai,No
+R01736,55,Female,B-,Lung,HLA-A03-B15,Lung Disease,High,1253,Kauvery Hospital,Madurai,Yes
+R01737,61,Female,O+,Liver,HLA-A11-B35,Liver Failure,Medium,1119,CMC Vellore,Vellore,No
+R01738,34,Male,AB-,Liver,HLA-A03-B15,Liver Failure,High,1480,Global Hospital,Madurai,Yes
+R01739,28,Male,O+,Lung,HLA-A11-B35,Lung Disease,Medium,704,MIOT Hospital,Coimbatore,Yes
+R01740,24,Female,AB-,Pancreas,HLA-A26-B40,Pancreatic Disease,Low,1323,Global Hospital,Mumbai,Yes
+R01741,72,Female,A+,Lung,HLA-A26-B40,Lung Disease,Critical,1393,Kauvery Hospital,Trichy,Yes
+R01742,30,Female,A-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,986,Global Hospital,Madurai,Yes
+R01743,51,Female,B-,Liver,HLA-A24-B44,Liver Failure,Low,177,MIOT Hospital,Salem,No
+R01744,23,Female,AB+,Heart,HLA-A33-B58,Heart Failure,Low,670,MIOT Hospital,Salem,Yes
+R01745,64,Male,AB-,Liver,HLA-A11-B35,Liver Failure,Critical,975,CMC Vellore,Salem,No
+R01746,72,Female,A+,Lung,HLA-A01-B08,Lung Disease,High,307,CMC Vellore,Trichy,Yes
+R01747,67,Female,B+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,1261,CMC Vellore,Delhi,No
+R01748,21,Male,O-,Pancreas,HLA-A01-B08,Pancreatic Disease,High,740,Fortis Hospital,Salem,Yes
+R01749,28,Male,AB-,Lung,HLA-A30-B18,Lung Disease,Critical,120,MIOT Hospital,Delhi,No
+R01750,52,Female,AB+,Lung,HLA-A24-B44,Lung Disease,Medium,284,Global Hospital,Vellore,Yes
+R01751,52,Female,O+,Heart,HLA-A26-B40,Heart Failure,High,1460,Kauvery Hospital,Madurai,Yes
+R01752,57,Male,A-,Heart,HLA-A30-B18,Heart Failure,High,53,Fortis Hospital,Chennai,Yes
+R01753,27,Female,AB-,Kidney,HLA-A11-B35,Chronic Kidney Disease,Medium,149,AIIMS Delhi,Madurai,Yes
+R01754,73,Female,A-,Heart,HLA-A11-B35,Heart Failure,Low,664,MIOT Hospital,Hyderabad,Yes
+R01755,31,Female,B+,Pancreas,HLA-A02-B07,Pancreatic Disease,High,622,Kauvery Hospital,Mumbai,No
+R01756,55,Female,B+,Lung,HLA-A33-B58,Lung Disease,Medium,867,Global Hospital,Hyderabad,Yes
+R01757,27,Male,B+,Lung,HLA-A26-B40,Lung Disease,Medium,756,Kauvery Hospital,Salem,Yes
+R01758,31,Male,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,129,Fortis Hospital,Salem,Yes
+R01759,58,Female,A-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,17,CMC Vellore,Mumbai,Yes
+R01760,34,Female,B+,Lung,HLA-A11-B35,Lung Disease,Critical,707,Apollo Hospital,Mumbai,Yes
+R01761,43,Male,O-,Lung,HLA-A03-B15,Lung Disease,Medium,717,Global Hospital,Hyderabad,Yes
+R01762,65,Female,AB+,Heart,HLA-A33-B58,Heart Failure,Medium,777,Fortis Hospital,Delhi,Yes
+R01763,27,Male,O-,Heart,HLA-A30-B18,Heart Failure,Medium,1495,CMC Vellore,Bangalore,Yes
+R01764,73,Male,O-,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,360,CMC Vellore,Hyderabad,Yes
+R01765,46,Male,B+,Liver,HLA-A01-B08,Liver Failure,High,373,Fortis Hospital,Madurai,Yes
+R01766,74,Male,A-,Lung,HLA-A30-B18,Lung Disease,High,1347,CMC Vellore,Trichy,Yes
+R01767,53,Male,B-,Pancreas,HLA-A03-B15,Pancreatic Disease,High,1338,MIOT Hospital,Salem,Yes
+R01768,53,Female,AB+,Heart,HLA-A30-B18,Heart Failure,Low,1002,Global Hospital,Hyderabad,Yes
+R01769,69,Female,AB+,Liver,HLA-A11-B35,Liver Failure,Low,1170,MIOT Hospital,Trichy,Yes
+R01770,69,Female,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Critical,1237,Global Hospital,Chennai,Yes
+R01771,29,Female,A-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,679,AIIMS Delhi,Delhi,No
+R01772,49,Male,B-,Pancreas,HLA-A33-B58,Pancreatic Disease,High,284,AIIMS Delhi,Madurai,Yes
+R01773,69,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,1494,Apollo Hospital,Mumbai,Yes
+R01774,20,Male,AB+,Liver,HLA-A33-B58,Liver Failure,Critical,1063,Global Hospital,Vellore,Yes
+R01775,60,Female,B+,Heart,HLA-A11-B35,Heart Failure,Critical,125,Apollo Hospital,Salem,Yes
+R01776,37,Male,O+,Heart,HLA-A02-B07,Heart Failure,High,225,Global Hospital,Coimbatore,Yes
+R01777,31,Male,A+,Liver,HLA-A03-B15,Liver Failure,Medium,1495,MIOT Hospital,Chennai,Yes
+R01778,30,Female,AB+,Heart,HLA-A11-B35,Heart Failure,Low,1254,AIIMS Delhi,Chennai,No
+R01779,23,Male,O-,Lung,HLA-A02-B07,Lung Disease,Low,298,Sri Ramachandra Hospital,Chennai,Yes
+R01780,25,Male,B+,Liver,HLA-A02-B07,Liver Failure,Critical,840,Global Hospital,Madurai,Yes
+R01781,56,Male,A-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,825,CMC Vellore,Madurai,Yes
+R01782,25,Male,O-,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1356,Global Hospital,Salem,Yes
+R01783,65,Male,A+,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,884,Sri Ramachandra Hospital,Vellore,Yes
+R01784,18,Male,O-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,307,Kauvery Hospital,Madurai,Yes
+R01785,36,Male,O+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,18,MIOT Hospital,Madurai,Yes
+R01786,36,Female,B+,Pancreas,HLA-A01-B08,Pancreatic Disease,Medium,1435,MIOT Hospital,Vellore,No
+R01787,69,Male,B-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,1423,Global Hospital,Chennai,Yes
+R01788,47,Male,B+,Liver,HLA-A24-B44,Liver Failure,Medium,869,MIOT Hospital,Mumbai,Yes
+R01789,41,Female,AB+,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,56,Kauvery Hospital,Coimbatore,Yes
+R01790,27,Female,A+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,742,Fortis Hospital,Hyderabad,Yes
+R01791,49,Female,A+,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,908,CMC Vellore,Bangalore,No
+R01792,19,Female,B-,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,577,CMC Vellore,Vellore,Yes
+R01793,73,Male,A+,Heart,HLA-A11-B35,Heart Failure,High,67,AIIMS Delhi,Chennai,Yes
+R01794,57,Female,O+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,755,Sri Ramachandra Hospital,Trichy,Yes
+R01795,46,Female,AB-,Heart,HLA-A24-B44,Heart Failure,Critical,354,AIIMS Delhi,Trichy,No
+R01796,26,Female,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,227,Apollo Hospital,Mumbai,Yes
+R01797,69,Male,A+,Kidney,HLA-A11-B35,Chronic Kidney Disease,Low,845,AIIMS Delhi,Coimbatore,No
+R01798,35,Male,O-,Lung,HLA-A03-B15,Lung Disease,Critical,1058,Apollo Hospital,Mumbai,Yes
+R01799,24,Female,O-,Pancreas,HLA-A02-B07,Pancreatic Disease,Medium,1214,Apollo Hospital,Coimbatore,Yes
+R01800,47,Male,B-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,928,CMC Vellore,Salem,Yes
+R01801,63,Male,AB-,Lung,HLA-A02-B07,Lung Disease,Low,590,MIOT Hospital,Mumbai,Yes
+R01802,37,Male,O+,Lung,HLA-A03-B15,Lung Disease,Low,1442,AIIMS Delhi,Chennai,Yes
+R01803,45,Male,AB-,Pancreas,HLA-A26-B40,Pancreatic Disease,Critical,873,Sri Ramachandra Hospital,Delhi,Yes
+R01804,19,Male,A-,Lung,HLA-A01-B08,Lung Disease,High,408,AIIMS Delhi,Delhi,No
+R01805,70,Female,AB+,Liver,HLA-A30-B18,Liver Failure,Critical,895,Fortis Hospital,Coimbatore,Yes
+R01806,22,Male,B+,Pancreas,HLA-A33-B58,Pancreatic Disease,Low,66,Apollo Hospital,Trichy,No
+R01807,45,Male,AB+,Lung,HLA-A26-B40,Lung Disease,Low,139,CMC Vellore,Chennai,No
+R01808,49,Female,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,Low,41,Kauvery Hospital,Delhi,Yes
+R01809,67,Male,AB+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,511,CMC Vellore,Vellore,Yes
+R01810,34,Male,AB+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Critical,1242,Global Hospital,Salem,Yes
+R01811,47,Female,A-,Liver,HLA-A30-B18,Liver Failure,Critical,1235,Kauvery Hospital,Coimbatore,No
+R01812,24,Male,B-,Lung,HLA-A33-B58,Lung Disease,High,101,Global Hospital,Hyderabad,Yes
+R01813,32,Male,AB-,Liver,HLA-A30-B18,Liver Failure,Medium,432,Kauvery Hospital,Delhi,Yes
+R01814,46,Male,A-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,883,Fortis Hospital,Chennai,Yes
+R01815,21,Female,B+,Lung,HLA-A02-B07,Lung Disease,Low,842,Apollo Hospital,Madurai,Yes
+R01816,24,Male,B-,Heart,HLA-A26-B40,Heart Failure,Critical,301,CMC Vellore,Coimbatore,No
+R01817,64,Female,A+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,533,Kauvery Hospital,Mumbai,Yes
+R01818,66,Male,O-,Liver,HLA-A26-B40,Liver Failure,Medium,1170,Global Hospital,Mumbai,Yes
+R01819,18,Male,A+,Lung,HLA-A01-B08,Lung Disease,High,1107,Apollo Hospital,Bangalore,No
+R01820,48,Male,B+,Heart,HLA-A11-B35,Heart Failure,Critical,1154,CMC Vellore,Trichy,No
+R01821,66,Male,B+,Kidney,HLA-A33-B58,Chronic Kidney Disease,High,339,Sri Ramachandra Hospital,Mumbai,Yes
+R01822,64,Female,O-,Lung,HLA-A01-B08,Lung Disease,High,89,MIOT Hospital,Salem,Yes
+R01823,75,Male,O+,Heart,HLA-A02-B07,Heart Failure,High,875,Apollo Hospital,Hyderabad,Yes
+R01824,49,Female,B-,Liver,HLA-A26-B40,Liver Failure,Critical,726,CMC Vellore,Hyderabad,No
+R01825,36,Male,O+,Liver,HLA-A24-B44,Liver Failure,Critical,786,AIIMS Delhi,Trichy,No
+R01826,35,Female,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,910,Apollo Hospital,Madurai,Yes
+R01827,42,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,1291,Sri Ramachandra Hospital,Trichy,Yes
+R01828,50,Male,AB+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Medium,1258,Apollo Hospital,Bangalore,Yes
+R01829,43,Female,B+,Heart,HLA-A33-B58,Heart Failure,Low,871,Apollo Hospital,Delhi,Yes
+R01830,37,Male,B-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,733,Fortis Hospital,Salem,No
+R01831,32,Male,O-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,700,Fortis Hospital,Salem,Yes
+R01832,38,Male,O+,Heart,HLA-A26-B40,Heart Failure,Low,340,MIOT Hospital,Trichy,Yes
+R01833,27,Female,A-,Lung,HLA-A02-B07,Lung Disease,Critical,652,Apollo Hospital,Salem,Yes
+R01834,19,Female,O+,Heart,HLA-A02-B07,Heart Failure,Critical,992,CMC Vellore,Mumbai,Yes
+R01835,56,Male,A+,Heart,HLA-A30-B18,Heart Failure,Critical,1129,Fortis Hospital,Coimbatore,Yes
+R01836,46,Female,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,669,Fortis Hospital,Bangalore,No
+R01837,52,Female,B-,Heart,HLA-A30-B18,Heart Failure,Critical,639,Sri Ramachandra Hospital,Delhi,Yes
+R01838,38,Female,AB+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,227,CMC Vellore,Delhi,Yes
+R01839,61,Male,A+,Pancreas,HLA-A33-B58,Pancreatic Disease,High,505,Sri Ramachandra Hospital,Chennai,Yes
+R01840,22,Female,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,466,Sri Ramachandra Hospital,Salem,No
+R01841,33,Female,B+,Heart,HLA-A02-B07,Heart Failure,High,672,MIOT Hospital,Delhi,Yes
+R01842,49,Male,A+,Lung,HLA-A01-B08,Lung Disease,High,279,Kauvery Hospital,Mumbai,Yes
+R01843,21,Female,O+,Liver,HLA-A30-B18,Liver Failure,High,1141,Sri Ramachandra Hospital,Bangalore,No
+R01844,21,Female,O+,Lung,HLA-A24-B44,Lung Disease,Medium,30,Kauvery Hospital,Vellore,No
+R01845,49,Female,AB-,Heart,HLA-A01-B08,Heart Failure,Critical,632,MIOT Hospital,Salem,Yes
+R01846,69,Male,O+,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,757,Kauvery Hospital,Bangalore,No
+R01847,72,Male,O+,Liver,HLA-A26-B40,Liver Failure,High,111,CMC Vellore,Bangalore,Yes
+R01848,56,Female,B-,Pancreas,HLA-A01-B08,Pancreatic Disease,Low,1423,Sri Ramachandra Hospital,Madurai,Yes
+R01849,29,Male,AB+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,877,Global Hospital,Hyderabad,Yes
+R01850,26,Female,A-,Lung,HLA-A30-B18,Lung Disease,Low,213,CMC Vellore,Madurai,Yes
+R01851,23,Female,AB+,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,13,Apollo Hospital,Coimbatore,No
+R01852,51,Female,O-,Pancreas,HLA-A33-B58,Pancreatic Disease,Medium,402,CMC Vellore,Madurai,Yes
+R01853,68,Male,AB+,Lung,HLA-A33-B58,Lung Disease,Medium,1472,Sri Ramachandra Hospital,Trichy,Yes
+R01854,22,Male,A-,Lung,HLA-A03-B15,Lung Disease,Low,418,Kauvery Hospital,Salem,No
+R01855,32,Female,AB-,Heart,HLA-A30-B18,Heart Failure,Low,945,MIOT Hospital,Madurai,Yes
+R01856,50,Male,AB+,Heart,HLA-A03-B15,Heart Failure,Low,1376,AIIMS Delhi,Mumbai,Yes
+R01857,41,Female,A+,Heart,HLA-A01-B08,Heart Failure,Critical,522,Kauvery Hospital,Vellore,Yes
+R01858,39,Male,B-,Lung,HLA-A02-B07,Lung Disease,Low,287,AIIMS Delhi,Madurai,No
+R01859,67,Female,A-,Heart,HLA-A33-B58,Heart Failure,Critical,816,AIIMS Delhi,Salem,Yes
+R01860,49,Male,A+,Liver,HLA-A11-B35,Liver Failure,Critical,1404,Fortis Hospital,Coimbatore,No
+R01861,63,Male,A+,Heart,HLA-A02-B07,Heart Failure,Critical,506,Apollo Hospital,Trichy,Yes
+R01862,20,Female,B-,Liver,HLA-A26-B40,Liver Failure,Medium,547,AIIMS Delhi,Vellore,Yes
+R01863,18,Male,A-,Heart,HLA-A02-B07,Heart Failure,Critical,903,Global Hospital,Mumbai,Yes
+R01864,75,Male,O+,Pancreas,HLA-A26-B40,Pancreatic Disease,Medium,572,Kauvery Hospital,Trichy,Yes
+R01865,34,Female,A+,Heart,HLA-A11-B35,Heart Failure,High,1410,CMC Vellore,Hyderabad,Yes
+R01866,63,Male,A+,Lung,HLA-A26-B40,Lung Disease,Medium,1319,CMC Vellore,Madurai,No
+R01867,50,Female,O+,Pancreas,HLA-A30-B18,Pancreatic Disease,Medium,1415,Apollo Hospital,Trichy,Yes
+R01868,55,Male,O-,Lung,HLA-A02-B07,Lung Disease,High,921,Fortis Hospital,Trichy,No
+R01869,20,Male,O+,Liver,HLA-A24-B44,Liver Failure,Medium,549,Fortis Hospital,Salem,Yes
+R01870,46,Male,B-,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,310,CMC Vellore,Mumbai,No
+R01871,43,Male,B-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,1458,AIIMS Delhi,Madurai,Yes
+R01872,20,Male,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,360,Apollo Hospital,Chennai,Yes
+R01873,42,Female,O+,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,93,Apollo Hospital,Mumbai,No
+R01874,25,Male,A-,Lung,HLA-A24-B44,Lung Disease,Medium,764,Sri Ramachandra Hospital,Coimbatore,Yes
+R01875,64,Male,AB+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,1314,CMC Vellore,Delhi,Yes
+R01876,35,Female,B+,Lung,HLA-A11-B35,Lung Disease,High,634,Sri Ramachandra Hospital,Delhi,Yes
+R01877,20,Male,B-,Kidney,HLA-A01-B08,Chronic Kidney Disease,Critical,828,Fortis Hospital,Chennai,Yes
+R01878,39,Female,O-,Heart,HLA-A02-B07,Heart Failure,High,41,Apollo Hospital,Bangalore,No
+R01879,45,Female,A-,Lung,HLA-A02-B07,Lung Disease,Low,1326,Sri Ramachandra Hospital,Vellore,Yes
+R01880,63,Male,B-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,916,MIOT Hospital,Coimbatore,No
+R01881,70,Female,O-,Pancreas,HLA-A01-B08,Pancreatic Disease,Low,753,AIIMS Delhi,Bangalore,No
+R01882,30,Female,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,Critical,327,Sri Ramachandra Hospital,Delhi,No
+R01883,51,Male,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,1084,Global Hospital,Delhi,Yes
+R01884,19,Female,O+,Heart,HLA-A03-B15,Heart Failure,High,929,CMC Vellore,Delhi,No
+R01885,19,Male,B+,Lung,HLA-A01-B08,Lung Disease,Low,272,Sri Ramachandra Hospital,Vellore,No
+R01886,54,Male,O+,Pancreas,HLA-A01-B08,Pancreatic Disease,High,162,Apollo Hospital,Delhi,Yes
+R01887,22,Female,AB-,Liver,HLA-A26-B40,Liver Failure,High,242,Global Hospital,Hyderabad,No
+R01888,63,Male,B+,Heart,HLA-A33-B58,Heart Failure,High,789,Fortis Hospital,Coimbatore,Yes
+R01889,61,Male,AB+,Pancreas,HLA-A02-B07,Pancreatic Disease,Critical,283,Sri Ramachandra Hospital,Trichy,Yes
+R01890,27,Female,AB-,Liver,HLA-A02-B07,Liver Failure,Critical,110,Kauvery Hospital,Vellore,Yes
+R01891,24,Female,AB+,Liver,HLA-A26-B40,Liver Failure,Critical,93,MIOT Hospital,Bangalore,Yes
+R01892,72,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,1,Apollo Hospital,Chennai,Yes
+R01893,32,Female,O+,Lung,HLA-A24-B44,Lung Disease,Low,941,Fortis Hospital,Salem,Yes
+R01894,72,Female,B+,Heart,HLA-A03-B15,Heart Failure,High,1477,Kauvery Hospital,Chennai,Yes
+R01895,49,Male,B+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Critical,493,CMC Vellore,Madurai,No
+R01896,42,Female,A+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,121,MIOT Hospital,Mumbai,Yes
+R01897,25,Female,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Critical,224,CMC Vellore,Vellore,Yes
+R01898,23,Male,AB-,Lung,HLA-A11-B35,Lung Disease,Critical,110,Fortis Hospital,Salem,Yes
+R01899,47,Male,O+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Low,10,Global Hospital,Trichy,Yes
+R01900,54,Female,AB-,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,1323,Fortis Hospital,Delhi,No
+R01901,55,Male,O+,Lung,HLA-A26-B40,Lung Disease,Medium,1219,Kauvery Hospital,Trichy,No
+R01902,44,Male,B+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,637,CMC Vellore,Salem,Yes
+R01903,34,Female,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,High,1150,Sri Ramachandra Hospital,Salem,Yes
+R01904,47,Female,B-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Critical,525,AIIMS Delhi,Vellore,Yes
+R01905,51,Male,O+,Lung,HLA-A24-B44,Lung Disease,Critical,80,Sri Ramachandra Hospital,Hyderabad,Yes
+R01906,53,Male,AB+,Pancreas,HLA-A24-B44,Pancreatic Disease,Medium,1121,Kauvery Hospital,Madurai,Yes
+R01907,42,Female,O+,Liver,HLA-A03-B15,Liver Failure,Low,678,MIOT Hospital,Chennai,No
+R01908,35,Male,O+,Lung,HLA-A26-B40,Lung Disease,Critical,1270,MIOT Hospital,Vellore,Yes
+R01909,43,Male,B-,Heart,HLA-A03-B15,Heart Failure,Low,1217,Apollo Hospital,Mumbai,Yes
+R01910,24,Male,O-,Heart,HLA-A24-B44,Heart Failure,Low,1365,CMC Vellore,Salem,Yes
+R01911,24,Female,O+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Low,292,MIOT Hospital,Trichy,No
+R01912,21,Male,B+,Lung,HLA-A01-B08,Lung Disease,Critical,1469,MIOT Hospital,Salem,Yes
+R01913,62,Male,B+,Heart,HLA-A01-B08,Heart Failure,Low,1366,Fortis Hospital,Madurai,No
+R01914,68,Female,A+,Heart,HLA-A01-B08,Heart Failure,Medium,856,Apollo Hospital,Coimbatore,Yes
+R01915,39,Male,B+,Kidney,HLA-A26-B40,Chronic Kidney Disease,High,902,MIOT Hospital,Chennai,No
+R01916,20,Female,A-,Heart,HLA-A33-B58,Heart Failure,Medium,265,Global Hospital,Delhi,Yes
+R01917,63,Female,A+,Heart,HLA-A11-B35,Heart Failure,Low,99,Apollo Hospital,Bangalore,Yes
+R01918,31,Female,A+,Pancreas,HLA-A11-B35,Pancreatic Disease,Low,7,Kauvery Hospital,Vellore,Yes
+R01919,74,Male,O+,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,132,CMC Vellore,Mumbai,Yes
+R01920,24,Male,AB-,Pancreas,HLA-A03-B15,Pancreatic Disease,High,709,AIIMS Delhi,Vellore,Yes
+R01921,20,Female,O+,Liver,HLA-A02-B07,Liver Failure,Low,122,Sri Ramachandra Hospital,Hyderabad,Yes
+R01922,43,Female,A+,Kidney,HLA-A02-B07,Chronic Kidney Disease,Critical,1469,Global Hospital,Hyderabad,Yes
+R01923,67,Male,O-,Kidney,HLA-A24-B44,Chronic Kidney Disease,Medium,1468,AIIMS Delhi,Salem,Yes
+R01924,55,Female,B-,Heart,HLA-A01-B08,Heart Failure,Low,805,Global Hospital,Hyderabad,No
+R01925,39,Female,A+,Liver,HLA-A11-B35,Liver Failure,Medium,1297,MIOT Hospital,Chennai,Yes
+R01926,31,Female,AB-,Lung,HLA-A24-B44,Lung Disease,Medium,802,Fortis Hospital,Trichy,Yes
+R01927,52,Female,B+,Lung,HLA-A01-B08,Lung Disease,Medium,1355,Fortis Hospital,Salem,Yes
+R01928,39,Male,A-,Heart,HLA-A01-B08,Heart Failure,Low,1171,Apollo Hospital,Bangalore,Yes
+R01929,33,Male,O+,Heart,HLA-A24-B44,Heart Failure,Medium,29,Fortis Hospital,Coimbatore,Yes
+R01930,43,Female,B-,Lung,HLA-A03-B15,Lung Disease,Low,577,MIOT Hospital,Hyderabad,Yes
+R01931,53,Female,AB-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,351,Sri Ramachandra Hospital,Trichy,Yes
+R01932,20,Male,B-,Lung,HLA-A30-B18,Lung Disease,Medium,18,Fortis Hospital,Hyderabad,Yes
+R01933,51,Male,A-,Heart,HLA-A24-B44,Heart Failure,Critical,949,Apollo Hospital,Delhi,Yes
+R01934,46,Male,A-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,463,Apollo Hospital,Madurai,Yes
+R01935,62,Male,A-,Lung,HLA-A03-B15,Lung Disease,Low,723,CMC Vellore,Mumbai,No
+R01936,61,Female,A-,Kidney,HLA-A30-B18,Chronic Kidney Disease,Low,230,Sri Ramachandra Hospital,Salem,Yes
+R01937,53,Male,AB-,Heart,HLA-A33-B58,Heart Failure,Critical,343,CMC Vellore,Bangalore,Yes
+R01938,66,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,138,Sri Ramachandra Hospital,Delhi,Yes
+R01939,55,Female,B+,Pancreas,HLA-A24-B44,Pancreatic Disease,High,637,Apollo Hospital,Coimbatore,Yes
+R01940,64,Female,B+,Liver,HLA-A01-B08,Liver Failure,Low,364,AIIMS Delhi,Delhi,Yes
+R01941,26,Male,B+,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,517,CMC Vellore,Trichy,Yes
+R01942,35,Male,B+,Lung,HLA-A02-B07,Lung Disease,Low,864,MIOT Hospital,Delhi,Yes
+R01943,61,Male,A+,Kidney,HLA-A03-B15,Chronic Kidney Disease,Low,1299,AIIMS Delhi,Chennai,Yes
+R01944,32,Male,B+,Liver,HLA-A33-B58,Liver Failure,Critical,736,Fortis Hospital,Coimbatore,Yes
+R01945,63,Male,A+,Heart,HLA-A03-B15,Heart Failure,Low,856,MIOT Hospital,Chennai,No
+R01946,43,Male,A+,Heart,HLA-A01-B08,Heart Failure,High,1465,AIIMS Delhi,Hyderabad,No
+R01947,40,Female,A-,Lung,HLA-A11-B35,Lung Disease,Medium,146,Apollo Hospital,Madurai,Yes
+R01948,61,Male,O-,Lung,HLA-A24-B44,Lung Disease,Critical,1246,Apollo Hospital,Madurai,Yes
+R01949,68,Male,AB+,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,137,Sri Ramachandra Hospital,Bangalore,Yes
+R01950,54,Male,B-,Liver,HLA-A02-B07,Liver Failure,Critical,998,Apollo Hospital,Mumbai,Yes
+R01951,43,Female,O+,Heart,HLA-A30-B18,Heart Failure,Critical,84,Sri Ramachandra Hospital,Salem,No
+R01952,23,Female,AB-,Liver,HLA-A26-B40,Liver Failure,Low,621,Kauvery Hospital,Trichy,Yes
+R01953,46,Female,O+,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,1239,AIIMS Delhi,Salem,No
+R01954,18,Female,O+,Heart,HLA-A03-B15,Heart Failure,Critical,389,Fortis Hospital,Madurai,No
+R01955,45,Male,A-,Liver,HLA-A24-B44,Liver Failure,Medium,524,AIIMS Delhi,Bangalore,Yes
+R01956,59,Female,AB+,Heart,HLA-A03-B15,Heart Failure,Low,1391,Apollo Hospital,Mumbai,No
+R01957,61,Male,O+,Pancreas,HLA-A03-B15,Pancreatic Disease,Medium,1484,Kauvery Hospital,Coimbatore,No
+R01958,32,Male,AB-,Heart,HLA-A11-B35,Heart Failure,Medium,1475,Kauvery Hospital,Hyderabad,Yes
+R01959,60,Male,AB-,Heart,HLA-A11-B35,Heart Failure,Medium,503,Kauvery Hospital,Salem,Yes
+R01960,22,Male,AB-,Liver,HLA-A33-B58,Liver Failure,Critical,58,MIOT Hospital,Trichy,Yes
+R01961,67,Female,AB+,Lung,HLA-A33-B58,Lung Disease,High,929,Sri Ramachandra Hospital,Delhi,Yes
+R01962,30,Female,B-,Heart,HLA-A30-B18,Heart Failure,High,1156,Global Hospital,Trichy,No
+R01963,64,Female,A-,Lung,HLA-A30-B18,Lung Disease,Medium,575,Fortis Hospital,Coimbatore,Yes
+R01964,36,Female,A+,Heart,HLA-A01-B08,Heart Failure,High,1267,Kauvery Hospital,Mumbai,Yes
+R01965,29,Female,B+,Heart,HLA-A26-B40,Heart Failure,High,1180,Sri Ramachandra Hospital,Bangalore,Yes
+R01966,29,Male,B-,Lung,HLA-A01-B08,Lung Disease,Critical,566,Fortis Hospital,Salem,Yes
+R01967,25,Female,B+,Pancreas,HLA-A30-B18,Pancreatic Disease,Low,586,Apollo Hospital,Trichy,Yes
+R01968,68,Male,O+,Liver,HLA-A02-B07,Liver Failure,High,649,Kauvery Hospital,Salem,Yes
+R01969,54,Female,B-,Lung,HLA-A33-B58,Lung Disease,Medium,214,Apollo Hospital,Chennai,Yes
+R01970,51,Female,B+,Lung,HLA-A03-B15,Lung Disease,Low,163,MIOT Hospital,Mumbai,No
+R01971,53,Female,AB-,Kidney,HLA-A03-B15,Chronic Kidney Disease,Medium,743,Kauvery Hospital,Madurai,No
+R01972,69,Female,AB+,Pancreas,HLA-A24-B44,Pancreatic Disease,Critical,100,CMC Vellore,Hyderabad,Yes
+R01973,73,Male,O+,Liver,HLA-A26-B40,Liver Failure,Medium,456,Global Hospital,Hyderabad,No
+R01974,54,Female,O+,Liver,HLA-A26-B40,Liver Failure,Critical,386,AIIMS Delhi,Hyderabad,Yes
+R01975,35,Male,A+,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,900,CMC Vellore,Chennai,Yes
+R01976,59,Male,A+,Heart,HLA-A01-B08,Heart Failure,Medium,991,Fortis Hospital,Madurai,Yes
+R01977,29,Female,O-,Heart,HLA-A11-B35,Heart Failure,Low,872,Apollo Hospital,Delhi,Yes
+R01978,54,Male,B-,Liver,HLA-A30-B18,Liver Failure,Low,1013,Fortis Hospital,Chennai,Yes
+R01979,30,Female,AB-,Kidney,HLA-A26-B40,Chronic Kidney Disease,Medium,1062,Sri Ramachandra Hospital,Madurai,Yes
+R01980,59,Male,O-,Pancreas,HLA-A11-B35,Pancreatic Disease,High,262,MIOT Hospital,Delhi,Yes
+R01981,33,Male,B+,Liver,HLA-A03-B15,Liver Failure,Critical,465,AIIMS Delhi,Mumbai,Yes
+R01982,36,Female,O-,Kidney,HLA-A11-B35,Chronic Kidney Disease,High,462,Fortis Hospital,Salem,No
+R01983,23,Female,A+,Lung,HLA-A33-B58,Lung Disease,Critical,188,Apollo Hospital,Mumbai,No
+R01984,50,Male,O+,Kidney,HLA-A33-B58,Chronic Kidney Disease,Low,1036,Fortis Hospital,Salem,No
+R01985,24,Male,O-,Kidney,HLA-A02-B07,Chronic Kidney Disease,Medium,812,CMC Vellore,Vellore,Yes
+R01986,61,Male,A-,Pancreas,HLA-A33-B58,Pancreatic Disease,Critical,1449,Kauvery Hospital,Mumbai,Yes
+R01987,48,Male,AB-,Lung,HLA-A33-B58,Lung Disease,High,269,Fortis Hospital,Salem,Yes
+R01988,27,Male,A+,Liver,HLA-A02-B07,Liver Failure,High,520,Fortis Hospital,Vellore,Yes
+R01989,29,Female,O+,Liver,HLA-A01-B08,Liver Failure,Critical,375,MIOT Hospital,Salem,Yes
+R01990,75,Female,B-,Kidney,HLA-A33-B58,Chronic Kidney Disease,Medium,137,CMC Vellore,Mumbai,Yes
+R01991,43,Female,AB+,Heart,HLA-A02-B07,Heart Failure,Medium,13,Global Hospital,Vellore,Yes
+R01992,37,Male,AB-,Pancreas,HLA-A03-B15,Pancreatic Disease,Low,1352,CMC Vellore,Salem,No
+R01993,43,Male,AB+,Liver,HLA-A30-B18,Liver Failure,Medium,1170,Global Hospital,Vellore,No
+R01994,38,Female,O-,Kidney,HLA-A01-B08,Chronic Kidney Disease,High,653,Kauvery Hospital,Delhi,Yes
+R01995,58,Male,AB-,Liver,HLA-A02-B07,Liver Failure,Critical,1476,Kauvery Hospital,Coimbatore,Yes
+R01996,67,Female,AB-,Pancreas,HLA-A30-B18,Pancreatic Disease,High,35,CMC Vellore,Delhi,No
+R01997,31,Female,O-,Pancreas,HLA-A33-B58,Pancreatic Disease,High,379,Apollo Hospital,Hyderabad,Yes
+R01998,19,Female,B+,Liver,HLA-A30-B18,Liver Failure,Medium,1366,Apollo Hospital,Coimbatore,No
+R01999,26,Male,B+,Kidney,HLA-A24-B44,Chronic Kidney Disease,Low,414,AIIMS Delhi,Bangalore,No
+R02000,52,Female,O+,Lung,HLA-A01-B08,Lung Disease,Critical,442,CMC Vellore,Madurai,No
