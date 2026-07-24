@@ -1,0 +1,5 @@
+outs:
+- md5: 37317f17a8310319c12eb37173187c87
+  size: 45583
+  hash: md5
+  path: donors.csv

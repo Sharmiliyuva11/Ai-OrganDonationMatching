@@ -1,0 +1,5 @@
+outs:
+- md5: aac47506fd69c3f16da8f426b8eb7fad
+  size: 4200985
+  hash: md5
+  path: xgboost_model.json

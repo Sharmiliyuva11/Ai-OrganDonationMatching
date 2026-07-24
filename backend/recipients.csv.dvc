@@ -1,0 +1,5 @@
+outs:
+- md5: 3e9660feb26aa36f81a9755b570b4e2f
+  size: 185427
+  hash: md5
+  path: recipients.csv
