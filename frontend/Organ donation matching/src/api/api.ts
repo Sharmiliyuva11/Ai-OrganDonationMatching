@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000',
+  // Use relative base URL so requests go through Vite dev proxy during development
+  baseURL: '',
   timeout: 15000,
   headers: {
     'Content-Type': 'application/json',
@@ -52,6 +53,37 @@ export interface MatchPredictionResponse {
 
 export async function predictMatch(payload: MatchPredictionRequest): Promise<MatchPredictionResponse> {
   const response = await api.post<MatchPredictionResponse>('/predict', payload)
+  return response.data
+}
+
+export interface FindMatchingDonorsRequest {
+  recipient_id: string
+}
+
+export interface MatchingDonor {
+  donor_id: string
+  donor_type: string
+  age: number | string
+  gender: string
+  blood_group: string
+  organ_available: string
+  hla_type: string
+  organ_condition: string
+  city: string
+  hospital: string
+  donation_date: string
+  match_score: number
+  match_details: Record<string, number>
+}
+
+export interface FindMatchingDonorsResponse {
+  recipient: Record<string, any>
+  matching_donors: MatchingDonor[]
+  total_matches: number
+}
+
+export async function findMatchingDonors(payload: FindMatchingDonorsRequest): Promise<FindMatchingDonorsResponse> {
+  const response = await api.post<FindMatchingDonorsResponse>('/find-matching-donors', payload)
   return response.data
 }
 
