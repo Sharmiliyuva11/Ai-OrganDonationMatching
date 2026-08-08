@@ -2,10 +2,22 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from xgboost import XGBClassifier
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="AI Powered Organ Donation Matching Platform",
     version="2.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:8443",
+        "http://127.0.0.1:8443",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Load trained model

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --color-portal-canvas: #f7fafc;
+  --color-portal-surface: #ffffff;
+  --color-portal-primary: #0f766e;
+  --color-portal-primary-hover: #0a5c55;
+  --color-portal-mint: #dff7f2;
+  --color-portal-mint-soft: #f0fdf9;
+  --color-portal-ink: #1f2937;
+  --color-portal-muted: #6b7280;
+  --color-portal-border: #e2e8f0;
+  --color-portal-danger: #e05252;
+  --color-portal-warning: #d58a16;
+  --color-portal-info: #3c82c4;
+  --color-portal-success: #119a72;
+  --shadow-portal-card: 0 8px 24px rgba(15, 118, 110, 0.06);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-width: 320px;
+    background: var(--color-portal-canvas);
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--color-portal-canvas);
+    color: var(--color-portal-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--color-portal-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .portal-card {
+    border: 1px solid var(--color-portal-border);
+    border-radius: 14px;
+    background: var(--color-portal-surface);
+    box-shadow: var(--shadow-portal-card);
+  }
+
+  .portal-section-header {
+    border-bottom: 1px solid var(--color-portal-border);
+  }
+
+  .portal-input {
+    min-height: 40px;
+    border: 1px solid var(--color-portal-border);
+    border-radius: 10px;
+    background: var(--color-portal-surface);
+    color: var(--color-portal-ink);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .portal-input:hover {
+    border-color: #b9c9d3;
+  }
+
+  .portal-input:focus {
+    border-color: var(--color-portal-primary);
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    outline: none;
+  }
+
+  .portal-table-wrap {
+    overflow-x: auto;
+  }
+
+  .portal-table-wrap table {
+    min-width: 720px;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}

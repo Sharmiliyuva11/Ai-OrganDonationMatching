@@ -1,0 +1,10 @@
+{
+  "description": "Simplifies complex tasks by providing an intuitive interface that enhances productivity and streamlines workflows for professionals and teams.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

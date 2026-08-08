@@ -1,0 +1,161 @@
+import { useState } from 'react'
+
+const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+const organs = ['Kidney', 'Liver', 'Heart', 'Lung', 'Cornea', 'Pancreas', 'Bone Marrow']
+const hospitals = ['City Hospital Karachi', 'Aga Khan Hospital', 'Jinnah Hospital', 'Services Hospital', 'Liaquat Hospital', 'PKLI', 'Shaukat Khanum', 'NICVD', 'CMH Rawalpindi', 'Holy Family Hospital']
+const cities = ['Karachi', 'Lahore', 'Rawalpindi', 'Islamabad', 'Hyderabad', 'Peshawar', 'Quetta', 'Multan']
+const hlaTypes = ['HLA-A', 'HLA-B', 'HLA-C', 'HLA-DR', 'HLA-DQ', 'HLA-DP']
+
+const inputCls = "w-full px-4 py-2.5 border border-[#D1FAE5] rounded-xl text-sm text-[#1F2937] placeholder-[#9CA3AF] bg-white focus:outline-none transition-all"
+const selectCls = "w-full px-4 py-2.5 border border-[#D1FAE5] rounded-xl text-sm text-[#1F2937] bg-white focus:outline-none transition-all appearance-none"
+
+function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-[#1F2937] mb-1.5">
+        {label}{required && <span className="text-red-500 ml-0.5">*</span>}
+      </label>
+      {children}
+    </div>
+  )
+}
+
+function SectionHeader({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="flex items-center gap-3 mb-5 pb-3 border-b border-[#D1FAE5]">
+      <div className="w-1 h-6 rounded-full" style={{ background: '#0F766E' }}/>
+      <div>
+        <h3 className="text-sm font-semibold text-[#1F2937]">{title}</h3>
+        <p className="text-xs text-[#6B7280]">{desc}</p>
+      </div>
+    </div>
+  )
+}
+
+const newId = () => 'R' + String(Math.floor(Math.random() * 900) + 100)
+
+export default function RecipientRegistration() {
+  const [form, setForm] = useState({
+    recipientId: newId(), fullName: '', age: '', gender: '',
+    bloodGroup: '', organ: '', hlaType: '', urgency: '', waitingDays: '',
+    hospital: '', city: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const set = (f: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    setForm(p => ({ ...p, [f]: e.target.value }))
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 3000)
+  }
+
+  return (
+    <div className="max-w-3xl space-y-4">
+      {submitted && (
+        <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm border" style={{ background: '#F0FDF9', borderColor: '#D1FAE5', color: '#0F766E' }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Recipient <strong>{form.recipientId}</strong> registered successfully.
+        </div>
+      )}
+
+      <div className="bg-white rounded-2xl border border-[#D1FAE5] shadow-sm overflow-hidden">
+        <div className="px-6 py-4 border-b border-[#D1FAE5]" style={{ background: '#F0FDF9' }}>
+          <h2 className="text-base font-semibold text-[#1F2937] font-display">Recipient Registration Form</h2>
+          <p className="text-xs text-[#6B7280] mt-0.5">Fields marked * are required</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="p-6 space-y-8">
+          <div>
+            <SectionHeader title="Basic Information" desc="Patient personal details"/>
+            <div className="grid grid-cols-2 gap-4">
+              <Field label="Recipient ID" required>
+                <input value={form.recipientId} readOnly className={`${inputCls} bg-slate-50 text-[#6B7280]`}/>
+              </Field>
+              <Field label="Full Name" required>
+                <input value={form.fullName} onChange={set('fullName')} placeholder="Enter full name" className={inputCls} required
+                  onFocus={e => e.target.style.boxShadow = '0 0 0 2px #0F766E33'}
+                  onBlur={e => e.target.style.boxShadow = ''}/>
+              </Field>
+              <Field label="Age" required>
+                <input type="number" value={form.age} onChange={set('age')} placeholder="Years" min="1" max="80" className={inputCls} required
+                  onFocus={e => e.target.style.boxShadow = '0 0 0 2px #0F766E33'}
+                  onBlur={e => e.target.style.boxShadow = ''}/>
+              </Field>
+              <Field label="Gender" required>
+                <select value={form.gender} onChange={set('gender')} className={selectCls} required>
+                  <option value="">Select gender</option>
+                  <option>Male</option><option>Female</option><option>Other</option>
+                </select>
+              </Field>
+            </div>
+          </div>
+
+          <div>
+            <SectionHeader title="Medical Requirements" desc="Clinical and organ matching criteria"/>
+            <div className="grid grid-cols-2 gap-4">
+              <Field label="Blood Group" required>
+                <select value={form.bloodGroup} onChange={set('bloodGroup')} className={selectCls} required>
+                  <option value="">Select blood group</option>
+                  {bloodGroups.map(g => <option key={g}>{g}</option>)}
+                </select>
+              </Field>
+              <Field label="Organ Needed" required>
+                <select value={form.organ} onChange={set('organ')} className={selectCls} required>
+                  <option value="">Select organ</option>
+                  {organs.map(o => <option key={o}>{o}</option>)}
+                </select>
+              </Field>
+              <Field label="HLA Type" required>
+                <select value={form.hlaType} onChange={set('hlaType')} className={selectCls} required>
+                  <option value="">Select HLA type</option>
+                  {hlaTypes.map(h => <option key={h}>{h}</option>)}
+                </select>
+              </Field>
+              <Field label="Urgency Level" required>
+                <select value={form.urgency} onChange={set('urgency')} className={selectCls} required>
+                  <option value="">Select urgency</option>
+                  <option>Critical</option><option>High</option><option>Medium</option><option>Low</option>
+                </select>
+              </Field>
+              <Field label="Waiting Days" required>
+                <input type="number" value={form.waitingDays} onChange={set('waitingDays')} placeholder="Days on waiting list" min="0" className={inputCls} required
+                  onFocus={e => e.target.style.boxShadow = '0 0 0 2px #0F766E33'}
+                  onBlur={e => e.target.style.boxShadow = ''}/>
+              </Field>
+            </div>
+          </div>
+
+          <div>
+            <SectionHeader title="Hospital Information" desc="Treatment facility and location"/>
+            <div className="grid grid-cols-2 gap-4">
+              <Field label="Hospital" required>
+                <select value={form.hospital} onChange={set('hospital')} className={selectCls} required>
+                  <option value="">Select hospital</option>
+                  {hospitals.map(h => <option key={h}>{h}</option>)}
+                </select>
+              </Field>
+              <Field label="City" required>
+                <select value={form.city} onChange={set('city')} className={selectCls} required>
+                  <option value="">Select city</option>
+                  {cities.map(c => <option key={c}>{c}</option>)}
+                </select>
+              </Field>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 pt-2 border-t border-[#D1FAE5]">
+            <button type="submit" className="px-7 py-2.5 text-white text-sm font-semibold rounded-xl shadow-sm transition-all" style={{ background: '#0F766E' }}
+              onMouseEnter={e => (e.target as HTMLElement).style.background = '#0a5c55'}
+              onMouseLeave={e => (e.target as HTMLElement).style.background = '#0F766E'}>
+              Register Recipient
+            </button>
+            <button type="button" className="px-6 py-2.5 border border-[#D1FAE5] text-[#6B7280] hover:bg-[#F0FDF9] text-sm font-medium rounded-xl transition-colors">Reset</button>
+            <button type="button" className="px-6 py-2.5 text-[#6B7280] hover:text-[#1F2937] text-sm font-medium rounded-xl">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
