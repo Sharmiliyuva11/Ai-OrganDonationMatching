@@ -42,9 +42,59 @@ export default function AIMatchPrediction() {
   const [prediction, setPrediction] = useState<MatchPredictionResponse | null>(null)
   const [predictionError, setPredictionError] = useState('')
 
+  // Form state for manual editing
+  const [recipientAge, setRecipientAge] = useState<number | ''>('')
+  const [recipientBloodGroup, setRecipientBloodGroup] = useState('')
+  const [organNeeded, setOrganNeeded] = useState('')
+  const [recipientHla, setRecipientHla] = useState('')
+  const [recipientCity, setRecipientCity] = useState('')
+  const [recipientHospital, setRecipientHospital] = useState('')
+  const [urgency, setUrgency] = useState('')
+  const [waitingDays, setWaitingDays] = useState<number | ''>('')
+
+  const [donorAge, setDonorAge] = useState<number | ''>('')
+  const [donorBloodGroup, setDonorBloodGroup] = useState('')
+  const [organAvailable, setOrganAvailable] = useState('')
+  const [donorHla, setDonorHla] = useState('')
+  const [donorCity, setDonorCity] = useState('')
+  const [donorHospital, setDonorHospital] = useState('')
+  const [donorType, setDonorType] = useState('')
+
+  const [doctorVerified, setDoctorVerified] = useState('No')
+  const [organCondition, setOrganCondition] = useState('Good')
+  const [infectionStatus, setInfectionStatus] = useState('No')
   const predict = async (id: string) => {
-    const found = recipients.find(item => item.id.toLowerCase() === id.trim().toLowerCase())
-    if (!found) {
+    // If an ID is provided, try to load that recipient and populate form fields.
+    const found = id ? recipients.find(item => item.id.toLowerCase() === id.trim().toLowerCase()) : null
+
+    let chosenDonor = null
+    if (found) {
+      chosenDonor = resolveDonor(found)
+      // populate form fields from found and chosen donor
+      setRecipient(found)
+      setRecipientAge(found.age)
+      setRecipientBloodGroup(found.bloodGroup)
+      setOrganNeeded(found.requiredOrgan)
+      setRecipientHla(String(found.hlaScore))
+      setRecipientCity(found.city)
+      setRecipientHospital(found.hospital)
+      setUrgency(mapUrgency(found.urgencyLevel))
+      setWaitingDays(found.waitingDays)
+
+      if (chosenDonor) {
+        setDonorAge(chosenDonor.age)
+        setDonorBloodGroup(chosenDonor.bloodGroup)
+        setOrganAvailable(chosenDonor.organ)
+        setDonorHla(String(chosenDonor.hlaScore))
+        setDonorCity(chosenDonor.city)
+        setDonorHospital(chosenDonor.hospital)
+        setDonorType(chosenDonor.donorType)
+        setDoctorVerified(chosenDonor.doctorVerified ? 'Yes' : 'No')
+        setOrganCondition(mapOrganCondition(chosenDonor.organCondition))
+        setInfectionStatus(chosenDonor.infectionStatus.toLowerCase().includes('positive') ? 'Yes' : 'No')
+      }
+    } else if (id) {
+      // if an ID was provided but not found, show feedback and abort
       setRecipient(null)
       setPrediction(null)
       setPredictionError('')
@@ -52,38 +102,36 @@ export default function AIMatchPrediction() {
       return
     }
 
-    const chosenDonor = resolveDonor(found)
+    // Build payload from current form state (populated from sample or edited manually)
+    const payload = {
+      donor_age: typeof donorAge === 'number' ? donorAge : Number(donorAge) || 0,
+      recipient_age: typeof recipientAge === 'number' ? recipientAge : Number(recipientAge) || 0,
+      donor_blood_group: donorBloodGroup || '',
+      recipient_blood_group: recipientBloodGroup || '',
+      organ_available: organAvailable || '',
+      organ_needed: organNeeded || '',
+      donor_hla: donorHla || '',
+      recipient_hla: recipientHla || '',
+      donor_city: donorCity || '',
+      recipient_city: recipientCity || '',
+      donor_hospital: donorHospital || '',
+      recipient_hospital: recipientHospital || '',
+      donor_type: donorType || '',
+      doctor_verified: doctorVerified || 'No',
+      urgency: urgency || 'Low',
+      waiting_days: typeof waitingDays === 'number' ? waitingDays : Number(waitingDays) || 0,
+      organ_condition: organCondition || 'Good',
+      infection_status: infectionStatus || 'No',
+    }
 
     setLoading(true)
-    setRecipient(found)
     setPrediction(null)
     setPredictionError('')
 
     try {
-      const payload = {
-        donor_age: chosenDonor.age,
-        recipient_age: found.age,
-        donor_blood_group: chosenDonor.bloodGroup,
-        recipient_blood_group: found.bloodGroup,
-        organ_available: chosenDonor.organ,
-        organ_needed: found.requiredOrgan,
-        donor_hla: String(chosenDonor.hlaScore),
-        recipient_hla: String(found.hlaScore),
-        donor_city: chosenDonor.city,
-        recipient_city: found.city,
-        donor_hospital: chosenDonor.hospital,
-        recipient_hospital: found.hospital,
-        donor_type: chosenDonor.donorType,
-        doctor_verified: chosenDonor.doctorVerified ? 'Yes' : 'No',
-        urgency: mapUrgency(found.urgencyLevel),
-        waiting_days: found.waitingDays,
-        organ_condition: mapOrganCondition(chosenDonor.organCondition),
-        infection_status: chosenDonor.infectionStatus.toLowerCase().includes('positive') ? 'Yes' : 'No',
-      }
-
       const response = await predictMatch(payload)
       setPrediction(response)
-      setFeedback(`Prediction completed for ${found.id}.`)
+      setFeedback(found ? `Prediction completed for ${found.id}.` : 'Prediction completed.')
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to reach the prediction service.'
       setPrediction(null)
@@ -127,7 +175,50 @@ export default function AIMatchPrediction() {
     {feedback && <div role="status" className="fixed bottom-5 right-5 z-30 rounded-xl border border-[#b9e8dd] bg-white px-4 py-3 text-xs font-semibold text-portal-primary shadow-lg">{feedback}</div>}
     <PageHeader title="AI Match Prediction" subtitle="Predict donor-recipient compatibility using the AI matching engine" actions={<PortalButton onClick={() => { void predict(recipientId || 'R001') }} disabled={loading}><Activity size={14} />{loading ? 'Running...' : 'Run Prediction'}</PortalButton>} />
     <div className="grid gap-5 xl:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.75fr)]">
-      <section className="portal-card p-4 sm:p-5"><div className="mb-4 flex items-start gap-3"><div className="flex h-9 w-9 items-center justify-center rounded-xl bg-portal-mint text-portal-primary"><Search size={17} /></div><div><h3 className="text-sm font-semibold text-portal-ink">Recipient Search</h3><p className="mt-1 text-[11px] text-portal-muted">Select a recipient to generate a live AI prediction</p></div></div><form onSubmit={submit} className="flex flex-col gap-3 sm:flex-row sm:items-end"><FilterField label="Recipient ID" icon={<Search size={14} />} className="flex-1"><input value={recipientId} onChange={event => setRecipientId(event.target.value)} placeholder="e.g. R001" className="portal-input w-full pl-9 pr-3 text-sm" /></FilterField><PortalButton type="submit" disabled={loading || !recipientId}>{loading ? <><LoaderCircle size={14} className="animate-spin" />Predicting</> : 'Predict Match'}</PortalButton><PortalButton type="button" variant="secondary" onClick={() => { setRecipientId('R001'); void predict('R001') }}>Load Sample</PortalButton></form></section>
+      <section className="portal-card p-4 sm:p-5">
+        <div className="mb-4 flex items-start gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-portal-mint text-portal-primary"><Search size={17} /></div>
+          <div>
+            <h3 className="text-sm font-semibold text-portal-ink">Recipient Search</h3>
+            <p className="mt-1 text-[11px] text-portal-muted">Select a recipient or manually edit inputs to generate a live AI prediction</p>
+          </div>
+        </div>
+
+        <form onSubmit={submit} className="flex flex-col gap-3">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <FilterField label="Patient ID" icon={<Search size={14} />} className="col-span-2"><input value={recipientId} onChange={event => setRecipientId(event.target.value)} placeholder="e.g. R001" className="portal-input w-full pl-9 pr-3 text-sm" /></FilterField>
+
+            <h4 className="col-span-2 mt-2 text-sm font-semibold text-portal-ink">Recipient Information</h4>
+            <FilterField label="Recipient Age"><input type="number" value={recipientAge ?? ''} onChange={e => setRecipientAge(e.target.value === '' ? '' : Number(e.target.value))} className="portal-input" /></FilterField>
+            <FilterField label="Recipient Blood Group"><select value={recipientBloodGroup} onChange={e => setRecipientBloodGroup(e.target.value)} className="portal-input"><option value="">Select</option><option>O+</option><option>O-</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option></select></FilterField>
+            <FilterField label="Organ Needed"><select value={organNeeded} onChange={e => setOrganNeeded(e.target.value)} className="portal-input"><option value="">Select</option><option>Kidney</option><option>Liver</option><option>Heart</option><option>Lung</option><option>Cornea</option></select></FilterField>
+            <FilterField label="Recipient HLA"><input value={recipientHla} onChange={e => setRecipientHla(e.target.value)} className="portal-input" /></FilterField>
+            <FilterField label="Recipient City"><input value={recipientCity} onChange={e => setRecipientCity(e.target.value)} className="portal-input" /></FilterField>
+            <FilterField label="Recipient Hospital"><input value={recipientHospital} onChange={e => setRecipientHospital(e.target.value)} className="portal-input" /></FilterField>
+            <FilterField label="Urgency"><select value={urgency} onChange={e => setUrgency(e.target.value)} className="portal-input"><option value="">Select</option><option>Critical</option><option>High</option><option>Medium</option><option>Moderate</option><option>Low</option></select></FilterField>
+            <FilterField label="Waiting Days"><input type="number" value={waitingDays ?? ''} onChange={e => setWaitingDays(e.target.value === '' ? '' : Number(e.target.value))} className="portal-input" /></FilterField>
+
+            <h4 className="col-span-2 mt-2 text-sm font-semibold text-portal-ink">Donor Information</h4>
+            <FilterField label="Donor Age"><input type="number" value={donorAge ?? ''} onChange={e => setDonorAge(e.target.value === '' ? '' : Number(e.target.value))} className="portal-input" /></FilterField>
+            <FilterField label="Donor Blood Group"><select value={donorBloodGroup} onChange={e => setDonorBloodGroup(e.target.value)} className="portal-input"><option value="">Select</option><option>O+</option><option>O-</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option></select></FilterField>
+            <FilterField label="Organ Available"><select value={organAvailable} onChange={e => setOrganAvailable(e.target.value)} className="portal-input"><option value="">Select</option><option>Kidney</option><option>Liver</option><option>Heart</option><option>Lung</option><option>Cornea</option></select></FilterField>
+            <FilterField label="Donor HLA"><input value={donorHla} onChange={e => setDonorHla(e.target.value)} className="portal-input" /></FilterField>
+            <FilterField label="Donor City"><input value={donorCity} onChange={e => setDonorCity(e.target.value)} className="portal-input" /></FilterField>
+            <FilterField label="Donor Hospital"><input value={donorHospital} onChange={e => setDonorHospital(e.target.value)} className="portal-input" /></FilterField>
+            <FilterField label="Donor Type"><select value={donorType} onChange={e => setDonorType(e.target.value)} className="portal-input"><option value="">Select</option><option>Living</option><option>Deceased</option></select></FilterField>
+
+            <h4 className="col-span-2 mt-2 text-sm font-semibold text-portal-ink">Medical Information</h4>
+            <FilterField label="Doctor Verified"><select value={doctorVerified} onChange={e => setDoctorVerified(e.target.value)} className="portal-input"><option value="Yes">Yes</option><option value="No">No</option></select></FilterField>
+            <FilterField label="Organ Condition"><select value={organCondition} onChange={e => setOrganCondition(e.target.value)} className="portal-input"><option>Excellent</option><option>Good</option><option>Satisfactory</option><option>Average</option></select></FilterField>
+            <FilterField label="Infection Status"><select value={infectionStatus} onChange={e => setInfectionStatus(e.target.value)} className="portal-input"><option value="No">Negative</option><option value="Yes">Positive</option></select></FilterField>
+          </div>
+
+          <div className="mt-3 flex items-center gap-2">
+            <PortalButton type="submit" disabled={loading}>{loading ? <><LoaderCircle size={14} className="animate-spin" />Predicting</> : 'Predict Match'}</PortalButton>
+            <PortalButton type="button" variant="secondary" onClick={() => { setRecipientId('R001'); void predict('R001') }}>Load Sample</PortalButton>
+          </div>
+        </form>
+      </section>
       {recipient ? <section className="space-y-4"><div><h3 className="mb-2 text-sm font-semibold text-portal-ink">Selected Recipient Summary</h3><ProfileCard recipient={recipient} compact /></div><div className="portal-card p-4"><div className="mb-3 flex items-center gap-2"><ClipboardCheck size={15} className="text-portal-primary" /><h3 className="text-sm font-semibold text-portal-ink">Medical Compatibility Details</h3></div><div className="space-y-2.5"><ScoreBar label="HLA matching" value={recipient.hlaScore} /><ScoreBar label="Organ need priority" value={recipient.urgencyLevel === 'Critical' ? 96 : 84} tone="info" /><div className="grid grid-cols-2 gap-2 pt-2 text-[11px]"><div className="rounded-lg bg-portal-mint-soft p-2"><span className="text-portal-muted">Organ needed</span><p className="mt-1 font-semibold text-portal-ink">{recipient.requiredOrgan}</p></div><div className="rounded-lg bg-portal-mint-soft p-2"><span className="text-portal-muted">Urgency</span><p className="mt-1 font-semibold text-portal-primary">{recipient.urgencyLevel}</p></div></div></div></div></section> : <section className="portal-card"><EmptyState title="Prediction workspace ready" description="Search for a recipient or load the sample case to run a live AI prediction." icon={<Activity size={22} />} /></section>}
     </div>
 
