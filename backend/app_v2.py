@@ -178,6 +178,122 @@ class RecipientLookup(BaseModel):
     recipient_id: str
 
 
+# Request model for finding matches by donor id
+class DonorLookup(BaseModel):
+    donor_id: str
+
+
+@app.post("/find-matching-recipients")
+def find_matching_recipients(data: DonorLookup):
+    """
+    Find matching recipients for a given donor_id.
+    """
+
+    donor_id = data.donor_id
+
+    # Load CSV files
+    try:
+        recipients_df = pd.read_csv("recipients.csv", dtype=str)
+        donors_df = pd.read_csv("donors.csv", dtype=str)
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=500, detail=f"Data file not found: {e}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unable to read data files: {e}")
+
+    required_recipient_cols = {"recipient_id", "age", "gender", "blood_group", "organ_needed", "hla_type", "urgency", "waiting_days", "hospital", "city", "doctor_verified", "diagnosis"}
+    required_donor_cols = {"donor_id", "donor_type", "age", "gender", "blood_group", "organ_available", "hla_type", "infection_status", "organ_condition", "city", "hospital", "donation_date"}
+
+    if not required_recipient_cols.issubset(set(recipients_df.columns)):
+        raise HTTPException(status_code=500, detail="recipients.csv is missing required columns")
+    if not required_donor_cols.issubset(set(donors_df.columns)):
+        raise HTTPException(status_code=500, detail="donors.csv is missing required columns")
+
+    donor_row = donors_df[donors_df["donor_id"] == donor_id]
+    if donor_row.empty:
+        raise HTTPException(status_code=404, detail=f"Donor with id {donor_id} not found")
+
+    donor_rec = donor_row.iloc[0].to_dict()
+    try:
+        donor_info = {
+            "donor_id": donor_rec.get("donor_id"),
+            "donor_type": donor_rec.get("donor_type"),
+            "age": int(donor_rec.get("age", 0)) if str(donor_rec.get("age", "")).isdigit() else donor_rec.get("age"),
+            "gender": donor_rec.get("gender"),
+            "blood_group": donor_rec.get("blood_group"),
+            "organ_available": donor_rec.get("organ_available"),
+            "hla_type": donor_rec.get("hla_type"),
+            "infection_status": donor_rec.get("infection_status"),
+            "organ_condition": donor_rec.get("organ_condition"),
+            "city": donor_rec.get("city"),
+            "hospital": donor_rec.get("hospital"),
+            "donation_date": donor_rec.get("donation_date"),
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Invalid donor data: {e}")
+
+    recipients_df = recipients_df.fillna("")
+
+    def donor_compatible(donor_bg: str, recipient_bg: str) -> bool:
+        donor_bg = str(donor_bg).strip()
+        recipient_bg = str(recipient_bg).strip()
+        if donor_bg not in blood_compatibility:
+            return False
+        return recipient_bg in blood_compatibility[donor_bg]
+
+    try:
+        recipients_filtered = recipients_df[recipients_df["organ_needed"].str.strip().str.lower() == str(donor_info["organ_available"]).strip().lower()]
+        recipients_filtered = recipients_filtered[recipients_filtered.apply(lambda r: donor_compatible(donor_info["blood_group"], r.get("blood_group")), axis=1)]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error filtering recipients: {e}")
+
+    matches = []
+    try:
+        for _, r in recipients_filtered.iterrows():
+            recipient = r.to_dict()
+
+            organ_match_pts = 30 if str(recipient.get("organ_needed", "")).strip().lower() == str(donor_info["organ_available"]).strip().lower() else 0
+            blood_compat_pts = 25 if donor_compatible(donor_info["blood_group"], recipient.get("blood_group")) else 0
+            hla_pts = 20 if str(recipient.get("hla_type", "")).strip() == str(donor_info.get("hla_type", "")).strip() else 0
+            same_city_pts = 10 if str(recipient.get("city", "")).strip().lower() == str(donor_info.get("city", "")).strip().lower() else 0
+            same_hospital_pts = 5 if str(recipient.get("hospital", "")).strip().lower() == str(donor_info.get("hospital", "")).strip().lower() else 0
+
+            total_score = organ_match_pts + blood_compat_pts + hla_pts + same_city_pts + same_hospital_pts
+            match_details = {
+                "organ_match": organ_match_pts,
+                "blood_compatibility": blood_compat_pts,
+                "hla_match": hla_pts,
+                "same_city": same_city_pts,
+                "same_hospital": same_hospital_pts,
+            }
+
+            matches.append({
+                "recipient_id": recipient.get("recipient_id"),
+                "age": int(recipient.get("age", 0)) if str(recipient.get("age", "")).isdigit() else recipient.get("age"),
+                "gender": recipient.get("gender"),
+                "blood_group": recipient.get("blood_group"),
+                "organ_needed": recipient.get("organ_needed"),
+                "hla_type": recipient.get("hla_type"),
+                "diagnosis": recipient.get("diagnosis"),
+                "urgency": recipient.get("urgency"),
+                "waiting_days": int(recipient.get("waiting_days", 0)) if str(recipient.get("waiting_days", "")).isdigit() else recipient.get("waiting_days"),
+                "hospital": recipient.get("hospital"),
+                "city": recipient.get("city"),
+                "doctor_verified": recipient.get("doctor_verified"),
+                "match_score": int(total_score),
+                "match_details": match_details,
+            })
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error scoring recipients: {e}")
+
+    matches_sorted = sorted(matches, key=lambda x: x["match_score"], reverse=True)
+
+    return {
+        "donor": donor_info,
+        "matching_recipients": matches_sorted,
+        "total_matches": len(matches_sorted)
+    }
+
+
 @app.post("/find-matching-donors")
 def find_matching_donors(payload: RecipientLookup):
     """

@@ -1,156 +1,200 @@
 import { useState } from 'react'
-import { donors, recipients } from '../data'
-
-function ScoreBar({ label, value, color = 'bg-blue-500' }: { label: string; value: number; color?: string }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="text-xs text-slate-500 w-32 flex-shrink-0">{label}</span>
-      <div className="flex-1 bg-slate-100 rounded-full h-2">
-        <div className={`${color} h-2 rounded-full transition-all duration-500`} style={{ width: `${value}%` }}/>
-      </div>
-      <span className="text-xs font-semibold text-slate-700 w-10 text-right">{value}%</span>
-    </div>
-  )
-}
-
-const rankRecipients = (donor: typeof donors[0]) => {
-  return recipients
-    .filter(r => r.status === 'Active' && r.requiredOrgan === donor.organ)
-    .map(r => {
-      const bloodMatch = r.bloodGroup === donor.bloodGroup ? 100 : 60
-      const hlaScore = Math.round((donor.hlaScore + r.hlaScore) / 2)
-      const urgencyScore = r.urgencyLevel === 'Critical' ? 100 : r.urgencyLevel === 'High' ? 80 : r.urgencyLevel === 'Medium' ? 60 : 40
-      const waitScore = Math.min(100, Math.round(r.waitingDays / 4))
-      const compatibility = Math.round((bloodMatch * 0.35 + hlaScore * 0.3 + urgencyScore * 0.2 + waitScore * 0.15))
-      return { ...r, compatibility, bloodMatch, hlaScore, urgencyScore, waitScore }
-    })
-    .sort((a, b) => b.compatibility - a.compatibility)
-}
+import { RotateCcw, Search, Loader2 } from 'lucide-react'
+import { findMatchingRecipients, type FindMatchingRecipientsResponse, type MatchingRecipient } from '../api/api'
+import { EmptyState, PortalButton, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
 
 export default function FindMatchingRecipient() {
   const [searchId, setSearchId] = useState('')
-  const [donor, setDonor] = useState<typeof donors[0] | null>(null)
-  const [results, setResults] = useState<ReturnType<typeof rankRecipients>>([])
+  const [backendLoading, setBackendLoading] = useState(false)
+  const [backendError, setBackendError] = useState('')
+  const [validationError, setValidationError] = useState('')
+  const [backendDonor, setBackendDonor] = useState<FindMatchingRecipientsResponse['donor'] | null>(null)
+  const [backendRecipients, setBackendRecipients] = useState<MatchingRecipient[]>([])
+  const [backendTotal, setBackendTotal] = useState<number | null>(null)
   const [searched, setSearched] = useState(false)
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const found = donors.find(d => d.id.toLowerCase() === searchId.toLowerCase())
-    if (found) {
-      setDonor(found)
-      setResults(rankRecipients(found))
-    } else {
-      setDonor(null)
-      setResults([])
-    }
+    const donorId = searchId.trim()
+    setValidationError('')
+    setBackendError('')
+    setBackendDonor(null)
+    setBackendRecipients([])
+    setBackendTotal(null)
     setSearched(true)
+
+    if (!donorId) {
+      setValidationError('Please enter a donor ID.')
+      return
+    }
+
+    setBackendLoading(true)
+    try {
+      const resp = await findMatchingRecipients({ donor_id: donorId })
+      setBackendDonor(resp.donor)
+      setBackendRecipients(resp.matching_recipients)
+      setBackendTotal(resp.total_matches)
+    } catch (err: any) {
+      const message = err?.response?.data?.detail ?? err?.message ?? 'Unable to reach matching service.'
+      setBackendError(String(message))
+    } finally {
+      setBackendLoading(false)
+    }
+  }
+
+  const handleTryExample = async () => {
+    setSearchId('D0001')
+    setValidationError('')
+    setBackendError('')
+    setBackendDonor(null)
+    setBackendRecipients([])
+    setBackendTotal(null)
+    setSearched(true)
+    setBackendLoading(true)
+
+    try {
+      const resp = await findMatchingRecipients({ donor_id: 'D0001' })
+      setBackendDonor(resp.donor)
+      setBackendRecipients(resp.matching_recipients)
+      setBackendTotal(resp.total_matches)
+    } catch (err: any) {
+      const message = err?.response?.data?.detail ?? err?.message ?? 'Unable to reach matching service.'
+      setBackendError(String(message))
+    } finally {
+      setBackendLoading(false)
+    }
   }
 
   return (
     <div className="space-y-5 max-w-5xl">
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5">
         <h2 className="text-sm font-semibold text-slate-900 font-display mb-4">Search by Donor ID</h2>
-        <form onSubmit={handleSearch} className="flex gap-3">
+        <form onSubmit={handleSearch} className="flex flex-wrap gap-3">
           <input
             value={searchId}
             onChange={e => setSearchId(e.target.value)}
-            placeholder="e.g. D001, D002..."
-            className="flex-1 max-w-md px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="e.g. D0001"
+            className="flex-1 min-w-[220px] max-w-md px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
-          <button type="submit" className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm">
-            Find Matching Recipients
-          </button>
-          <button type="button" onClick={() => { setSearchId('D001'); setDonor(donors[0]); setResults(rankRecipients(donors[0])); setSearched(true) }} className="px-4 py-2.5 border border-slate-200 text-slate-600 hover:bg-slate-50 text-sm rounded-lg transition-colors">
-            Try D001
-          </button>
+          <PortalButton type="submit" className="min-w-[180px]">
+            {backendLoading ? <><Loader2 size={14} className="animate-spin" /> Searching...</> : <><Search size={14} />Find Matching Recipients</>}
+          </PortalButton>
+          <PortalButton variant="secondary" type="button" onClick={handleTryExample}>
+            <RotateCcw size={14} />Try D0001
+          </PortalButton>
         </form>
       </div>
 
-      {donor && (
-        <div className="bg-green-50 border border-green-200 rounded-xl p-5">
-          <div className="flex items-start justify-between">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="font-mono text-xs text-green-700 font-semibold bg-green-100 px-2 py-0.5 rounded">{donor.id}</span>
-                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${donor.status === 'Available' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>{donor.status}</span>
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 font-display">{donor.name}</h3>
-              <p className="text-sm text-slate-600 mt-1">{donor.age} years · {donor.gender} · {donor.city}</p>
-            </div>
-            <div className="text-right">
-              <p className="text-xs text-slate-500">HLA Score</p>
-              <p className="text-3xl font-bold text-slate-900 font-display">{donor.hlaScore}</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-5 gap-4 mt-4 pt-4 border-t border-green-200">
-            {[
-              { label: 'Organ', value: donor.organ },
-              { label: 'Blood Group', value: donor.bloodGroup },
-              { label: 'Organ Condition', value: donor.organCondition },
-              { label: 'Infection', value: donor.infectionStatus },
-              { label: 'Hospital', value: donor.hospital },
-            ].map(f => (
-              <div key={f.label}>
-                <p className="text-xs text-slate-500">{f.label}</p>
-                <p className="text-sm font-semibold text-slate-900 mt-0.5">{f.value}</p>
-              </div>
-            ))}
-          </div>
+      {validationError && (
+        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{validationError}</div>
+      )}
+
+      {backendError && (
+        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{backendError}</div>
+      )}
+
+      {backendLoading && (
+        <div className="grid gap-3 lg:grid-cols-2">
+          <div className="h-40 rounded-xl bg-slate-100 animate-pulse" />
+          <div className="h-40 rounded-xl bg-slate-100 animate-pulse" />
         </div>
       )}
 
-      {searched && results.length === 0 && (
-        <div className="bg-white rounded-xl border border-slate-200 shadow-sm py-16 text-center text-slate-400">
-          <p className="text-sm font-medium">No matching recipients found</p>
-          <p className="text-xs mt-1">{donor ? 'No active recipients need this organ type' : 'Donor ID not found'}</p>
-        </div>
-      )}
-
-      {results.length > 0 && (
-        <div className="space-y-3">
-          <h3 className="text-sm font-semibold text-slate-900 font-display">{results.length} Compatible Recipients Found — Ranked by AI Priority</h3>
-          {results.map((r, idx) => (
-            <div key={r.id} className={`bg-white rounded-xl border shadow-sm p-5 ${idx === 0 ? 'border-indigo-300 ring-1 ring-indigo-200' : 'border-slate-200'}`}>
-              <div className="flex items-start gap-4">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold font-display flex-shrink-0 ${idx === 0 ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'}`}>
-                  #{idx + 1}
+      {backendDonor && !backendLoading && (
+        <div className="space-y-4">
+          <div className="bg-green-50 border border-green-200 rounded-xl p-5">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="font-mono text-xs text-green-700 font-semibold bg-green-100 px-2 py-0.5 rounded">{backendDonor.donor_id}</span>
+                  <StatusBadge status={backendDonor.donor_type} />
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between mb-3">
+                <h3 className="text-lg font-bold text-slate-900 font-display">Donor information</h3>
+                <p className="text-sm text-slate-600 mt-1">{backendDonor.city} · {backendDonor.hospital}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 text-sm text-slate-700 sm:grid-cols-4">
+                <div><span className="text-xs text-slate-500">Type</span><p className="font-semibold text-slate-900">{backendDonor.donor_type}</p></div>
+                <div><span className="text-xs text-slate-500">Age</span><p className="font-semibold text-slate-900">{backendDonor.age}</p></div>
+                <div><span className="text-xs text-slate-500">Blood</span><p className="font-semibold text-slate-900">{backendDonor.blood_group}</p></div>
+                <div><span className="text-xs text-slate-500">Organ</span><p className="font-semibold text-slate-900">{backendDonor.organ_available}</p></div>
+              </div>
+            </div>
+            <div className="grid gap-4 mt-4 sm:grid-cols-2">
+              <div><span className="text-xs text-slate-500">HLA Type</span><p className="font-semibold text-slate-900">{backendDonor.hla_type}</p></div>
+              <div><span className="text-xs text-slate-500">Condition</span><p className="font-semibold text-slate-900">{backendDonor.organ_condition}</p></div>
+              <div><span className="text-xs text-slate-500">City</span><p className="font-semibold text-slate-900">{backendDonor.city}</p></div>
+              <div><span className="text-xs text-slate-500">Hospital</span><p className="font-semibold text-slate-900">{backendDonor.hospital}</p></div>
+              <div className="sm:col-span-2"><span className="text-xs text-slate-500">Donation Date</span><p className="font-semibold text-slate-900">{backendDonor.donation_date}</p></div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl border border-slate-200 p-5">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 className="text-sm font-semibold text-slate-900">Matching Recipients</h3>
+                <p className="text-xs text-slate-500 mt-1">{backendTotal === null ? backendRecipients.length : backendTotal} total matches found</p>
+              </div>
+              <div className="text-xs text-slate-500">Search input: {searchId}</div>
+            </div>
+          </div>
+
+          {backendRecipients.length === 0 ? (
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm py-16 text-center text-slate-400">
+              <p className="text-sm font-medium">No matching recipients found</p>
+              <p className="text-xs mt-1">Try another donor ID or verify the donor details.</p>
+            </div>
+          ) : (
+            <div className="grid gap-4 lg:grid-cols-2">
+              {backendRecipients.map(recipient => (
+                <article key={recipient.recipient_id} className="portal-card p-5">
+                  <div className="flex items-start justify-between gap-4">
                     <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs text-slate-500">{r.id}</span>
-                        <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${r.urgencyLevel === 'Critical' ? 'bg-red-100 text-red-700' : r.urgencyLevel === 'High' ? 'bg-orange-100 text-orange-700' : 'bg-yellow-100 text-yellow-700'}`}>{r.urgencyLevel}</span>
-                        {idx === 0 && <span className="text-xs bg-indigo-100 text-indigo-700 font-semibold px-2 py-0.5 rounded-full">Best Match</span>}
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="font-mono text-xs text-slate-500">{recipient.recipient_id}</span>
+                        <StatusBadge status={recipient.urgency} />
                       </div>
-                      <h4 className="text-base font-semibold text-slate-900 mt-0.5">{r.name}</h4>
-                      <p className="text-xs text-slate-500">{r.age}y · {r.gender} · {r.city} · Waiting {r.waitingDays} days</p>
+                      <h3 className="mt-2 text-base font-semibold text-portal-ink">Recipient {recipient.recipient_id}</h3>
+                      <p className="text-sm text-portal-muted">{recipient.age} years · {recipient.blood_group} · {recipient.organ_needed}</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold font-display" style={{ color: r.compatibility >= 90 ? '#16a34a' : r.compatibility >= 75 ? '#2563EB' : '#d97706' }}>{r.compatibility}%</div>
-                      <div className="text-xs text-slate-400">AI Score</div>
+                      <p className="text-xs text-portal-muted">Match score</p>
+                      <p className="text-2xl font-semibold text-portal-ink">{recipient.match_score}</p>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <ScoreBar label="Blood Compatibility" value={r.bloodMatch} color={r.bloodMatch === 100 ? 'bg-green-500' : 'bg-amber-400'}/>
-                    <ScoreBar label="HLA Score Match" value={r.hlaScore} color="bg-blue-500"/>
-                    <ScoreBar label="Medical Urgency" value={r.urgencyScore} color="bg-red-500"/>
-                    <ScoreBar label="Waiting Time Score" value={r.waitScore} color="bg-purple-500"/>
+
+                  <div className="grid gap-3 mt-4 text-sm text-portal-muted sm:grid-cols-2">
+                    <div><span className="block text-[11px] text-portal-muted">HLA type</span><span className="font-semibold text-portal-ink">{recipient.hla_type}</span></div>
+                    <div><span className="block text-[11px] text-portal-muted">Urgency</span><span className="font-semibold text-portal-ink">{recipient.urgency}</span></div>
+                    <div><span className="block text-[11px] text-portal-muted">Waiting days</span><span className="font-semibold text-portal-ink">{recipient.waiting_days}</span></div>
+                    <div><span className="block text-[11px] text-portal-muted">Doctor verified</span><span className="font-semibold text-portal-ink">{recipient.doctor_verified}</span></div>
+                    <div><span className="block text-[11px] text-portal-muted">Hospital</span><span className="font-semibold text-portal-ink">{recipient.hospital}</span></div>
+                    <div><span className="block text-[11px] text-portal-muted">City</span><span className="font-semibold text-portal-ink">{recipient.city}</span></div>
                   </div>
-                  <div className="flex items-center gap-3 mt-4 pt-3 border-t border-slate-100">
-                    <div className="flex items-center gap-4 text-xs text-slate-500 flex-1">
-                      <span>Blood: <strong className="text-slate-700">{r.bloodGroup}</strong></span>
-                      <span>Needs: <strong className="text-slate-700">{r.requiredOrgan}</strong></span>
-                      <span>HLA: <strong className="text-slate-700">{r.hlaScore}</strong></span>
-                      <span>Hospital: <strong className="text-slate-700">{r.hospital}</strong></span>
+
+                  {recipient.match_details && Object.keys(recipient.match_details).length > 0 && (
+                    <div className="mt-4 rounded-2xl border border-portal-border bg-slate-50 p-4 text-sm text-portal-muted">
+                      <h4 className="text-xs font-semibold uppercase tracking-wide text-portal-ink">Match details</h4>
+                      <div className="grid gap-2 mt-3 sm:grid-cols-2">
+                        {Object.entries(recipient.match_details).map(([key, value]) => (
+                          <div key={key} className="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-xs shadow-sm">
+                            <span className="capitalize text-portal-muted">{key.replaceAll('_', ' ')}</span>
+                            <span className="font-semibold text-portal-ink">{value}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <button className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-lg transition-colors">Approve Match</button>
-                    <button className="px-4 py-1.5 border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-medium rounded-lg transition-colors">View Details</button>
-                  </div>
-                </div>
-              </div>
+                  )}
+                </article>
+              ))}
             </div>
-          ))}
+          )}
+        </div>
+      )}
+
+      {!backendDonor && searched && !backendLoading && !backendError && validationError === '' && (
+        <div className="bg-white rounded-xl border border-slate-200 shadow-sm py-16 text-center text-slate-400">
+          <p className="text-sm font-medium">No matching recipients found</p>
+          <p className="text-xs mt-1">Enter a valid donor ID and try again.</p>
         </div>
       )}
     </div>

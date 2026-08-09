@@ -9,6 +9,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import DoctorDashboard from './pages/DoctorDashboard'
 import AIMatchPrediction from './pages/AIMatchPrediction'
 import FindMatchingDonor from './pages/FindMatchingDonor'
+import FindMatchingRecipient from './pages/FindMatchingRecipient'
 import PredictionHistory from './pages/PredictionHistory'
 import ClinicalReports from './pages/ClinicalReports'
 import RegisterDonor from './pages/RegisterDonor'
@@ -45,6 +46,7 @@ function PageRenderer({ page, role }: { page: Page; role: UserRole }) {
   switch (page) {
     case 'ai-match-prediction': return <AIMatchPrediction />
     case 'find-matching-donor': return <FindMatchingDonor />
+    case 'find-matching-recipient': return <FindMatchingRecipient />
     case 'prediction-history': return <PredictionHistory />
     case 'clinical-reports': return <ClinicalReports />
     case 'donor-registration': return <RegisterDonor />

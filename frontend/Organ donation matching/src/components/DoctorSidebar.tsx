@@ -13,7 +13,8 @@ type SidebarProps = {
 const items: { id: Page; label: string; icon: LucideIcon }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: Grid2X2 },
   { id: 'ai-match-prediction', label: 'AI Match Prediction', icon: Bot },
-  { id: 'find-matching-donor', label: 'Find Matching Donor', icon: Search },
+  { id: 'find-matching-donor', label: 'Find Matching Donors', icon: Search },
+  { id: 'find-matching-recipient', label: 'Find Matching Recipients', icon: Search },
   { id: 'prediction-history', label: 'Prediction History', icon: History },
   { id: 'clinical-reports', label: 'Clinical Reports', icon: FileText },
 ]

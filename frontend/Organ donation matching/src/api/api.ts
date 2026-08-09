@@ -87,4 +87,49 @@ export async function findMatchingDonors(payload: FindMatchingDonorsRequest): Pr
   return response.data
 }
 
+export interface FindMatchingRecipientsRequest {
+  donor_id: string
+}
+
+export interface MatchingRecipient {
+  recipient_id: string
+  age: number | string
+  gender: string
+  blood_group: string
+  organ_needed: string
+  hla_type: string
+  diagnosis: string
+  urgency: string
+  waiting_days: number | string
+  hospital: string
+  city: string
+  doctor_verified: string
+  match_score: number
+  match_details: Record<string, number>
+}
+
+export interface FindMatchingRecipientsResponse {
+  donor: {
+    donor_id: string
+    donor_type: string
+    age: number | string
+    gender: string
+    blood_group: string
+    organ_available: string
+    hla_type: string
+    infection_status: string
+    organ_condition: string
+    city: string
+    hospital: string
+    donation_date: string
+  }
+  matching_recipients: MatchingRecipient[]
+  total_matches: number
+}
+
+export async function findMatchingRecipients(payload: FindMatchingRecipientsRequest): Promise<FindMatchingRecipientsResponse> {
+  const response = await api.post<FindMatchingRecipientsResponse>('/find-matching-recipients', payload)
+  return response.data
+}
+
 export default api

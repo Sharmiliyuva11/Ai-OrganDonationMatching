@@ -40,6 +40,10 @@ export default defineConfig(({ mode }) => {
           target: 'http://127.0.0.1:8000',
           changeOrigin: true,
         },
+        '/find-matching-recipients': {
+          target: 'http://127.0.0.1:8000',
+          changeOrigin: true,
+        },
         '/predict': {
           target: 'http://127.0.0.1:8000',
           changeOrigin: true,
