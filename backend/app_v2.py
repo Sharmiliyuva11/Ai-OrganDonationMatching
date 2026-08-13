@@ -1,9 +1,15 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Depends, HTTPException
 import pandas as pd
 from pydantic import BaseModel
 from xgboost import XGBClassifier
 import numpy as np
+from pathlib import Path
 from fastapi.middleware.cors import CORSMiddleware
+from jose import JWTError, jwt
+from datetime import datetime, timedelta
+from typing import Dict, Optional
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+
 
 app = FastAPI(
     title="AI Powered Organ Donation Matching Platform",
@@ -15,6 +21,9 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:8443",
         "http://127.0.0.1:8443",
+        "http://10.10.238.67:8443",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -22,8 +31,292 @@ app.add_middleware(
 )
 
 # Load trained model
+BASE_DIR = Path(__file__).resolve().parent
 model = XGBClassifier()
-model.load_model("xgboost_model.json")
+model.load_model(BASE_DIR / "xgboost_model.json")
+
+# JWT Authentication Configuration
+SECRET_KEY = "dev-secret-key-please-change"
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
+security = HTTPBearer(auto_error=False)
+
+class AuthUser(BaseModel):
+    email: str
+    password: str
+    role: str
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+    role: str
+
+class LoginResponse(BaseModel):
+    message: str
+    email: str
+    role: str
+    access_token: str
+
+class DonorRegistrationRequest(BaseModel):
+    donor_id: Optional[str] = None
+    donor_type: str
+    age: int
+    gender: str
+    blood_group: str
+    organ_available: str
+    hla_type: str
+    infection_status: str
+    organ_condition: str
+    city: str
+    hospital: str
+    donation_date: Optional[str] = None
+
+class RecipientRegistrationRequest(BaseModel):
+    recipient_id: Optional[str] = None
+    age: int
+    gender: str
+    blood_group: str
+    organ_needed: str
+    hla_type: str
+    urgency: str
+    waiting_days: int
+    hospital: str
+    city: str
+    diagnosis: Optional[str] = ""
+
+users: Dict[str, AuthUser] = {
+    "admin@example.com": AuthUser(email="admin@example.com", password="Admin@123", role="admin"),
+    "doctor@example.com": AuthUser(email="doctor@example.com", password="Doctor@123", role="doctor"),
+}
+
+
+def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
+    to_encode = data.copy()
+    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
+    to_encode.update({"exp": expire})
+    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+
+def get_current_user(
+    credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)
+) -> AuthUser:
+    if credentials is None:
+        raise HTTPException(
+            status_code=401,
+            detail="Authentication required",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    token = credentials.credentials
+    credentials_exception = HTTPException(
+        status_code=401,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        email: str = payload.get("email")
+        role: str = payload.get("role")
+        if email is None or role is None:
+            raise credentials_exception
+    except JWTError:
+        raise credentials_exception
+    user = users.get(email)
+    if user is None or user.role != role:
+        raise credentials_exception
+    return AuthUser(email=user.email, password="", role=user.role)
+
+
+def require_role(required_role: str):
+    def role_checker(current_user: AuthUser = Depends(get_current_user)) -> AuthUser:
+        if current_user.role != required_role:
+            raise HTTPException(status_code=403, detail="Insufficient privileges")
+        return current_user
+    return role_checker
+
+
+def require_any_role(*allowed_roles: str):
+    """Authorize a request for one of the predefined application roles."""
+    def role_checker(current_user: AuthUser = Depends(get_current_user)) -> AuthUser:
+        if current_user.role not in allowed_roles:
+            raise HTTPException(status_code=403, detail="Insufficient privileges")
+        return current_user
+    return role_checker
+
+
+def _ensure_csv_has_columns(path: Path, required_columns: set[str]):
+    if not path.exists():
+        raise HTTPException(status_code=500, detail=f"Data file not found: {path.name}")
+    try:
+        df = pd.read_csv(path, dtype=str)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unable to read data file {path.name}: {e}")
+    if not required_columns.issubset(set(df.columns)):
+        raise HTTPException(status_code=500, detail=f"{path.name} is missing required columns")
+    return df
+
+
+def _append_record_to_csv(path: Path, record: dict, columns: list[str]):
+    try:
+        df = pd.read_csv(path, dtype=str)
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail=f"Data file not found: {path.name}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unable to read data file {path.name}: {e}")
+
+    missing_cols = [col for col in columns if col not in df.columns]
+    if missing_cols:
+        raise HTTPException(status_code=500, detail=f"{path.name} is missing required columns: {', '.join(missing_cols)}")
+
+    record_row = {col: str(record.get(col, "")) for col in columns}
+    df_to_append = pd.DataFrame([record_row], columns=columns)
+    try:
+        df = pd.concat([df, df_to_append], ignore_index=True)
+        df.to_csv(path, index=False)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unable to append record to {path.name}: {e}")
+    return record_row
+
+
+def _ensure_id_is_unique(df: pd.DataFrame, column: str, record_id: str, file_name: str):
+    if record_id in set(df[column].fillna("").astype(str)):
+        raise HTTPException(status_code=409, detail=f"{file_name} already contains {column} {record_id}")
+
+
+def _generate_donor_id() -> str:
+    existing = set()
+    donors_path = BASE_DIR / "donors.csv"
+    if donors_path.exists():
+        try:
+            existing = set(pd.read_csv(donors_path, dtype=str)["donor_id"].fillna(""))
+        except Exception:
+            existing = set()
+    while True:
+        candidate = "D" + str(np.random.randint(100, 1000))
+        if candidate not in existing:
+            return candidate
+
+
+def _generate_recipient_id() -> str:
+    existing = set()
+    recipients_path = BASE_DIR / "recipients.csv"
+    if recipients_path.exists():
+        try:
+            existing = set(pd.read_csv(recipients_path, dtype=str)["recipient_id"].fillna(""))
+        except Exception:
+            existing = set()
+    while True:
+        candidate = "R" + str(np.random.randint(100, 1000))
+        if candidate not in existing:
+            return candidate
+
+
+@app.post("/auth/login", response_model=LoginResponse)
+def login(data: LoginRequest):
+    user = users.get(data.email)
+    if not user:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    if user.password != data.password or user.role != data.role:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+    access_token = create_access_token({"email": user.email, "role": user.role})
+    return {
+        "message": "Login successful",
+        "email": user.email,
+        "role": user.role,
+        "access_token": access_token,
+    }
+
+
+@app.post("/register/donor")
+def register_donor(data: DonorRegistrationRequest, current_user: AuthUser = Depends(require_role("admin"))):
+    donors_path = BASE_DIR / "donors.csv"
+    required_columns = [
+        "donor_id",
+        "donor_type",
+        "age",
+        "gender",
+        "blood_group",
+        "organ_available",
+        "hla_type",
+        "infection_status",
+        "organ_condition",
+        "city",
+        "hospital",
+        "donation_date",
+    ]
+    donors_df = _ensure_csv_has_columns(donors_path, set(required_columns))
+
+    donor_id = data.donor_id or _generate_donor_id()
+    _ensure_id_is_unique(donors_df, "donor_id", donor_id, "donors.csv")
+    donation_date = data.donation_date or datetime.utcnow().strftime("%Y-%m-%d")
+
+    record = {
+        "donor_id": donor_id,
+        "donor_type": data.donor_type,
+        "age": str(data.age),
+        "gender": data.gender,
+        "blood_group": data.blood_group,
+        "organ_available": data.organ_available,
+        "hla_type": data.hla_type,
+        "infection_status": data.infection_status,
+        "organ_condition": data.organ_condition,
+        "city": data.city,
+        "hospital": data.hospital,
+        "donation_date": donation_date,
+    }
+
+    saved_record = _append_record_to_csv(donors_path, record, required_columns)
+    return {
+        "message": "Donor registered successfully",
+        "donor_id": donor_id,
+        "record": saved_record,
+    }
+
+
+@app.post("/register/recipient")
+def register_recipient(data: RecipientRegistrationRequest, current_user: AuthUser = Depends(require_role("admin"))):
+    recipients_path = BASE_DIR / "recipients.csv"
+    required_columns = [
+        "recipient_id",
+        "age",
+        "gender",
+        "blood_group",
+        "organ_needed",
+        "hla_type",
+        "diagnosis",
+        "urgency",
+        "waiting_days",
+        "hospital",
+        "city",
+        "doctor_verified",
+    ]
+    recipients_df = _ensure_csv_has_columns(recipients_path, set(required_columns))
+
+    recipient_id = data.recipient_id or _generate_recipient_id()
+    _ensure_id_is_unique(recipients_df, "recipient_id", recipient_id, "recipients.csv")
+
+    record = {
+        "recipient_id": recipient_id,
+        "age": str(data.age),
+        "gender": data.gender,
+        "blood_group": data.blood_group,
+        "organ_needed": data.organ_needed,
+        "hla_type": data.hla_type,
+        "diagnosis": data.diagnosis or "",
+        "urgency": data.urgency,
+        "waiting_days": str(data.waiting_days),
+        "hospital": data.hospital,
+        "city": data.city,
+        "doctor_verified": "False",
+    }
+
+    saved_record = _append_record_to_csv(recipients_path, record, required_columns)
+    return {
+        "message": "Recipient registered successfully",
+        "recipient_id": recipient_id,
+        "record": saved_record,
+    }
+
 
 # Blood Compatibility Dictionary
 blood_compatibility = {
@@ -90,9 +383,8 @@ def home():
         "message": "AI Powered Organ Donation Matching API is Running Successfully"
     }
 
-
 @app.post("/predict")
-def predict(data: MatchInput):
+def predict(data: MatchInput, current_user: AuthUser = Depends(require_any_role("admin", "doctor"))):
 
     # Feature Engineering
 
@@ -184,7 +476,7 @@ class DonorLookup(BaseModel):
 
 
 @app.post("/find-matching-recipients")
-def find_matching_recipients(data: DonorLookup):
+def find_matching_recipients(data: DonorLookup, current_user: AuthUser = Depends(require_any_role("admin", "doctor"))):
     """
     Find matching recipients for a given donor_id.
     """
@@ -193,8 +485,8 @@ def find_matching_recipients(data: DonorLookup):
 
     # Load CSV files
     try:
-        recipients_df = pd.read_csv("recipients.csv", dtype=str)
-        donors_df = pd.read_csv("donors.csv", dtype=str)
+        recipients_df = pd.read_csv(BASE_DIR / "recipients.csv", dtype=str)
+        donors_df = pd.read_csv(BASE_DIR / "donors.csv", dtype=str)
     except FileNotFoundError as e:
         raise HTTPException(status_code=500, detail=f"Data file not found: {e}")
     except Exception as e:
@@ -295,7 +587,7 @@ def find_matching_recipients(data: DonorLookup):
 
 
 @app.post("/find-matching-donors")
-def find_matching_donors(payload: RecipientLookup):
+def find_matching_donors(payload: RecipientLookup, current_user: AuthUser = Depends(require_any_role("admin", "doctor"))):
     """
     Find matching donors for a given recipient_id.
 
@@ -313,8 +605,8 @@ def find_matching_donors(payload: RecipientLookup):
 
     # Load CSV files
     try:
-        recipients_df = pd.read_csv("recipients.csv", dtype=str)
-        donors_df = pd.read_csv("donors.csv", dtype=str)
+        recipients_df = pd.read_csv(BASE_DIR / "recipients.csv", dtype=str)
+        donors_df = pd.read_csv(BASE_DIR / "donors.csv", dtype=str)
     except FileNotFoundError as e:
         raise HTTPException(status_code=500, detail=f"Data file not found: {e}")
     except Exception as e:
@@ -417,6 +709,7 @@ def find_matching_donors(payload: RecipientLookup):
                 "blood_group": donor.get("blood_group"),
                 "organ_available": donor.get("organ_available"),
                 "hla_type": donor.get("hla_type"),
+                "infection_status": donor.get("infection_status"),
                 "organ_condition": donor.get("organ_condition"),
                 "city": donor.get("city"),
                 "hospital": donor.get("hospital"),

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { RotateCcw, Search, Loader2 } from 'lucide-react'
-import { findMatchingRecipients, type FindMatchingRecipientsResponse, type MatchingRecipient } from '../api/api'
-import { EmptyState, PortalButton, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
+import { findMatchingRecipients, getApiErrorMessage, type FindMatchingRecipientsResponse, type MatchingRecipient } from '../api/api'
+import { PortalButton, StatusBadge } from '../components/PortalPrimitives'
 
 export default function FindMatchingRecipient() {
   const [searchId, setSearchId] = useState('')
@@ -34,9 +34,8 @@ export default function FindMatchingRecipient() {
       setBackendDonor(resp.donor)
       setBackendRecipients(resp.matching_recipients)
       setBackendTotal(resp.total_matches)
-    } catch (err: any) {
-      const message = err?.response?.data?.detail ?? err?.message ?? 'Unable to reach matching service.'
-      setBackendError(String(message))
+    } catch (err: unknown) {
+      setBackendError(getApiErrorMessage(err, 'Unable to reach matching service.'))
     } finally {
       setBackendLoading(false)
     }
@@ -57,9 +56,8 @@ export default function FindMatchingRecipient() {
       setBackendDonor(resp.donor)
       setBackendRecipients(resp.matching_recipients)
       setBackendTotal(resp.total_matches)
-    } catch (err: any) {
-      const message = err?.response?.data?.detail ?? err?.message ?? 'Unable to reach matching service.'
-      setBackendError(String(message))
+    } catch (err: unknown) {
+      setBackendError(getApiErrorMessage(err, 'Unable to reach matching service.'))
     } finally {
       setBackendLoading(false)
     }
@@ -177,7 +175,7 @@ export default function FindMatchingRecipient() {
                       <div className="grid gap-2 mt-3 sm:grid-cols-2">
                         {Object.entries(recipient.match_details).map(([key, value]) => (
                           <div key={key} className="flex items-center justify-between rounded-xl bg-white px-3 py-2 text-xs shadow-sm">
-                            <span className="capitalize text-portal-muted">{key.replaceAll('_', ' ')}</span>
+                            <span className="capitalize text-portal-muted">{key.replace(/_/g, ' ')}</span>
                             <span className="font-semibold text-portal-ink">{value}</span>
                           </div>
                         ))}

@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import type { UserRole } from '../context'
+import { clearAuthStorage, loginUser, type LoginRequest } from '../api/api'
 
 const features = [
   {
@@ -31,11 +33,58 @@ export default function Login({ onLogin }: { onLogin: (role: UserRole) => void }
   const [remember, setRemember] = useState(false)
   const [loading, setLoading] = useState(false)
   const [showPass, setShowPass] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const storedError = sessionStorage.getItem('auth_error') ?? localStorage.getItem('auth_error')
+    if (storedError) {
+      setError(storedError)
+      sessionStorage.removeItem('auth_error')
+      localStorage.removeItem('auth_error')
+    }
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => { setLoading(false); onLogin(role) }, 900)
+    setError('')
+
+    const payload: LoginRequest = {
+      email,
+      password,
+      role,
+    }
+
+    try {
+      const response = await loginUser(payload)
+      // A previous remembered session must not override this newly authenticated user.
+      clearAuthStorage()
+      const storage = remember ? localStorage : sessionStorage
+      storage.setItem('access_token', response.access_token)
+      storage.setItem('user_role', response.role)
+      storage.setItem('user_email', response.email)
+      onLogin(response.role)
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        const status = err.response?.status
+        const detail = err.response?.data?.detail ?? err.response?.data?.message ?? err.message
+        if (status === 401) {
+          setError('Invalid email, password, or role. Please try again.')
+        } else if (status === 422) {
+          setError('Validation error. Please verify your email, password, and role.')
+        } else if (status === 0 || status === 502 || status === 503 || status === 504) {
+          setError('Authentication service is unavailable. Please try again later.')
+        } else {
+          setError(String(detail) || 'Login failed. Please try again.')
+        }
+      } else if (err instanceof Error) {
+        setError(err.message)
+      } else {
+        setError('Login failed. Please try again.')
+      }
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -114,6 +163,12 @@ export default function Login({ onLogin }: { onLogin: (role: UserRole) => void }
               </button>
             ))}
           </div>
+
+          {error && (
+            <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {error}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>

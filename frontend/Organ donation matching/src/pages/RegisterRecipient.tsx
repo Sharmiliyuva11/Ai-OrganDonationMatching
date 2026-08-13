@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getApiErrorMessage, registerRecipient, type RegisterRecipientRequest } from '../api/api'
 
 const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
 const organs = ['Kidney', 'Liver', 'Heart', 'Lung', 'Cornea', 'Pancreas', 'Bone Marrow']
@@ -32,31 +33,72 @@ function SectionHeader({ title, desc }: { title: string; desc: string }) {
   )
 }
 
-const newId = () => 'R' + String(Math.floor(Math.random() * 900) + 100)
-
 export default function RecipientRegistration() {
   const [form, setForm] = useState({
-    recipientId: newId(), fullName: '', age: '', gender: '',
+    recipientId: '', fullName: '', age: '', gender: '',
     bloodGroup: '', organ: '', hlaType: '', urgency: '', waitingDays: '',
     hospital: '', city: '',
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [successMessage, setSuccessMessage] = useState('')
 
   const set = (f: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm(p => ({ ...p, [f]: e.target.value }))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setError('')
+    setSuccessMessage('')
+    setLoading(true)
+
+    const payload: RegisterRecipientRequest = {
+      ...(form.recipientId.trim() ? { recipient_id: form.recipientId.trim() } : {}),
+      age: Number(form.age),
+      gender: form.gender,
+      blood_group: form.bloodGroup,
+      organ_needed: form.organ,
+      hla_type: form.hlaType,
+      urgency: form.urgency,
+      waiting_days: Number(form.waitingDays),
+      hospital: form.hospital,
+      city: form.city,
+    }
+
+    try {
+      const response = await registerRecipient(payload)
+      setSuccessMessage(`Recipient registered successfully with ID ${response.recipient_id}.`)
+      setForm({
+        recipientId: '',
+        fullName: '',
+        age: '',
+        gender: '',
+        bloodGroup: '',
+        organ: '',
+        hlaType: '',
+        urgency: '',
+        waitingDays: '',
+        hospital: '',
+        city: '',
+      })
+    } catch (err: unknown) {
+      setError(getApiErrorMessage(err, 'Unable to register recipient. Please try again.'))
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="max-w-3xl space-y-4">
-      {submitted && (
+      {successMessage && (
         <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm border" style={{ background: '#F0FDF9', borderColor: '#D1FAE5', color: '#0F766E' }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Recipient <strong>{form.recipientId}</strong> registered successfully.
+          {successMessage}
+        </div>
+      )}
+      {error && (
+        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          {error}
         </div>
       )}
 
@@ -146,13 +188,15 @@ export default function RecipientRegistration() {
           </div>
 
           <div className="flex items-center gap-3 pt-2 border-t border-[#D1FAE5]">
-            <button type="submit" className="px-7 py-2.5 text-white text-sm font-semibold rounded-xl shadow-sm transition-all" style={{ background: '#0F766E' }}
-              onMouseEnter={e => (e.target as HTMLElement).style.background = '#0a5c55'}
+            <button type="submit" disabled={loading} className="px-7 py-2.5 text-white text-sm font-semibold rounded-xl shadow-sm transition-all disabled:opacity-70" style={{ background: '#0F766E' }}
+              onMouseEnter={e => { if (!loading) (e.target as HTMLElement).style.background = '#0a5c55' }}
               onMouseLeave={e => (e.target as HTMLElement).style.background = '#0F766E'}>
-              Register Recipient
+              {loading ? 'Registering...' : 'Register Recipient'}
             </button>
-            <button type="button" className="px-6 py-2.5 border border-[#D1FAE5] text-[#6B7280] hover:bg-[#F0FDF9] text-sm font-medium rounded-xl transition-colors">Reset</button>
-            <button type="button" className="px-6 py-2.5 text-[#6B7280] hover:text-[#1F2937] text-sm font-medium rounded-xl">Cancel</button>
+            <button type="button" onClick={() => setForm({ ...form, fullName: '', age: '', gender: '', bloodGroup: '', organ: '', hlaType: '', urgency: '', waitingDays: '', hospital: '', city: '' })}
+              className="px-6 py-2.5 border border-[#D1FAE5] text-[#6B7280] hover:bg-[#F0FDF9] text-sm font-medium rounded-xl transition-colors">Reset</button>
+            <button type="button" onClick={() => setForm({ recipientId: '', fullName: '', age: '', gender: '', bloodGroup: '', organ: '', hlaType: '', urgency: '', waitingDays: '', hospital: '', city: '' })}
+              className="px-6 py-2.5 text-[#6B7280] hover:text-[#1F2937] text-sm font-medium rounded-xl">Cancel</button>
           </div>
         </form>
       </div>

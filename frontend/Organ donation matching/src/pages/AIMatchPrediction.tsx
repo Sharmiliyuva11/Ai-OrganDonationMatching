@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { Activity, ClipboardCheck, LoaderCircle, Search } from 'lucide-react'
 import { donors, recipients, type RecipientRecord } from '../data'
 import { EmptyState, FilterField, PageHeader, PortalButton, ProfileCard, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
-import { predictMatch, type MatchPredictionResponse } from '../api/api'
+import { getApiErrorMessage, predictMatch, type MatchPredictionResponse } from '../api/api'
 
 function mapUrgency(urgency: RecipientRecord['urgencyLevel']) {
   switch (urgency) {
@@ -132,8 +132,8 @@ export default function AIMatchPrediction() {
       const response = await predictMatch(payload)
       setPrediction(response)
       setFeedback(found ? `Prediction completed for ${found.id}.` : 'Prediction completed.')
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'Unable to reach the prediction service.'
+    } catch (error: unknown) {
+      const message = getApiErrorMessage(error, 'Unable to reach the prediction service.')
       setPrediction(null)
       setPredictionError(message)
       setFeedback('Prediction failed. Please try again in a moment.')
@@ -145,11 +145,6 @@ export default function AIMatchPrediction() {
   const submit = (event: FormEvent) => {
     event.preventDefault()
     void predict(recipientId)
-  }
-
-  const showFeedback = (message: string) => {
-    setFeedback(message)
-    window.setTimeout(() => setFeedback(''), 2300)
   }
 
   const resultRows = prediction

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, useLocation, useNavigate as useRouterNavigate } from 'react-router-dom'
 import { NavContext } from './context'
 import type { Page, UserRole } from './context'
+import { clearAuthStorage } from './api/api'
 import AdminLayout from './components/AdminLayout'
 import DoctorLayout from './components/DoctorLayout'
 import Login from './pages/Login'
@@ -42,6 +43,15 @@ const pathToPage = (pathname: string): Page => {
   return match?.[0] ?? 'dashboard'
 }
 
+const doctorPages = new Set<Page>([
+  'dashboard',
+  'ai-match-prediction',
+  'find-matching-donor',
+  'find-matching-recipient',
+  'prediction-history',
+  'clinical-reports',
+])
+
 function PageRenderer({ page, role }: { page: Page; role: UserRole }) {
   switch (page) {
     case 'ai-match-prediction': return <AIMatchPrediction />
@@ -63,12 +73,18 @@ function PageRenderer({ page, role }: { page: Page; role: UserRole }) {
 function AppContent() {
   const routerNavigate = useRouterNavigate()
   const location = useLocation()
-  const [role, setRole] = useState<UserRole | null>(null)
-  const page = pathToPage(location.pathname)
+  const [role, setRole] = useState<UserRole | null>(() => {
+    const token = sessionStorage.getItem('access_token') ?? localStorage.getItem('access_token')
+    const storedRole = sessionStorage.getItem('user_role') ?? localStorage.getItem('user_role')
+    if (!token) return null
+    return storedRole === 'doctor' || storedRole === 'admin' ? storedRole : null
+  })
+  const requestedPage = pathToPage(location.pathname)
+  const page = role === 'doctor' && !doctorPages.has(requestedPage) ? 'dashboard' : requestedPage
 
   const navigate = (nextPage: Page) => routerNavigate(pagePaths[nextPage] ?? '/dashboard')
   const handleLogin = (selectedRole: UserRole) => { setRole(selectedRole); routerNavigate('/dashboard') }
-  const handleLogout = () => { setRole(null); routerNavigate('/dashboard') }
+  const handleLogout = () => { clearAuthStorage(); setRole(null); routerNavigate('/') }
 
   if (!role) return <Login onLogin={handleLogin} />
 

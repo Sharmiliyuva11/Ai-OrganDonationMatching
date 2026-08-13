@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getApiErrorMessage, registerDonor, type RegisterDonorRequest } from '../api/api'
 
 const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
 const organs = ['Kidney', 'Liver', 'Heart', 'Lung', 'Cornea', 'Pancreas', 'Bone Marrow']
@@ -32,31 +33,75 @@ function SectionHeader({ title, desc }: { title: string; desc: string }) {
   )
 }
 
-const newId = () => 'D' + String(Math.floor(Math.random() * 900) + 100)
-
 export default function DonorRegistration() {
   const [form, setForm] = useState({
-    donorId: newId(), fullName: '', age: '', gender: '',
+    donorId: '', fullName: '', age: '', gender: '',
     bloodGroup: '', organ: '', hlaType: '', organCondition: '', doctorVerified: 'Yes', infectionStatus: 'Negative',
     hospital: '', city: '', donorType: 'Living',
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [successMessage, setSuccessMessage] = useState('')
 
   const set = (f: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm(p => ({ ...p, [f]: e.target.value }))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setError('')
+    setSuccessMessage('')
+    setLoading(true)
+
+    const payload: RegisterDonorRequest = {
+      ...(form.donorId.trim() ? { donor_id: form.donorId.trim() } : {}),
+      donor_type: form.donorType,
+      age: Number(form.age),
+      gender: form.gender,
+      blood_group: form.bloodGroup,
+      organ_available: form.organ,
+      hla_type: form.hlaType,
+      infection_status: form.infectionStatus === 'Positive' ? 'Yes' : 'No',
+      organ_condition: form.organCondition,
+      city: form.city,
+      hospital: form.hospital,
+    }
+
+    try {
+      const response = await registerDonor(payload)
+      setSuccessMessage(`Donor registered successfully with ID ${response.donor_id}.`)
+      setForm(prev => ({
+        ...prev,
+        donorId: '',
+        fullName: '',
+        age: '',
+        gender: '',
+        bloodGroup: '',
+        organ: '',
+        hlaType: '',
+        organCondition: '',
+        infectionStatus: 'Negative',
+        hospital: '',
+        city: '',
+        donorType: 'Living',
+      }))
+    } catch (err: unknown) {
+      setError(getApiErrorMessage(err, 'Unable to register donor. Please try again.'))
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="max-w-3xl space-y-4">
-      {submitted && (
+      {successMessage && (
         <div className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm border" style={{ background: '#F0FDF9', borderColor: '#D1FAE5', color: '#0F766E' }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Donor <strong>{form.donorId}</strong> registered successfully.
+          {successMessage}
+        </div>
+      )}
+      {error && (
+        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          {error}
         </div>
       )}
 
@@ -118,7 +163,7 @@ export default function DonorRegistration() {
               <Field label="Organ Condition" required>
                 <select value={form.organCondition} onChange={set('organCondition')} className={selectCls} required>
                   <option value="">Select condition</option>
-                  <option>Excellent</option><option>Good</option><option>Satisfactory</option><option>Poor</option>
+                  <option>Excellent</option><option>Good</option><option>Average</option>
                 </select>
               </Field>
               <Field label="Doctor Verified">
@@ -159,10 +204,10 @@ export default function DonorRegistration() {
           </div>
 
           <div className="flex items-center gap-3 pt-2 border-t border-[#D1FAE5]">
-            <button type="submit" className="px-7 py-2.5 text-white text-sm font-semibold rounded-xl shadow-sm transition-all" style={{ background: '#0F766E' }}
-              onMouseEnter={e => (e.target as HTMLElement).style.background = '#0a5c55'}
+            <button type="submit" disabled={loading} className="px-7 py-2.5 text-white text-sm font-semibold rounded-xl shadow-sm transition-all disabled:opacity-70" style={{ background: '#0F766E' }}
+              onMouseEnter={e => { if (!loading) (e.target as HTMLElement).style.background = '#0a5c55' }}
               onMouseLeave={e => (e.target as HTMLElement).style.background = '#0F766E'}>
-              Register Donor
+              {loading ? 'Registering...' : 'Register Donor'}
             </button>
             <button type="button" onClick={() => setForm(f => ({ ...f, fullName: '', age: '', gender: '', bloodGroup: '', organ: '', hlaType: '', organCondition: '', hospital: '', city: '' }))}
               className="px-6 py-2.5 border border-[#D1FAE5] text-[#6B7280] hover:bg-[#F0FDF9] text-sm font-medium rounded-xl transition-colors">

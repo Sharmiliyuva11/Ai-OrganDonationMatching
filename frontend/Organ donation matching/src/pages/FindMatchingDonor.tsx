@@ -3,7 +3,7 @@ import { Building2, Filter, MapPin, Phone, RotateCcw, Search, SlidersHorizontal,
 import { donors, recipients, type DonorRecommendation } from '../data'
 import MatchCard from '../components/MatchCard'
 import { DetailModal, EmptyState, FilterField, PageHeader, PortalButton, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
-import { findMatchingDonors, type MatchingDonor } from '../api/api'
+import { findMatchingDonors, getApiErrorMessage, type MatchingDonor } from '../api/api'
 
 const organs = ['Kidney', 'Liver', 'Heart', 'Cornea', 'Lung']
 const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
@@ -20,7 +20,6 @@ export default function FindMatchingDonor() {
   // Backend integration state
   const [backendLoading, setBackendLoading] = useState(false)
   const [backendError, setBackendError] = useState('')
-  const [backendRecipient, setBackendRecipient] = useState<Record<string, any> | null>(null)
   const [backendDonors, setBackendDonors] = useState<MatchingDonor[] | null>(null)
   const [backendTotal, setBackendTotal] = useState<number | null>(null)
 
@@ -41,7 +40,6 @@ export default function FindMatchingDonor() {
     const recipientId = filters.recipientId?.trim()
     setBackendError('')
     setBackendDonors(null)
-    setBackendRecipient(null)
     setBackendTotal(null)
 
     if (!recipientId) {
@@ -52,15 +50,13 @@ export default function FindMatchingDonor() {
     setBackendLoading(true)
     try {
       const resp = await findMatchingDonors({ recipient_id: recipientId })
-      setBackendRecipient(resp.recipient)
       setBackendDonors(resp.matching_donors)
       setBackendTotal(resp.total_matches)
       if (!resp.matching_donors || resp.matching_donors.length === 0) {
         showFeedback('No matching donors found for this recipient.')
       }
-    } catch (err: any) {
-      const message = err?.response?.data?.detail ?? err?.message ?? 'Unable to reach matching service.'
-      setBackendError(String(message))
+    } catch (err: unknown) {
+      setBackendError(getApiErrorMessage(err, 'Unable to reach matching service.'))
     } finally {
       setBackendLoading(false)
     }
