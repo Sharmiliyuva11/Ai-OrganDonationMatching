@@ -1,11 +1,6 @@
 import { useState } from 'react'
 import { getApiErrorMessage, registerRecipient, type RegisterRecipientRequest } from '../api/api'
-
-const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
-const organs = ['Kidney', 'Liver', 'Heart', 'Lung', 'Cornea', 'Pancreas', 'Bone Marrow']
-const hospitals = ['City Hospital Karachi', 'Aga Khan Hospital', 'Jinnah Hospital', 'Services Hospital', 'Liaquat Hospital', 'PKLI', 'Shaukat Khanum', 'NICVD', 'CMH Rawalpindi', 'Holy Family Hospital']
-const cities = ['Karachi', 'Lahore', 'Rawalpindi', 'Islamabad', 'Hyderabad', 'Peshawar', 'Quetta', 'Multan']
-const hlaTypes = ['HLA-A', 'HLA-B', 'HLA-C', 'HLA-DR', 'HLA-DQ', 'HLA-DP']
+import { useMetadataOptions } from '../hooks/useMetadataOptions'
 
 const inputCls = "w-full px-4 py-2.5 border border-[#D1FAE5] rounded-xl text-sm text-[#1F2937] placeholder-[#9CA3AF] bg-white focus:outline-none transition-all"
 const selectCls = "w-full px-4 py-2.5 border border-[#D1FAE5] rounded-xl text-sm text-[#1F2937] bg-white focus:outline-none transition-all appearance-none"
@@ -34,6 +29,7 @@ function SectionHeader({ title, desc }: { title: string; desc: string }) {
 }
 
 export default function RecipientRegistration() {
+  const { options, metadataError } = useMetadataOptions()
   const [form, setForm] = useState({
     recipientId: '', fullName: '', age: '', gender: '',
     bloodGroup: '', organ: '', hlaType: '', urgency: '', waitingDays: '',
@@ -101,6 +97,7 @@ export default function RecipientRegistration() {
           {error}
         </div>
       )}
+      {metadataError && <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-700">{metadataError}</div>}
 
       <div className="bg-white rounded-2xl border border-[#D1FAE5] shadow-sm overflow-hidden">
         <div className="px-6 py-4 border-b border-[#D1FAE5]" style={{ background: '#F0FDF9' }}>
@@ -140,25 +137,25 @@ export default function RecipientRegistration() {
               <Field label="Blood Group" required>
                 <select value={form.bloodGroup} onChange={set('bloodGroup')} className={selectCls} required>
                   <option value="">Select blood group</option>
-                  {bloodGroups.map(g => <option key={g}>{g}</option>)}
+                  {options.blood_groups.map(g => <option key={g}>{g}</option>)}
                 </select>
               </Field>
               <Field label="Organ Needed" required>
                 <select value={form.organ} onChange={set('organ')} className={selectCls} required>
                   <option value="">Select organ</option>
-                  {organs.map(o => <option key={o}>{o}</option>)}
+                  {options.organs_needed.map(o => <option key={o}>{o}</option>)}
                 </select>
               </Field>
               <Field label="HLA Type" required>
                 <select value={form.hlaType} onChange={set('hlaType')} className={selectCls} required>
                   <option value="">Select HLA type</option>
-                  {hlaTypes.map(h => <option key={h}>{h}</option>)}
+                  {options.hla_types.map(h => <option key={h}>{h}</option>)}
                 </select>
               </Field>
               <Field label="Urgency Level" required>
                 <select value={form.urgency} onChange={set('urgency')} className={selectCls} required>
                   <option value="">Select urgency</option>
-                  <option>Critical</option><option>High</option><option>Medium</option><option>Low</option>
+                  {options.urgencies.map(urgency => <option key={urgency}>{urgency}</option>)}
                 </select>
               </Field>
               <Field label="Waiting Days" required>
@@ -175,13 +172,13 @@ export default function RecipientRegistration() {
               <Field label="Hospital" required>
                 <select value={form.hospital} onChange={set('hospital')} className={selectCls} required>
                   <option value="">Select hospital</option>
-                  {hospitals.map(h => <option key={h}>{h}</option>)}
+                  {options.hospitals.map(h => <option key={h}>{h}</option>)}
                 </select>
               </Field>
               <Field label="City" required>
                 <select value={form.city} onChange={set('city')} className={selectCls} required>
                   <option value="">Select city</option>
-                  {cities.map(c => <option key={c}>{c}</option>)}
+                  {options.cities.map(c => <option key={c}>{c}</option>)}
                 </select>
               </Field>
             </div>

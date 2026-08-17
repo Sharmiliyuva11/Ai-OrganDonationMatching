@@ -1,13 +1,18 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Query
+import hashlib
+import hmac
 import pandas as pd
 from pydantic import BaseModel
 from xgboost import XGBClassifier
 import numpy as np
 from pathlib import Path
+import secrets
+import sqlite3
+import os
 from fastapi.middleware.cors import CORSMiddleware
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-from typing import Dict, Optional
+from typing import Optional
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 
@@ -16,15 +21,23 @@ app = FastAPI(
     version="2.0"
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:8443",
-        "http://127.0.0.1:8443",
-        "http://10.10.238.67:8443",
+def _cors_origins() -> list[str]:
+    """Return explicit browser origins, including optionally configured LAN hosts."""
+    defaults = {
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-    ],
+        "http://localhost:8443",
+        "http://127.0.0.1:8443",
+        "http://192.168.137.220:8443",
+    }
+    
+    configured = os.getenv("CORS_ALLOWED_ORIGINS", "")
+    return sorted(defaults | {origin.strip() for origin in configured.split(",") if origin.strip()})
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_cors_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -36,15 +49,48 @@ model = XGBClassifier()
 model.load_model(BASE_DIR / "xgboost_model.json")
 
 # JWT Authentication Configuration
-SECRET_KEY = "dev-secret-key-please-change"
+# Set ORGAN_API_SECRET_KEY in every deployed environment. The development fallback
+# keeps local setup usable, but must never be used to sign production sessions.
+SECRET_KEY = os.getenv("ORGAN_API_SECRET_KEY", "dev-secret-key-please-change")
+if os.getenv("ENVIRONMENT", "development").lower() in {"production", "prod"} and SECRET_KEY == "dev-secret-key-please-change":
+    raise RuntimeError("ORGAN_API_SECRET_KEY must be set in production")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 security = HTTPBearer(auto_error=False)
 
 class AuthUser(BaseModel):
     email: str
-    password: str
     role: str
+
+class DoctorCreateRequest(BaseModel):
+    email: str
+    password: str
+    name: str
+    hospital: str
+    specialization: str
+
+class UserResponse(BaseModel):
+    id: int
+    email: str
+    role: str
+    created_at: str
+    is_active: bool
+    name: Optional[str] = None
+    hospital: Optional[str] = None
+    specialization: Optional[str] = None
+
+class MetadataOptionsResponse(BaseModel):
+    hospitals: list[str]
+    cities: list[str]
+    blood_groups: list[str]
+    organs_available: list[str]
+    organs_needed: list[str]
+    hla_types: list[str]
+    donor_types: list[str]
+    infection_statuses: list[str]
+    organ_conditions: list[str]
+    urgencies: list[str]
+    doctor_verified: list[str]
 
 class LoginRequest(BaseModel):
     email: str
@@ -84,10 +130,103 @@ class RecipientRegistrationRequest(BaseModel):
     city: str
     diagnosis: Optional[str] = ""
 
-users: Dict[str, AuthUser] = {
-    "admin@example.com": AuthUser(email="admin@example.com", password="Admin@123", role="admin"),
-    "doctor@example.com": AuthUser(email="doctor@example.com", password="Doctor@123", role="doctor"),
-}
+DATABASE_PATH = BASE_DIR / "auth_users.sqlite3"
+PASSWORD_HASH_ITERATIONS = 260_000
+
+
+def _connect_users_db() -> sqlite3.Connection:
+    conn = sqlite3.connect(DATABASE_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def _hash_password(password: str) -> str:
+    salt = secrets.token_hex(16)
+    password_hash = hashlib.pbkdf2_hmac(
+        "sha256",
+        password.encode("utf-8"),
+        salt.encode("utf-8"),
+        PASSWORD_HASH_ITERATIONS,
+    ).hex()
+    return f"pbkdf2_sha256${PASSWORD_HASH_ITERATIONS}${salt}${password_hash}"
+
+
+def _verify_password(password: str, stored_hash: str) -> bool:
+    try:
+        algorithm, iterations_text, salt, expected_hash = stored_hash.split("$", 3)
+        iterations = int(iterations_text)
+    except ValueError:
+        return False
+    if algorithm != "pbkdf2_sha256":
+        return False
+    actual_hash = hashlib.pbkdf2_hmac(
+        "sha256",
+        password.encode("utf-8"),
+        salt.encode("utf-8"),
+        iterations,
+    ).hex()
+    return hmac.compare_digest(actual_hash, expected_hash)
+
+
+def _create_users_table() -> None:
+    with _connect_users_db() as conn:
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                email TEXT NOT NULL UNIQUE,
+                password_hash TEXT NOT NULL,
+                role TEXT NOT NULL CHECK(role IN ('admin', 'doctor')),
+                created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                is_active INTEGER NOT NULL DEFAULT 1
+            )
+            """
+        )
+        existing_columns = {row["name"] for row in conn.execute("PRAGMA table_info(users)").fetchall()}
+        for column in ("name", "hospital", "specialization"):
+            if column not in existing_columns:
+                conn.execute(f"ALTER TABLE users ADD COLUMN {column} TEXT")
+
+
+def _get_user_by_email(email: str) -> Optional[sqlite3.Row]:
+    with _connect_users_db() as conn:
+        return conn.execute(
+            "SELECT id, email, password_hash, role, created_at, is_active, name, hospital, specialization FROM users WHERE email = ?",
+            (email,),
+        ).fetchone()
+
+
+def _create_user(email: str, password: str, role: str, name: Optional[str] = None, hospital: Optional[str] = None, specialization: Optional[str] = None) -> sqlite3.Row:
+    try:
+        with _connect_users_db() as conn:
+            cursor = conn.execute(
+                "INSERT INTO users (email, password_hash, role, is_active, name, hospital, specialization) VALUES (?, ?, ?, 1, ?, ?, ?)",
+                (email, _hash_password(password), role, name, hospital, specialization),
+            )
+            return conn.execute(
+                "SELECT id, email, role, created_at, is_active, name, hospital, specialization FROM users WHERE id = ?",
+                (cursor.lastrowid,),
+            ).fetchone()
+    except sqlite3.IntegrityError:
+        raise HTTPException(status_code=409, detail="User with this email already exists")
+
+
+def _seed_default_users() -> None:
+    default_users = [
+        ("admin@example.com", "Admin@123", "admin"),
+        ("doctor@example.com", "Doctor@123", "doctor"),
+    ]
+    for email, password, role in default_users:
+        if _get_user_by_email(email) is None:
+            _create_user(email, password, role)
+
+
+def initialize_user_database() -> None:
+    _create_users_table()
+    _seed_default_users()
+
+
+initialize_user_database()
 
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
@@ -120,10 +259,10 @@ def get_current_user(
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    user = users.get(email)
-    if user is None or user.role != role:
+    user = _get_user_by_email(email)
+    if user is None or not user["is_active"] or user["role"] != role:
         raise credentials_exception
-    return AuthUser(email=user.email, password="", role=user.role)
+    return AuthUser(email=user["email"], role=user["role"])
 
 
 def require_role(required_role: str):
@@ -210,20 +349,87 @@ def _generate_recipient_id() -> str:
             return candidate
 
 
+def _unique_values(df: pd.DataFrame, column: str) -> list[str]:
+    if column not in df.columns:
+        return []
+    values = df[column].dropna().astype(str).map(str.strip)
+    return sorted(value for value in values.unique() if value)
+
+
+def _read_dataset(name: str, required_columns: set[str]) -> pd.DataFrame:
+    """Load a project dataset from its canonical backend-relative path."""
+    return _ensure_csv_has_columns(BASE_DIR / name, required_columns)
+
+
+def _records_for_response(df: pd.DataFrame, columns: list[str]) -> list[dict]:
+    """Return JSON-safe dataset rows without turning missing values into fake labels."""
+    normalized = df.fillna("").astype(str)
+    return [{column: row.get(column, "") for column in columns} for _, row in normalized.iterrows()]
+
+
 @app.post("/auth/login", response_model=LoginResponse)
 def login(data: LoginRequest):
-    user = users.get(data.email)
-    if not user:
+    user = _get_user_by_email(data.email)
+    if not user or not user["is_active"]:
         raise HTTPException(status_code=401, detail="Invalid credentials")
-    if user.password != data.password or user.role != data.role:
+    if user["role"] != data.role or not _verify_password(data.password, user["password_hash"]):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    access_token = create_access_token({"email": user.email, "role": user.role})
+    access_token = create_access_token({"email": user["email"], "role": user["role"]})
     return {
         "message": "Login successful",
-        "email": user.email,
-        "role": user.role,
+        "email": user["email"],
+        "role": user["role"],
         "access_token": access_token,
+    }
+
+
+@app.post("/admin/doctors", response_model=UserResponse)
+def create_doctor(data: DoctorCreateRequest, current_user: AuthUser = Depends(require_role("admin"))):
+    email = data.email.strip().lower()
+    if not email or "@" not in email or "." not in email.rsplit("@", 1)[-1]:
+        raise HTTPException(status_code=422, detail="A valid email is required")
+    if not data.password or len(data.password) < 8:
+        raise HTTPException(status_code=422, detail="Password must be at least 8 characters")
+    name, hospital, specialization = data.name.strip(), data.hospital.strip(), data.specialization.strip()
+    if not name or not hospital or not specialization:
+        raise HTTPException(status_code=422, detail="Doctor name, hospital, and specialization are required")
+    user = _create_user(email=email, password=data.password, role="doctor", name=name, hospital=hospital, specialization=specialization)
+    return {
+        "id": user["id"],
+        "email": user["email"],
+        "role": user["role"],
+        "created_at": user["created_at"],
+        "is_active": bool(user["is_active"]),
+        "name": user["name"],
+        "hospital": user["hospital"],
+        "specialization": user["specialization"],
+    }
+
+
+@app.get("/metadata/options", response_model=MetadataOptionsResponse)
+def get_metadata_options(current_user: AuthUser = Depends(require_any_role("admin", "doctor"))):
+    donors_df = _ensure_csv_has_columns(
+        BASE_DIR / "donors.csv",
+        {"hospital", "city", "blood_group", "organ_available", "hla_type", "donor_type", "infection_status", "organ_condition"},
+    )
+    recipients_df = _ensure_csv_has_columns(
+        BASE_DIR / "recipients.csv",
+        {"hospital", "city", "blood_group", "organ_needed", "hla_type", "urgency", "doctor_verified"},
+    )
+
+    return {
+        "hospitals": sorted(set(_unique_values(donors_df, "hospital")) | set(_unique_values(recipients_df, "hospital"))),
+        "cities": sorted(set(_unique_values(donors_df, "city")) | set(_unique_values(recipients_df, "city"))),
+        "blood_groups": sorted(set(_unique_values(donors_df, "blood_group")) | set(_unique_values(recipients_df, "blood_group"))),
+        "organs_available": _unique_values(donors_df, "organ_available"),
+        "organs_needed": _unique_values(recipients_df, "organ_needed"),
+        "hla_types": sorted(set(_unique_values(donors_df, "hla_type")) | set(_unique_values(recipients_df, "hla_type"))),
+        "donor_types": _unique_values(donors_df, "donor_type"),
+        "infection_statuses": _unique_values(donors_df, "infection_status"),
+        "organ_conditions": _unique_values(donors_df, "organ_condition"),
+        "urgencies": _unique_values(recipients_df, "urgency"),
+        "doctor_verified": _unique_values(recipients_df, "doctor_verified"),
     }
 
 
@@ -377,6 +583,77 @@ class MatchInput(BaseModel):
 
     infection_status: str
 
+@app.get("/data/overview")
+def get_data_overview(current_user: AuthUser = Depends(require_any_role("admin", "doctor"))):
+    """Dataset-derived dashboard metrics; prediction-history fields are intentionally absent."""
+    donors_df = _read_dataset("donors.csv", {"donor_id", "organ_available"})
+    recipients_df = _read_dataset("recipients.csv", {"recipient_id", "organ_needed", "urgency"})
+    matches_df = _read_dataset("matches.csv", set())
+
+    def organ_counts(df: pd.DataFrame, column: str) -> list[dict]:
+        return [{"organ": organ, "count": int(count)} for organ, count in df[column].fillna("").astype(str).value_counts().sort_index().items() if organ]
+
+    urgency_counts = [
+        {"urgency": urgency, "count": int(count)}
+        for urgency, count in recipients_df["urgency"].fillna("").astype(str).value_counts().sort_index().items()
+        if urgency
+    ]
+    return {
+        "total_donors": int(len(donors_df)),
+        "total_recipients": int(len(recipients_df)),
+        "total_matches": int(len(matches_df)),
+        "donors_by_organ": organ_counts(donors_df, "organ_available"),
+        "recipients_by_organ": organ_counts(recipients_df, "organ_needed"),
+        "recipients_by_urgency": urgency_counts,
+        "prediction_history_available": False,
+    }
+
+
+@app.get("/data/donors")
+def list_donors(
+    search: str = "",
+    organ: str = "",
+    page: int = Query(1, ge=1),
+    page_size: int = Query(25, ge=1, le=100),
+    current_user: AuthUser = Depends(require_any_role("admin", "doctor")),
+):
+    df = _read_dataset("donors.csv", {"donor_id", "age", "gender", "blood_group", "organ_available", "hla_type", "infection_status", "organ_condition", "city", "hospital"})
+    query = search.strip().lower()
+    if query:
+        searchable = df[["donor_id", "hospital", "city", "organ_available", "blood_group"]].fillna("").astype(str).apply(lambda column: column.str.lower().str.contains(query, regex=False))
+        df = df[searchable.any(axis=1)]
+    if organ.strip():
+        df = df[df["organ_available"].fillna("").astype(str).str.lower() == organ.strip().lower()]
+    total = int(len(df))
+    columns = ["donor_id", "donor_type", "age", "gender", "blood_group", "organ_available", "hla_type", "infection_status", "organ_condition", "city", "hospital", "donation_date"]
+    start = (page - 1) * page_size
+    return {"items": _records_for_response(df.iloc[start:start + page_size], columns), "total": total, "page": page, "page_size": page_size}
+
+
+@app.get("/data/recipients")
+def list_recipients(
+    search: str = "",
+    organ: str = "",
+    urgency: str = "",
+    page: int = Query(1, ge=1),
+    page_size: int = Query(25, ge=1, le=100),
+    current_user: AuthUser = Depends(require_any_role("admin", "doctor")),
+):
+    df = _read_dataset("recipients.csv", {"recipient_id", "age", "gender", "blood_group", "organ_needed", "hla_type", "urgency", "waiting_days", "hospital", "city"})
+    query = search.strip().lower()
+    if query:
+        searchable = df[["recipient_id", "hospital", "city", "organ_needed", "blood_group", "diagnosis"]].fillna("").astype(str).apply(lambda column: column.str.lower().str.contains(query, regex=False))
+        df = df[searchable.any(axis=1)]
+    if organ.strip():
+        df = df[df["organ_needed"].fillna("").astype(str).str.lower() == organ.strip().lower()]
+    if urgency.strip():
+        df = df[df["urgency"].fillna("").astype(str).str.lower() == urgency.strip().lower()]
+    total = int(len(df))
+    columns = ["recipient_id", "age", "gender", "blood_group", "organ_needed", "hla_type", "diagnosis", "urgency", "waiting_days", "hospital", "city", "doctor_verified"]
+    start = (page - 1) * page_size
+    return {"items": _records_for_response(df.iloc[start:start + page_size], columns), "total": total, "page": page, "page_size": page_size}
+
+
 @app.get("/")
 def home():
     return {
@@ -390,9 +667,7 @@ def predict(data: MatchInput, current_user: AuthUser = Depends(require_any_role(
 
     blood_match = 1 if data.donor_blood_group == data.recipient_blood_group else 0
 
-    blood_compatible = 1 if (
-        data.recipient_blood_group in blood_compatibility[data.donor_blood_group]
-    ) else 0
+    blood_compatible = 1 if data.donor_blood_group in blood_compatibility.get(data.recipient_blood_group, []) else 0
 
     organ_match = 1 if data.organ_available == data.organ_needed else 0
 
@@ -528,9 +803,7 @@ def find_matching_recipients(data: DonorLookup, current_user: AuthUser = Depends
     def donor_compatible(donor_bg: str, recipient_bg: str) -> bool:
         donor_bg = str(donor_bg).strip()
         recipient_bg = str(recipient_bg).strip()
-        if donor_bg not in blood_compatibility:
-            return False
-        return recipient_bg in blood_compatibility[donor_bg]
+        return donor_bg in blood_compatibility.get(recipient_bg, [])
 
     try:
         recipients_filtered = recipients_df[recipients_df["organ_needed"].str.strip().str.lower() == str(donor_info["organ_available"]).strip().lower()]
@@ -646,6 +919,11 @@ def find_matching_donors(payload: RecipientLookup, current_user: AuthUser = Depe
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Invalid recipient data: {e}")
 
+    def donor_compatible(donor_bg: str, recipient_bg: str) -> bool:
+        donor_bg = str(donor_bg).strip()
+        recipient_bg = str(recipient_bg).strip()
+        return donor_bg in blood_compatibility.get(recipient_bg, [])
+
     # Prepare donors: filter by infection_status == 'No', organ match, and blood compatibility
     try:
         # Normalize donor fields for comparison
@@ -657,14 +935,7 @@ def find_matching_donors(payload: RecipientLookup, current_user: AuthUser = Depe
         # Filter organ_available equals recipient organ_needed
         donors_filtered = donors_filtered[donors_filtered["organ_available"].str.strip().str.lower() == str(recipient_info["organ_needed"]).strip().lower()]
 
-        # Filter blood compatibility using existing blood_compatibility dict
-        def donor_compatible(donor_bg: str, recipient_bg: str) -> bool:
-            donor_bg = str(donor_bg).strip()
-            recipient_bg = str(recipient_bg).strip()
-            if donor_bg not in blood_compatibility:
-                return False
-            return recipient_bg in blood_compatibility[donor_bg]
-
+        # Filter blood compatibility using the recipient-to-acceptable-donor mapping.
         donors_filtered = donors_filtered[donors_filtered.apply(lambda r: donor_compatible(r.get("blood_group"), recipient_info["blood_group"]), axis=1)]
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error filtering donors: {e}")

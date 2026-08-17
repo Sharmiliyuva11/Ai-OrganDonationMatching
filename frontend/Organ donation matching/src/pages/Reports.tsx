@@ -1,5 +1,6 @@
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, PieChart, Pie, Cell } from 'recharts'
 import { predictionHistory } from '../data'
+import { openPrintableReport } from '../utils/reportUtils'
 
 const reportSummary = [
   { label: 'Total Predictions', value: predictionHistory.length, color: 'bg-blue-50 border-blue-200', text: 'text-blue-700' },
@@ -31,6 +32,27 @@ const statusDist = [
 ]
 
 export default function Reports() {
+  const downloadCsv = () => {
+    const rows = [
+      ['Metric', 'Value'],
+      ...reportSummary.map(item => [item.label, String(item.value)]),
+      ...doctorPerformance.map(item => [`${item.name} avg score`, String(item.avgScore)]),
+    ]
+    const csv = rows.map(row => row.map(cell => `"${cell.replace(/"/g, '""')}"`).join(',')).join('\n')
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8;' }))
+    link.download = 'organai-analytics-report.csv'
+    link.click()
+    URL.revokeObjectURL(link.href)
+  }
+
+  const downloadPdf = () => {
+    openPrintableReport('OrganAI Analytics Report', [
+      { heading: 'Summary', rows: Object.fromEntries(reportSummary.map(item => [item.label, item.value])) },
+      { heading: 'Doctor Performance', rows: Object.fromEntries(doctorPerformance.map(item => [item.name, `${item.approved}/${item.predictions} approved, ${item.avgScore}% average score`])) },
+    ])
+  }
+
   return (
     <div className="space-y-6">
       {/* Header controls */}
@@ -52,11 +74,11 @@ export default function Reports() {
               <option>Last 3 Months</option>
               <option>Last Month</option>
             </select>
-            <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors">
+            <button onClick={downloadCsv} className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download CSV
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium rounded-lg transition-colors">
+            <button onClick={downloadPdf} className="flex items-center gap-2 px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 text-sm font-medium rounded-lg transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download PDF
             </button>

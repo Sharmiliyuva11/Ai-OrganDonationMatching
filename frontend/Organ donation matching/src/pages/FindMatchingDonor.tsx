@@ -4,13 +4,10 @@ import { donors, recipients, type DonorRecommendation } from '../data'
 import MatchCard from '../components/MatchCard'
 import { DetailModal, EmptyState, FilterField, PageHeader, PortalButton, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
 import { findMatchingDonors, getApiErrorMessage, type MatchingDonor } from '../api/api'
-
-const organs = ['Kidney', 'Liver', 'Heart', 'Cornea', 'Lung']
-const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
-const hospitals = [...new Set(donors.map(donor => donor.hospital))]
-const cities = [...new Set(donors.map(donor => donor.city))]
+import { useMetadataOptions } from '../hooks/useMetadataOptions'
 
 export default function FindMatchingDonor() {
+  const { options } = useMetadataOptions()
   const [filters, setFilters] = useState({ recipientId: '', bloodGroup: '', organ: '', hospital: '', city: '' })
   const [applied, setApplied] = useState(filters)
   const [sort, setSort] = useState('compatibility')
@@ -76,14 +73,14 @@ export default function FindMatchingDonor() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-        <FilterField label="Recipient ID" icon={<Search size={14} />} className="xl:col-span-1"><input value={filters.recipientId} onChange={event => update('recipientId', event.target.value)} placeholder="e.g. R001" className="portal-input w-full pl-9 pr-3 text-sm" /></FilterField>
-        <FilterField label="Blood Group"><select value={filters.bloodGroup} onChange={event => update('bloodGroup', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All groups</option>{bloodGroups.map(group => <option key={group}>{group}</option>)}</select></FilterField>
-        <FilterField label="Organ Needed"><select value={filters.organ} onChange={event => update('organ', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All organs</option>{organs.map(organ => <option key={organ}>{organ}</option>)}</select></FilterField>
-        <FilterField label="Hospital" icon={<Building2 size={14} />}><select value={filters.hospital} onChange={event => update('hospital', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All hospitals</option>{hospitals.map(hospital => <option key={hospital}>{hospital}</option>)}</select></FilterField>
-        <FilterField label="City" icon={<MapPin size={14} />}><select value={filters.city} onChange={event => update('city', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All cities</option>{cities.map(city => <option key={city}>{city}</option>)}</select></FilterField>
+        <FilterField label="Recipient ID" icon={<Search size={14} />} className="xl:col-span-1"><input value={filters.recipientId} onChange={event => update('recipientId', event.target.value)} placeholder="e.g. R00001" className="portal-input w-full pl-9 pr-3 text-sm" /></FilterField>
+        <FilterField label="Blood Group"><select value={filters.bloodGroup} onChange={event => update('bloodGroup', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All groups</option>{options.blood_groups.map(group => <option key={group}>{group}</option>)}</select></FilterField>
+        <FilterField label="Organ Needed"><select value={filters.organ} onChange={event => update('organ', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All organs</option>{options.organs_needed.map(organ => <option key={organ}>{organ}</option>)}</select></FilterField>
+        <FilterField label="Hospital" icon={<Building2 size={14} />}><select value={filters.hospital} onChange={event => update('hospital', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All hospitals</option>{options.hospitals.map(hospital => <option key={hospital}>{hospital}</option>)}</select></FilterField>
+        <FilterField label="City" icon={<MapPin size={14} />}><select value={filters.city} onChange={event => update('city', event.target.value)} className="portal-input w-full px-3 text-sm"><option value="">All cities</option>{options.cities.map(city => <option key={city}>{city}</option>)}</select></FilterField>
 
         <div className="flex items-end gap-2">
-          <PortalButton onClick={() => setApplied(filters)} className="flex-1"><Search size={14} />Search</PortalButton>
+          <PortalButton onClick={() => filters.recipientId.trim() ? void fetchMatchingDonors() : setApplied(filters)} className="flex-1"><Search size={14} />Search</PortalButton>
           <PortalButton variant="secondary" onClick={() => { const empty = { recipientId: '', bloodGroup: '', organ: '', hospital: '', city: '' }; setFilters(empty); setApplied(empty); }}><RotateCcw size={14} />Reset</PortalButton>
           <PortalButton variant="ghost" onClick={() => { void fetchMatchingDonors() }} className="hidden sm:inline-flex">{backendLoading ? <><Loader2 size={14} className="animate-spin" /> Finding...</> : 'Find Matching Donors'}</PortalButton>
         </div>

@@ -3,6 +3,7 @@ import { Activity, ClipboardCheck, LoaderCircle, Search } from 'lucide-react'
 import { donors, recipients, type RecipientRecord } from '../data'
 import { EmptyState, FilterField, PageHeader, PortalButton, ProfileCard, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
 import { getApiErrorMessage, predictMatch, type MatchPredictionResponse } from '../api/api'
+import { useMetadataOptions } from '../hooks/useMetadataOptions'
 
 function mapUrgency(urgency: RecipientRecord['urgencyLevel']) {
   switch (urgency) {
@@ -35,6 +36,7 @@ function resolveDonor(recipient: RecipientRecord) {
 }
 
 export default function AIMatchPrediction() {
+  const { options } = useMetadataOptions()
   const [recipientId, setRecipientId] = useState('')
   const [recipient, setRecipient] = useState<RecipientRecord | null>(null)
   const [loading, setLoading] = useState(false)
@@ -94,34 +96,29 @@ export default function AIMatchPrediction() {
         setInfectionStatus(chosenDonor.infectionStatus.toLowerCase().includes('positive') ? 'Yes' : 'No')
       }
     } else if (id) {
-      // if an ID was provided but not found, show feedback and abort
       setRecipient(null)
-      setPrediction(null)
-      setPredictionError('')
-      setFeedback('Enter a valid recipient ID such as R001.')
-      return
     }
 
     // Build payload from current form state (populated from sample or edited manually)
     const payload = {
-      donor_age: typeof donorAge === 'number' ? donorAge : Number(donorAge) || 0,
-      recipient_age: typeof recipientAge === 'number' ? recipientAge : Number(recipientAge) || 0,
-      donor_blood_group: donorBloodGroup || '',
-      recipient_blood_group: recipientBloodGroup || '',
-      organ_available: organAvailable || '',
-      organ_needed: organNeeded || '',
-      donor_hla: donorHla || '',
-      recipient_hla: recipientHla || '',
-      donor_city: donorCity || '',
-      recipient_city: recipientCity || '',
-      donor_hospital: donorHospital || '',
-      recipient_hospital: recipientHospital || '',
-      donor_type: donorType || '',
+      donor_age: typeof donorAge === 'number' ? donorAge : Number(donorAge) || 42,
+      recipient_age: typeof recipientAge === 'number' ? recipientAge : Number(recipientAge) || 39,
+      donor_blood_group: donorBloodGroup || options.blood_groups[0],
+      recipient_blood_group: recipientBloodGroup || options.blood_groups[0],
+      organ_available: organAvailable || options.organs_available[0],
+      organ_needed: organNeeded || options.organs_needed[0],
+      donor_hla: donorHla || options.hla_types[0],
+      recipient_hla: recipientHla || options.hla_types[0],
+      donor_city: donorCity || options.cities[0],
+      recipient_city: recipientCity || options.cities[0],
+      donor_hospital: donorHospital || options.hospitals[0],
+      recipient_hospital: recipientHospital || options.hospitals[0],
+      donor_type: donorType || options.donor_types[0],
       doctor_verified: doctorVerified || 'No',
-      urgency: urgency || 'Low',
+      urgency: urgency || options.urgencies[0],
       waiting_days: typeof waitingDays === 'number' ? waitingDays : Number(waitingDays) || 0,
-      organ_condition: organCondition || 'Good',
-      infection_status: infectionStatus || 'No',
+      organ_condition: organCondition || options.organ_conditions[0],
+      infection_status: infectionStatus || options.infection_statuses[0],
     }
 
     setLoading(true)
@@ -168,7 +165,7 @@ export default function AIMatchPrediction() {
 
   return <div className="space-y-5">
     {feedback && <div role="status" className="fixed bottom-5 right-5 z-30 rounded-xl border border-[#b9e8dd] bg-white px-4 py-3 text-xs font-semibold text-portal-primary shadow-lg">{feedback}</div>}
-    <PageHeader title="AI Match Prediction" subtitle="Predict donor-recipient compatibility using the AI matching engine" actions={<PortalButton onClick={() => { void predict(recipientId || 'R001') }} disabled={loading}><Activity size={14} />{loading ? 'Running...' : 'Run Prediction'}</PortalButton>} />
+    <PageHeader title="AI Match Prediction" subtitle="Predict donor-recipient compatibility using the AI matching engine" actions={<PortalButton onClick={() => { void predict(recipientId || 'R00001') }} disabled={loading}><Activity size={14} />{loading ? 'Running...' : 'Run Prediction'}</PortalButton>} />
     <div className="grid gap-5 xl:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.75fr)]">
       <section className="portal-card p-4 sm:p-5">
         <div className="mb-4 flex items-start gap-3">
@@ -181,36 +178,36 @@ export default function AIMatchPrediction() {
 
         <form onSubmit={submit} className="flex flex-col gap-3">
           <div className="grid gap-3 sm:grid-cols-2">
-            <FilterField label="Patient ID" icon={<Search size={14} />} className="col-span-2"><input value={recipientId} onChange={event => setRecipientId(event.target.value)} placeholder="e.g. R001" className="portal-input w-full pl-9 pr-3 text-sm" /></FilterField>
+            <FilterField label="Patient ID" icon={<Search size={14} />} className="col-span-2"><input value={recipientId} onChange={event => setRecipientId(event.target.value)} placeholder="e.g. R00001" className="portal-input w-full pl-9 pr-3 text-sm" /></FilterField>
 
             <h4 className="col-span-2 mt-2 text-sm font-semibold text-portal-ink">Recipient Information</h4>
             <FilterField label="Recipient Age"><input type="number" value={recipientAge ?? ''} onChange={e => setRecipientAge(e.target.value === '' ? '' : Number(e.target.value))} className="portal-input" /></FilterField>
-            <FilterField label="Recipient Blood Group"><select value={recipientBloodGroup} onChange={e => setRecipientBloodGroup(e.target.value)} className="portal-input"><option value="">Select</option><option>O+</option><option>O-</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option></select></FilterField>
-            <FilterField label="Organ Needed"><select value={organNeeded} onChange={e => setOrganNeeded(e.target.value)} className="portal-input"><option value="">Select</option><option>Kidney</option><option>Liver</option><option>Heart</option><option>Lung</option><option>Cornea</option></select></FilterField>
+            <FilterField label="Recipient Blood Group"><select value={recipientBloodGroup} onChange={e => setRecipientBloodGroup(e.target.value)} className="portal-input"><option value="">Select</option>{options.blood_groups.map(group => <option key={group}>{group}</option>)}</select></FilterField>
+            <FilterField label="Organ Needed"><select value={organNeeded} onChange={e => setOrganNeeded(e.target.value)} className="portal-input"><option value="">Select</option>{options.organs_needed.map(organ => <option key={organ}>{organ}</option>)}</select></FilterField>
             <FilterField label="Recipient HLA"><input value={recipientHla} onChange={e => setRecipientHla(e.target.value)} className="portal-input" /></FilterField>
             <FilterField label="Recipient City"><input value={recipientCity} onChange={e => setRecipientCity(e.target.value)} className="portal-input" /></FilterField>
             <FilterField label="Recipient Hospital"><input value={recipientHospital} onChange={e => setRecipientHospital(e.target.value)} className="portal-input" /></FilterField>
-            <FilterField label="Urgency"><select value={urgency} onChange={e => setUrgency(e.target.value)} className="portal-input"><option value="">Select</option><option>Critical</option><option>High</option><option>Medium</option><option>Moderate</option><option>Low</option></select></FilterField>
+            <FilterField label="Urgency"><select value={urgency} onChange={e => setUrgency(e.target.value)} className="portal-input"><option value="">Select</option>{options.urgencies.map(value => <option key={value}>{value}</option>)}</select></FilterField>
             <FilterField label="Waiting Days"><input type="number" value={waitingDays ?? ''} onChange={e => setWaitingDays(e.target.value === '' ? '' : Number(e.target.value))} className="portal-input" /></FilterField>
 
             <h4 className="col-span-2 mt-2 text-sm font-semibold text-portal-ink">Donor Information</h4>
             <FilterField label="Donor Age"><input type="number" value={donorAge ?? ''} onChange={e => setDonorAge(e.target.value === '' ? '' : Number(e.target.value))} className="portal-input" /></FilterField>
-            <FilterField label="Donor Blood Group"><select value={donorBloodGroup} onChange={e => setDonorBloodGroup(e.target.value)} className="portal-input"><option value="">Select</option><option>O+</option><option>O-</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option></select></FilterField>
-            <FilterField label="Organ Available"><select value={organAvailable} onChange={e => setOrganAvailable(e.target.value)} className="portal-input"><option value="">Select</option><option>Kidney</option><option>Liver</option><option>Heart</option><option>Lung</option><option>Cornea</option></select></FilterField>
+            <FilterField label="Donor Blood Group"><select value={donorBloodGroup} onChange={e => setDonorBloodGroup(e.target.value)} className="portal-input"><option value="">Select</option>{options.blood_groups.map(group => <option key={group}>{group}</option>)}</select></FilterField>
+            <FilterField label="Organ Available"><select value={organAvailable} onChange={e => setOrganAvailable(e.target.value)} className="portal-input"><option value="">Select</option>{options.organs_available.map(organ => <option key={organ}>{organ}</option>)}</select></FilterField>
             <FilterField label="Donor HLA"><input value={donorHla} onChange={e => setDonorHla(e.target.value)} className="portal-input" /></FilterField>
             <FilterField label="Donor City"><input value={donorCity} onChange={e => setDonorCity(e.target.value)} className="portal-input" /></FilterField>
             <FilterField label="Donor Hospital"><input value={donorHospital} onChange={e => setDonorHospital(e.target.value)} className="portal-input" /></FilterField>
-            <FilterField label="Donor Type"><select value={donorType} onChange={e => setDonorType(e.target.value)} className="portal-input"><option value="">Select</option><option>Living</option><option>Deceased</option></select></FilterField>
+            <FilterField label="Donor Type"><select value={donorType} onChange={e => setDonorType(e.target.value)} className="portal-input"><option value="">Select</option>{options.donor_types.map(value => <option key={value}>{value}</option>)}</select></FilterField>
 
             <h4 className="col-span-2 mt-2 text-sm font-semibold text-portal-ink">Medical Information</h4>
             <FilterField label="Doctor Verified"><select value={doctorVerified} onChange={e => setDoctorVerified(e.target.value)} className="portal-input"><option value="Yes">Yes</option><option value="No">No</option></select></FilterField>
-            <FilterField label="Organ Condition"><select value={organCondition} onChange={e => setOrganCondition(e.target.value)} className="portal-input"><option>Excellent</option><option>Good</option><option>Satisfactory</option><option>Average</option></select></FilterField>
-            <FilterField label="Infection Status"><select value={infectionStatus} onChange={e => setInfectionStatus(e.target.value)} className="portal-input"><option value="No">Negative</option><option value="Yes">Positive</option></select></FilterField>
+            <FilterField label="Organ Condition"><select value={organCondition} onChange={e => setOrganCondition(e.target.value)} className="portal-input">{options.organ_conditions.map(value => <option key={value}>{value}</option>)}</select></FilterField>
+            <FilterField label="Infection Status"><select value={infectionStatus} onChange={e => setInfectionStatus(e.target.value)} className="portal-input">{options.infection_statuses.map(value => <option key={value} value={value}>{value === 'No' ? 'Negative' : value === 'Yes' ? 'Positive' : value}</option>)}</select></FilterField>
           </div>
 
           <div className="mt-3 flex items-center gap-2">
             <PortalButton type="submit" disabled={loading}>{loading ? <><LoaderCircle size={14} className="animate-spin" />Predicting</> : 'Predict Match'}</PortalButton>
-            <PortalButton type="button" variant="secondary" onClick={() => { setRecipientId('R001'); void predict('R001') }}>Load Sample</PortalButton>
+            <PortalButton type="button" variant="secondary" onClick={() => { setRecipientId('R00001'); void predict('R00001') }}>Load Sample</PortalButton>
           </div>
         </form>
       </section>

@@ -202,6 +202,63 @@ export interface LoginResponse {
   access_token: string
 }
 
+export interface CreateDoctorRequest {
+  email: string
+  password: string
+  name: string
+  hospital: string
+  specialization: string
+}
+
+export interface CreateDoctorResponse {
+  id: number
+  email: string
+  role: 'doctor'
+  created_at: string
+  is_active: boolean
+  name: string
+  hospital: string
+  specialization: string
+}
+
+export interface MetadataOptions {
+  hospitals: string[]
+  cities: string[]
+  blood_groups: string[]
+  organs_available: string[]
+  organs_needed: string[]
+  hla_types: string[]
+  donor_types: string[]
+  infection_statuses: string[]
+  organ_conditions: string[]
+  urgencies: string[]
+  doctor_verified: string[]
+}
+
+export interface DatasetOverview {
+  total_donors: number
+  total_recipients: number
+  total_matches: number
+  donors_by_organ: { organ: string; count: number }[]
+  recipients_by_organ: { organ: string; count: number }[]
+  recipients_by_urgency: { urgency: string; count: number }[]
+  prediction_history_available: boolean
+}
+
+export interface DatasetDonor {
+  donor_id: string; donor_type: string; age: string; gender: string; blood_group: string
+  organ_available: string; hla_type: string; infection_status: string; organ_condition: string
+  city: string; hospital: string; donation_date: string
+}
+
+export interface DatasetRecipient {
+  recipient_id: string; age: string; gender: string; blood_group: string; organ_needed: string
+  hla_type: string; diagnosis: string; urgency: string; waiting_days: string; hospital: string
+  city: string; doctor_verified: string
+}
+
+export interface PaginatedDataset<T> { items: T[]; total: number; page: number; page_size: number }
+
 export interface RegisterDonorRequest {
   donor_id?: string
   donor_type: string
@@ -246,6 +303,28 @@ export interface RegisterRecipientResponse {
 export async function loginUser(payload: LoginRequest): Promise<LoginResponse> {
   const response = await api.post<LoginResponse>('/auth/login', payload)
   return response.data
+}
+
+export async function createDoctor(payload: CreateDoctorRequest): Promise<CreateDoctorResponse> {
+  const response = await api.post<CreateDoctorResponse>('/admin/doctors', payload)
+  return response.data
+}
+
+export async function getMetadataOptions(): Promise<MetadataOptions> {
+  const response = await api.get<MetadataOptions>('/metadata/options')
+  return response.data
+}
+
+export async function getDatasetOverview(): Promise<DatasetOverview> {
+  return (await api.get<DatasetOverview>('/data/overview')).data
+}
+
+export async function getDonors(params: { search?: string; organ?: string; page?: number; page_size?: number } = {}): Promise<PaginatedDataset<DatasetDonor>> {
+  return (await api.get<PaginatedDataset<DatasetDonor>>('/data/donors', { params })).data
+}
+
+export async function getRecipients(params: { search?: string; organ?: string; urgency?: string; page?: number; page_size?: number } = {}): Promise<PaginatedDataset<DatasetRecipient>> {
+  return (await api.get<PaginatedDataset<DatasetRecipient>>('/data/recipients', { params })).data
 }
 
 export async function registerDonor(payload: RegisterDonorRequest): Promise<RegisterDonorResponse> {

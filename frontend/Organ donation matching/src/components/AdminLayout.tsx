@@ -8,6 +8,7 @@ const pageTitles: Partial<Record<Page, string>> = {
   dashboard: 'Dashboard',
   'donor-registration': 'Register Donor',
   'recipient-registration': 'Register Recipient',
+  'create-doctor-account': 'Create Doctor Account',
   'donor-database': 'Donor Database',
   'recipient-database': 'Recipient Database',
   analytics: 'Analytics',

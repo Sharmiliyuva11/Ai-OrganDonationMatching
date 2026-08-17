@@ -8,6 +8,7 @@ export type Page =
   | 'clinical-reports'
   | 'donor-registration'
   | 'recipient-registration'
+  | 'create-doctor-account'
   | 'analytics'
   | 'ai-matching-queue'
   | 'find-matching-recipient'

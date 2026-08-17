@@ -15,6 +15,7 @@ import PredictionHistory from './pages/PredictionHistory'
 import ClinicalReports from './pages/ClinicalReports'
 import RegisterDonor from './pages/RegisterDonor'
 import RegisterRecipient from './pages/RegisterRecipient'
+import CreateDoctorAccount from './pages/CreateDoctorAccount'
 import DonorDatabase from './pages/DonorDatabase'
 import RecipientDatabase from './pages/RecipientDatabase'
 import Analytics from './pages/Analytics'
@@ -28,6 +29,7 @@ const pagePaths: Partial<Record<Page, string>> = {
   'clinical-reports': '/clinical-reports',
   'donor-registration': '/register-donor',
   'recipient-registration': '/register-recipient',
+  'create-doctor-account': '/admin/doctors',
   analytics: '/analytics',
   'donor-database': '/donor-database',
   'recipient-database': '/recipient-database',
@@ -61,6 +63,7 @@ function PageRenderer({ page, role }: { page: Page; role: UserRole }) {
     case 'clinical-reports': return <ClinicalReports />
     case 'donor-registration': return <RegisterDonor />
     case 'recipient-registration': return <RegisterRecipient />
+    case 'create-doctor-account': return <CreateDoctorAccount />
     case 'donor-database': return <DonorDatabase />
     case 'recipient-database': return <RecipientDatabase />
     case 'analytics': return <Analytics />

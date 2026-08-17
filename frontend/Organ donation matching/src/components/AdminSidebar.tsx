@@ -14,6 +14,7 @@ const items: { id: Page; label: string; icon: LucideIcon }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: Grid2X2 },
   { id: 'donor-registration', label: 'Register Donor', icon: PlusCircle },
   { id: 'recipient-registration', label: 'Register Recipient', icon: PlusCircle },
+  { id: 'create-doctor-account', label: 'Create Doctor Account', icon: ShieldCheck },
   { id: 'donor-database', label: 'Donor Database', icon: UsersRound },
   { id: 'recipient-database', label: 'Recipient Database', icon: UsersRound },
   { id: 'analytics', label: 'Analytics', icon: BarChart3 },
