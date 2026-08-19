@@ -4,6 +4,7 @@ import { donors, recipients, type DonorRecommendation } from '../data'
 import MatchCard from '../components/MatchCard'
 import { DetailModal, EmptyState, FilterField, PageHeader, PortalButton, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
 import { findMatchingDonors, getApiErrorMessage, type MatchingDonor } from '../api/api'
+import { openPrintableReport } from '../utils/reportUtils'
 import { useMetadataOptions } from '../hooks/useMetadataOptions'
 
 export default function FindMatchingDonor() {
@@ -93,7 +94,7 @@ export default function FindMatchingDonor() {
           <h3 className="text-sm font-semibold text-portal-ink">Matching Donors</h3>
           <p className="mt-1 text-[11px] text-portal-muted">{backendDonors ? `${backendTotal ?? backendDonors.length} matching donors found` : (backendError ? '' : `${results.length} available donor${results.length === 1 ? '' : 's'} found`)}</p>
         </div>
-        <label className="flex items-center gap-2 text-[11px] text-portal-muted">Sort by<select value={sort} onChange={event => setSort(event.target.value)} className="portal-input h-9 px-3 text-xs"><option value="compatibility">Compatibility</option><option value="name">Donor name</option></select></label>
+        <div className="flex items-center gap-2"><label className="flex items-center gap-2 text-[11px] text-portal-muted">Sort by<select value={sort} onChange={event => setSort(event.target.value)} className="portal-input h-9 px-3 text-xs"><option value="compatibility">Compatibility</option><option value="name">Donor name</option></select></label>{backendDonors && <PortalButton variant="secondary" onClick={() => openPrintableReport('OrganAI Live Matching Donors Report', [{ heading: 'Recipient', rows: { 'Recipient ID': filters.recipientId } }, { heading: 'Matching donors', rows: Object.fromEntries(backendDonors.map(item => [item.donor_id, `Score ${item.match_score}; ${item.organ_available}; blood ${item.blood_group}`])) }], sessionStorage.getItem('user_email') ?? localStorage.getItem('user_email') ?? undefined)}>Export report</PortalButton>}</div>
       </div>
 
       {backendError && <div className="portal-card p-4 text-sm text-portal-ink text-red-600">{backendError}</div>}

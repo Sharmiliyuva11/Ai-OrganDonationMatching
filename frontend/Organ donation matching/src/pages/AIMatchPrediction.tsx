@@ -4,6 +4,7 @@ import { donors, recipients, type RecipientRecord } from '../data'
 import { EmptyState, FilterField, PageHeader, PortalButton, ProfileCard, ScoreBar, StatusBadge } from '../components/PortalPrimitives'
 import { getApiErrorMessage, predictMatch, type MatchPredictionResponse } from '../api/api'
 import { useMetadataOptions } from '../hooks/useMetadataOptions'
+import { openPrintableReport } from '../utils/reportUtils'
 
 function mapUrgency(urgency: RecipientRecord['urgencyLevel']) {
   switch (urgency) {
@@ -165,7 +166,7 @@ export default function AIMatchPrediction() {
 
   return <div className="space-y-5">
     {feedback && <div role="status" className="fixed bottom-5 right-5 z-30 rounded-xl border border-[#b9e8dd] bg-white px-4 py-3 text-xs font-semibold text-portal-primary shadow-lg">{feedback}</div>}
-    <PageHeader title="AI Match Prediction" subtitle="Predict donor-recipient compatibility using the AI matching engine" actions={<PortalButton onClick={() => { void predict(recipientId || 'R00001') }} disabled={loading}><Activity size={14} />{loading ? 'Running...' : 'Run Prediction'}</PortalButton>} />
+    <PageHeader title="AI Match Prediction" subtitle="Predict donor-recipient compatibility using the AI matching engine" actions={<div className="flex gap-2"><PortalButton onClick={() => { void predict(recipientId) }} disabled={loading}><Activity size={14} />{loading ? 'Running...' : 'Run Prediction'}</PortalButton>{prediction && <PortalButton variant="secondary" onClick={() => openPrintableReport('OrganAI Live Prediction Report', [{ heading: 'Recipient and donor input', rows: { 'Recipient ID': recipientId || 'Not supplied', 'Recipient blood group': recipientBloodGroup, 'Organ needed': organNeeded, 'Donor blood group': donorBloodGroup, 'Organ available': organAvailable } }, { heading: 'Prediction result', rows: Object.fromEntries(resultRows.map(row => [row.label, row.value])) }], sessionStorage.getItem('user_email') ?? localStorage.getItem('user_email') ?? undefined)}>Export report</PortalButton>}</div>} />
     <div className="grid gap-5 xl:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.75fr)]">
       <section className="portal-card p-4 sm:p-5">
         <div className="mb-4 flex items-start gap-3">
@@ -207,7 +208,6 @@ export default function AIMatchPrediction() {
 
           <div className="mt-3 flex items-center gap-2">
             <PortalButton type="submit" disabled={loading}>{loading ? <><LoaderCircle size={14} className="animate-spin" />Predicting</> : 'Predict Match'}</PortalButton>
-            <PortalButton type="button" variant="secondary" onClick={() => { setRecipientId('R00001'); void predict('R00001') }}>Load Sample</PortalButton>
           </div>
         </form>
       </section>

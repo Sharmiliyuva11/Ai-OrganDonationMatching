@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { RotateCcw, Search, Loader2 } from 'lucide-react'
 import { findMatchingRecipients, getApiErrorMessage, type FindMatchingRecipientsResponse, type MatchingRecipient } from '../api/api'
 import { PortalButton, StatusBadge } from '../components/PortalPrimitives'
+import { openPrintableReport } from '../utils/reportUtils'
 
 export default function FindMatchingRecipient() {
   const [searchId, setSearchId] = useState('')
@@ -132,7 +133,7 @@ export default function FindMatchingRecipient() {
                 <h3 className="text-sm font-semibold text-slate-900">Matching Recipients</h3>
                 <p className="text-xs text-slate-500 mt-1">{backendTotal === null ? backendRecipients.length : backendTotal} total matches found</p>
               </div>
-              <div className="text-xs text-slate-500">Search input: {searchId}</div>
+              <div className="flex items-center gap-3"><div className="text-xs text-slate-500">Search input: {searchId}</div><PortalButton variant="secondary" onClick={() => openPrintableReport('OrganAI Live Matching Recipients Report', [{ heading: 'Donor', rows: backendDonor }, { heading: 'Matching recipients', rows: Object.fromEntries(backendRecipients.map(item => [item.recipient_id, `Score ${item.match_score}; ${item.organ_needed}; blood ${item.blood_group}`])) }], sessionStorage.getItem('user_email') ?? localStorage.getItem('user_email') ?? undefined)}>Export report</PortalButton></div>
             </div>
           </div>
 

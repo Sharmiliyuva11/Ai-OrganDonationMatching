@@ -221,6 +221,17 @@ export interface CreateDoctorResponse {
   specialization: string
 }
 
+export interface AuthenticatedUser {
+  id: number
+  email: string
+  role: 'admin' | 'doctor'
+  created_at: string
+  is_active: boolean
+  name: string | null
+  hospital: string | null
+  specialization: string | null
+}
+
 export interface MetadataOptions {
   hospitals: string[]
   cities: string[]
@@ -308,6 +319,10 @@ export async function loginUser(payload: LoginRequest): Promise<LoginResponse> {
 export async function createDoctor(payload: CreateDoctorRequest): Promise<CreateDoctorResponse> {
   const response = await api.post<CreateDoctorResponse>('/admin/doctors', payload)
   return response.data
+}
+
+export async function getCurrentUser(): Promise<AuthenticatedUser> {
+  return (await api.get<AuthenticatedUser>('/auth/me')).data
 }
 
 export async function getMetadataOptions(): Promise<MetadataOptions> {

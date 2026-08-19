@@ -34,6 +34,7 @@ export default function Login({ onLogin }: { onLogin: (role: UserRole) => void }
   const [loading, setLoading] = useState(false)
   const [showPass, setShowPass] = useState(false)
   const [error, setError] = useState('')
+  const [forgotPasswordMessage, setForgotPasswordMessage] = useState('')
 
   useEffect(() => {
     const storedError = sessionStorage.getItem('auth_error') ?? localStorage.getItem('auth_error')
@@ -220,8 +221,10 @@ export default function Login({ onLogin }: { onLogin: (role: UserRole) => void }
                 <input type="checkbox" checked={remember} onChange={e => setRemember(e.target.checked)} className="rounded border-slate-300"/>
                 <span className="text-sm text-[#6B7280]">Remember me</span>
               </label>
-              <button type="button" className="text-sm font-medium" style={{ color: '#0F766E' }}>Forgot password?</button>
+              <button type="button" onClick={() => setForgotPasswordMessage('Contact your administrator to reset your password.')} className="text-sm font-medium" style={{ color: '#0F766E' }}>Forgot password?</button>
             </div>
+
+            {forgotPasswordMessage && <p role="status" className="text-sm text-[#0F766E]">{forgotPasswordMessage}</p>}
 
             <button
               type="submit"

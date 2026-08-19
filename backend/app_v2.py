@@ -29,6 +29,7 @@ def _cors_origins() -> list[str]:
         "http://localhost:8443",
         "http://127.0.0.1:8443",
         "http://192.168.137.220:8443",
+        "http://10.113.155.14:8443",
     }
     
     configured = os.getenv("CORS_ALLOWED_ORIGINS", "")
@@ -51,9 +52,9 @@ model.load_model(BASE_DIR / "xgboost_model.json")
 # JWT Authentication Configuration
 # Set ORGAN_API_SECRET_KEY in every deployed environment. The development fallback
 # keeps local setup usable, but must never be used to sign production sessions.
-SECRET_KEY = os.getenv("ORGAN_API_SECRET_KEY", "dev-secret-key-please-change")
+SECRET_KEY = os.getenv("JWT_SECRET_KEY") or os.getenv("ORGAN_API_SECRET_KEY", "dev-secret-key-please-change")
 if os.getenv("ENVIRONMENT", "development").lower() in {"production", "prod"} and SECRET_KEY == "dev-secret-key-please-change":
-    raise RuntimeError("ORGAN_API_SECRET_KEY must be set in production")
+    raise RuntimeError("JWT_SECRET_KEY must be set in production")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 security = HTTPBearer(auto_error=False)
@@ -102,6 +103,9 @@ class LoginResponse(BaseModel):
     email: str
     role: str
     access_token: str
+
+class PasswordResetRequest(BaseModel):
+    password: str
 
 class DonorRegistrationRequest(BaseModel):
     donor_id: Optional[str] = None
@@ -211,14 +215,26 @@ def _create_user(email: str, password: str, role: str, name: Optional[str] = Non
         raise HTTPException(status_code=409, detail="User with this email already exists")
 
 
+def _user_response(user: sqlite3.Row) -> dict:
+    return {
+        "id": user["id"], "email": user["email"], "role": user["role"],
+        "created_at": user["created_at"], "is_active": bool(user["is_active"]),
+        "name": user["name"], "hospital": user["hospital"], "specialization": user["specialization"],
+    }
+
+
 def _seed_default_users() -> None:
     default_users = [
-        ("admin@example.com", "Admin@123", "admin"),
-        ("doctor@example.com", "Doctor@123", "doctor"),
+        ("admin@example.com", "Admin@123", "admin", "Administrator", None, None),
+        ("doctor@example.com", "Doctor@123", "doctor", "Existing Doctor", "Not available", "Not available"),
     ]
-    for email, password, role in default_users:
-        if _get_user_by_email(email) is None:
-            _create_user(email, password, role)
+    for email, password, role, name, hospital, specialization in default_users:
+        user = _get_user_by_email(email)
+        if user is None:
+            _create_user(email, password, role, name, hospital, specialization)
+        elif not user["name"]:
+            with _connect_users_db() as conn:
+                conn.execute("UPDATE users SET name = ?, hospital = ?, specialization = ? WHERE email = ?", (name, hospital, specialization, email))
 
 
 def initialize_user_database() -> None:
@@ -384,6 +400,15 @@ def login(data: LoginRequest):
     }
 
 
+@app.get("/auth/me", response_model=UserResponse)
+def get_authenticated_profile(current_user: AuthUser = Depends(get_current_user)):
+    """Return the persisted profile for the JWT owner, never a client-supplied profile."""
+    user = _get_user_by_email(current_user.email)
+    if user is None:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    return _user_response(user)
+
+
 @app.post("/admin/doctors", response_model=UserResponse)
 def create_doctor(data: DoctorCreateRequest, current_user: AuthUser = Depends(require_role("admin"))):
     email = data.email.strip().lower()
@@ -395,16 +420,18 @@ def create_doctor(data: DoctorCreateRequest, current_user: AuthUser = Depends(re
     if not name or not hospital or not specialization:
         raise HTTPException(status_code=422, detail="Doctor name, hospital, and specialization are required")
     user = _create_user(email=email, password=data.password, role="doctor", name=name, hospital=hospital, specialization=specialization)
-    return {
-        "id": user["id"],
-        "email": user["email"],
-        "role": user["role"],
-        "created_at": user["created_at"],
-        "is_active": bool(user["is_active"]),
-        "name": user["name"],
-        "hospital": user["hospital"],
-        "specialization": user["specialization"],
-    }
+    return _user_response(user)
+
+
+@app.post("/admin/doctors/{doctor_id}/reset-password", status_code=204)
+def reset_doctor_password(doctor_id: int, data: PasswordResetRequest, current_user: AuthUser = Depends(require_role("admin"))):
+    if len(data.password) < 8:
+        raise HTTPException(status_code=422, detail="Password must be at least 8 characters")
+    with _connect_users_db() as conn:
+        doctor = conn.execute("SELECT id FROM users WHERE id = ? AND role = 'doctor'", (doctor_id,)).fetchone()
+        if doctor is None:
+            raise HTTPException(status_code=404, detail="Doctor not found")
+        conn.execute("UPDATE users SET password_hash = ? WHERE id = ?", (_hash_password(data.password), doctor_id))
 
 
 @app.get("/metadata/options", response_model=MetadataOptionsResponse)
