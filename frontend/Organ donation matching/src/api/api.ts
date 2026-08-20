@@ -57,7 +57,10 @@ api.interceptors.response.use(
   (error: AxiosError) => {
     if (axios.isAxiosError(error)) {
       const status = error.response?.status
-      if (status === 401) {
+      const isLoginRequest =
+        error.config?.method?.toLowerCase() === 'post' &&
+        error.config?.url === '/auth/login'
+      if (status === 401 && !isLoginRequest) {
         handleUnauthorized()
       }
     }

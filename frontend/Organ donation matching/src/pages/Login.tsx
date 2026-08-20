@@ -70,7 +70,7 @@ export default function Login({ onLogin }: { onLogin: (role: UserRole) => void }
         const status = err.response?.status
         const detail = err.response?.data?.detail ?? err.response?.data?.message ?? err.message
         if (status === 401) {
-          setError('Invalid email, password, or role. Please try again.')
+          setError('Invalid email or password.')
         } else if (status === 422) {
           setError('Validation error. Please verify your email, password, and role.')
         } else if (status === 0 || status === 502 || status === 503 || status === 504) {
