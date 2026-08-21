@@ -46,6 +46,13 @@ export default function RecipientRegistration() {
     e.preventDefault()
     setError('')
     setSuccessMessage('')
+
+    const waitingDays = Number(form.waitingDays)
+    if (!Number.isInteger(waitingDays) || waitingDays < 0) {
+      setError('Waiting days must be a whole number that is 0 or greater.')
+      return
+    }
+
     setLoading(true)
 
     const payload: RegisterRecipientRequest = {
@@ -56,7 +63,7 @@ export default function RecipientRegistration() {
       organ_needed: form.organ,
       hla_type: form.hlaType,
       urgency: form.urgency,
-      waiting_days: Number(form.waitingDays),
+      waiting_days: waitingDays,
       hospital: form.hospital,
       city: form.city,
     }
@@ -159,7 +166,9 @@ export default function RecipientRegistration() {
                 </select>
               </Field>
               <Field label="Waiting Days" required>
-                <input type="number" value={form.waitingDays} onChange={set('waitingDays')} placeholder="Days on waiting list" min="0" className={inputCls} required
+                <input type="number" value={form.waitingDays} onChange={set('waitingDays')} placeholder="Days on waiting list" min="0" step="1" className={inputCls} required
+                  onInvalid={e => e.currentTarget.setCustomValidity('Waiting days must be a whole number that is 0 or greater.')}
+                  onInput={e => e.currentTarget.setCustomValidity('')}
                   onFocus={e => e.target.style.boxShadow = '0 0 0 2px #0F766E33'}
                   onBlur={e => e.target.style.boxShadow = ''}/>
               </Field>

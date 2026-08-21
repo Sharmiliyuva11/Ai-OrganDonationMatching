@@ -8,3 +8,4 @@ xgboost
 joblib
 python-multipart
 python-jose[cryptography]
+psycopg[binary]
